@@ -1,0 +1,38 @@
+# Build outputs
+build/
+Debug/
+Release/
+x64/
+x86/
+*.exe
+*.dll
+*.lib
+*.obj
+*.o
+*.a
+*.so
+*.dylib
+
+# IDE files
+.vs/
+*.vcxproj.user
+*.sln
+*.vcxproj
+*.filters
+
+# Cache and temp files
+*.cache
+*.tmp
+*.temp
+
+# Dependencies
+dependencies/
+libs/
+vendor/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
