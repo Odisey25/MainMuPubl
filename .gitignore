@@ -16,8 +16,6 @@ x86/
 # IDE files
 .vs/
 *.vcxproj.user
-*.sln
-*.vcxproj
 *.filters
 
 # Cache and temp files
