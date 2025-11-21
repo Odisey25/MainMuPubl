@@ -736,12 +736,13 @@ constexpr int MAX_ITEM = MAX_ITEM_TYPE * MAX_ITEM_INDEX;
 
 
 //======
+
 #define GetGPUUse								1  //Test GPU
 #define BTYPECUSTOMSS							6  //Phien Ban Season
 #define NEW_MASTER_SKILL_TREE					1	//Su Dung Master Skill
 
 #define Interface_Legend						0	//Inerface
-#define Effect_15					        	0	//Inerface
+#define Effect_15					        	1	//Inerface
 #define UseStackLog								0
 #define OnOffMasterSkill						1	// Cho phep Dung  SkillTree
 #define OnOffPopupMess							0	// Hien Popup Mess Check File

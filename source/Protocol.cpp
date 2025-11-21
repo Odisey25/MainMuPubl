@@ -283,20 +283,28 @@ void GCConnectClientRecv(PMSG_CONNECT_CLIENT_RECV* lpMsg) // OK
 	CharacterAttribute->PrintPlayer.ViewIndex = MAKE_NUMBERW(lpMsg->index[0], lpMsg->index[1]);
 }
 
-void GCDamageRecv(PMSG_DAMAGE_RECV* lpMsg) // OK
+void GCDamageRecv(PMSG_DAMAGE_RECV* lpMsg) // OK CORREGIDO
 {
+	// Obtener el Index
 	int aIndex = MAKE_NUMBERW(lpMsg->index[0], lpMsg->index[1]) & 0x7FFF;
 
+	// Validar si es el jugador que estamos procesando
 	if (CharacterAttribute->PrintPlayer.ViewIndex == aIndex)
 	{
+		// Actualizar Vida y SD visual
 		CharacterAttribute->PrintPlayer.ViewCurHP = lpMsg->ViewCurHP;
 		CharacterAttribute->PrintPlayer.ViewCurSD = lpMsg->ViewCurSD;
 	}
 
+	// Guardar el daño real recibido del server
 	CharacterAttribute->PrintPlayer.ViewDamageHP = lpMsg->ViewDamageHP;
 	CharacterAttribute->PrintPlayer.ViewDamageSD = lpMsg->ViewDamageSD;
 
-	if ((lpMsg->type & 0x10) != 0)
+	// --- CORRECCIÓN AQUÍ ---
+	// Usamos lpMsg->type[0] en lugar de lpMsg->type
+	// El primer byte del array suele contener los flags de daño (Doble, Ignore, etc)
+
+	if ((lpMsg->type[0] & 0x10) != 0)
 	{
 		if (CharacterAttribute->PrintPlayer.ViewDamageCount < 3)
 		{
@@ -305,7 +313,7 @@ void GCDamageRecv(PMSG_DAMAGE_RECV* lpMsg) // OK
 		}
 	}
 
-	if ((lpMsg->type & 0x20) != 0)
+	if ((lpMsg->type[0] & 0x20) != 0)
 	{
 		if (CharacterAttribute->PrintPlayer.ViewDamageCount < 4)
 		{

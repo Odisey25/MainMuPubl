@@ -140,17 +140,19 @@ struct PMSG_HELPER_START_RECV //GS Send Client
 
 struct PMSG_DAMAGE_RECV
 {
-	PBMSG_HEAD header; // C1:11
-	BYTE index[2];
-	BYTE damage[2];
-	BYTE type;
-	BYTE ShieldDamage[2];
-	//EXTRA
-	DWORD ViewCurHP;
-	DWORD ViewCurSD;
-	DWORD ViewDamageHP;
-	DWORD ViewDamageSD;
+	PBMSG_HEAD header;    // C1:11 (El código 0x11 es estándar)
+	BYTE index[2];        // Índice del objetivo (quien recibe el daño)
+	BYTE damage[2];       // Cantidad de daño
+	BYTE type[2];         // IMPORTANTE: 2 Bytes para tipo de daño (Update 701+)
+	BYTE ShieldDamage[2]; // Daño al SD
+	BYTE attribute;       // IMPORTANTE: Atributo elemental (Update 701+)
+	// EXTRA - Datos visuales enviados por el servidor (GAMESERVER_EXTRA=1)
+	DWORD ViewCurHP;      // Vida actual real
+	DWORD ViewCurSD;      // Escudo actual real
+	DWORD ViewDamageHP;   // Daño real a la vida (para mostrar el número)
+	DWORD ViewDamageSD;   // Daño real al escudo
 };
+
 
 struct PMSG_VIEWPORT_DESTROY_RECV
 {

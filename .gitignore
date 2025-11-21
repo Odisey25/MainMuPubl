@@ -34,3 +34,7 @@ vendor/
 # OS files
 .DS_Store
 Thumbs.db
+*.tlog
+*.tlog
+*.pdb
+*.pdb
