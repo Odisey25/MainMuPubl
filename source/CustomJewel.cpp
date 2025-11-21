@@ -106,63 +106,58 @@ bool isBS(int Index)
 
 BOOL CCustomJewel::CheckCustomJewelByItem(int ItemIndex) // OK
 {
-	if (isBS(ItemIndex) == 1)
-	{
-		printf("SU DUNG NGOC 2 \n");
-		return 1;
-	}
-	if(this->GetInfoByItem(ItemIndex) != 0)
+	if (this->GetInfoByItem(ItemIndex) != 0)
 	{
 		return 1;
 	}
-
 	return 0;
 }
 
 
-BOOL CCustomJewel::CheckCustomJewelApplyItem(int ItemIndex,int TargetItemIndex) // OK
+
+BOOL CCustomJewel::CheckCustomJewelApplyItem(int ItemIndex, int TargetItemIndex) // OK
 {
-
-	if (isBS(ItemIndex) == 1 && IsRingPen(TargetItemIndex) == 1)
-	{
-		printf("SU DUNG NGOC \n");
-		return 1;
-	}
-
 	CUSTOM_JEWEL_INFO* lpInfo = this->GetInfoByItem(ItemIndex);
 
-	if(lpInfo == 0)
+	if (lpInfo == 0)
 	{
 		return 0;
 	}
 
-	if((TargetItemIndex/MAX_ITEM_TYPE) >= 7 && (TargetItemIndex / MAX_ITEM_TYPE) <= 11 && (TargetItemIndex%MAX_ITEM_TYPE) >= 62 && (TargetItemIndex%MAX_ITEM_TYPE) <= 72)
+	// Blocks items such as jewelry or special scrolls (indexes 12*512 + 62 to 72)
+
+	if ((TargetItemIndex / MAX_ITEM_TYPE) >= 7 && (TargetItemIndex / MAX_ITEM_TYPE) <= 11 && (TargetItemIndex % MAX_ITEM_TYPE) >= 62 && (TargetItemIndex % MAX_ITEM_TYPE) <= 72)
 	{
 		return 0;
 	}
 
-	if(TargetItemIndex > BConverITEM(12,6) && (TargetItemIndex < BConverITEM(12,36) || TargetItemIndex > BConverITEM(12,43)) && TargetItemIndex != BConverITEM(12,49) && TargetItemIndex != BConverITEM(12,50) && (TargetItemIndex < BConverITEM(12,262) || TargetItemIndex > BConverITEM(12,265)) && TargetItemIndex != BConverITEM(13,30) && gCustomWing.CheckCustomWingByItem(TargetItemIndex) == 0)
+	// Strict range validations for prohibited items
+	if (TargetItemIndex > BConverITEM(12, 6) && (TargetItemIndex < BConverITEM(12, 36) || TargetItemIndex > BConverITEM(12, 43)) && TargetItemIndex != BConverITEM(12, 49) && TargetItemIndex != BConverITEM(12, 50) && (TargetItemIndex < BConverITEM(12, 262) || TargetItemIndex > BConverITEM(12, 265)) && TargetItemIndex != BConverITEM(13, 30) && gCustomWing.CheckCustomWingByItem(TargetItemIndex) == 0)
 	{
 		return 0;
 	}
 
-	if(lpInfo->EnableSlotWeapon == 0 && (TargetItemIndex >= BConverITEM(0,0) && TargetItemIndex < BConverITEM(6,0)))
+	// Validation of slots configured in CustomJewel.txt (Weapon)
+	if (lpInfo->EnableSlotWeapon == 0 && (TargetItemIndex >= BConverITEM(0, 0) && TargetItemIndex < BConverITEM(6, 0)))
 	{
 		return 0;
 	}
 
-	if(lpInfo->EnableSlotArmor == 0 && (TargetItemIndex >= BConverITEM(6,0) && TargetItemIndex < BConverITEM(12,0)))
+	// Slot Validation (Armor)
+	if (lpInfo->EnableSlotArmor == 0 && (TargetItemIndex >= BConverITEM(6, 0) && TargetItemIndex < BConverITEM(12, 0)))
 	{
 		return 0;
 	}
 
-	if(lpInfo->EnableSlotWing == 0 && ((TargetItemIndex >= BConverITEM(12,0) && TargetItemIndex <= BConverITEM(12,6)) || (TargetItemIndex >= BConverITEM(12,36) && TargetItemIndex <= BConverITEM(12,43)) || TargetItemIndex == BConverITEM(12,49) || TargetItemIndex == BConverITEM(12,50) || (TargetItemIndex >= BConverITEM(12,262) && TargetItemIndex <= BConverITEM(12,265)) || TargetItemIndex == BConverITEM(13,30) || gCustomWing.CheckCustomWingByItem(TargetItemIndex) != 0))
+	// Slot Validation (Wings)
+	if (lpInfo->EnableSlotWing == 0 && ((TargetItemIndex >= BConverITEM(12, 0) && TargetItemIndex <= BConverITEM(12, 6)) || (TargetItemIndex >= BConverITEM(12, 36) && TargetItemIndex <= BConverITEM(12, 43)) || TargetItemIndex == BConverITEM(12, 49) || TargetItemIndex == BConverITEM(12, 50) || (TargetItemIndex >= BConverITEM(12, 262) && TargetItemIndex <= BConverITEM(12, 265)) || TargetItemIndex == BConverITEM(13, 30) || gCustomWing.CheckCustomWingByItem(TargetItemIndex) != 0))
 	{
 		return 0;
 	}
 
 	return 1;
 }
+
 
 int CCustomJewel::GetCustomJewelSuccessRate(int ItemIndex,int AccountLevel) // OK
 {
