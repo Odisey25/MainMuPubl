@@ -1901,23 +1901,19 @@ HELPER_INFO ConvertToHelperInfo(const HELPER_STRUCT& helperStruct)
 
 void SEASON3B::CNewUIMuHelper::SaveConfig()
 {
-	// 1. Copiamos los datos de la interfaz (DataAutoMu) a la estructura Helper
+	
 	this->Helper = this->DataAutoMu;
 
-	// === PARCHE DE RANGO ===
-	// Aquí forzamos el valor directamente en la estructura Helper usando "Range[0]"
-	// que es el nombre correcto según tu struct HELPER_STRUCT.
+
 
 	if (this->Helper.Range[0] >= 2)
 	{
-		this->Helper.Range[0] = 6; // Forzamos Rango 6 (u 8 si prefieres)
+		this->Helper.Range[0] = 6; 
 	}
 	// =======================
-
-	// 2. Enviamos los datos (ya parchados)
+	
 	CGSaveDataMuHelper((BYTE*)&ConvertToHelperInfo(this->Helper));
 
-	// 3. Ocultamos la ventana
 	g_pNewUISystem->Hide(INTERFACE_MuHelper);
 }
 
