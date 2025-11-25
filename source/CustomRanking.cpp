@@ -95,7 +95,7 @@ void CustomRanking::OpenWindow()
 
 	pMsg1.header.set(0xF3, 0xE7, sizeof(pMsg1));
 
-	DataSend((BYTE*)& pMsg1, pMsg1.header.size);
+	DataSend((BYTE*)&pMsg1, pMsg1.header.size);
 
 	PMSG_CUSTOM_RANKING_SEND pMsg;
 
@@ -105,7 +105,7 @@ void CustomRanking::OpenWindow()
 
 	pMsg.type = 0;
 
-	DataSend((BYTE*)& pMsg, pMsg.header.size);
+	DataSend((BYTE*)&pMsg, pMsg.header.size);
 
 	gInterface.Data[eRankPANEL_MAIN].OnShow = true;
 
@@ -190,155 +190,139 @@ void CustomRanking::DrawRankPanelWindow()
 		return;
 	}
 
-	float MainWidth = 620.0;
-	float MainHeight = 255.0;
-	float StartBody = ((MAX_WIN_HEIGHT - 51) / 2) - (MainHeight / 2);
-	float StartY = ((MAX_WIN_HEIGHT - 51) / 2) - (MainHeight / 2) - 30.0f;
-	float StartX = (MAX_WIN_WIDTH / 2) - (MainWidth / 2) + 147.0f;
-	float MainCenter = StartX + (MainWidth / 3);
-	float ButtonX = MainCenter - (float)(29.0 / 2);
-	float X = -20;
-	float y = - 22;
+	// CORREÇÃO: Ajuste de dimensões e posicionamento da janela
+	float MainWidth = 350.0f;
+	float MainHeight = 280.0f;
+	float StartY = ((MAX_WIN_HEIGHT - 51) / 2.0f) - (MainHeight / 2.0f);
+	float StartX = (MAX_WIN_WIDTH / 2.0f) - (MainWidth / 2.0f);
 
-	if (g_pBCustomMenuInfo->gDrawWindowCustom(&StartX, &StartY, MainWidth + 50, MainHeight + 10, eRankPANEL_MAIN, this->rankname))
-
-	EnableAlphaTest();
-	glColor3f(1.0, 1.0, 1.0);
-	gInterface.DrawFormat(eYellow, StartX + 37.0f, StartY + 13.0f, 100, 1, "Ranking [F3]");
-
-
-	int CloseX = StartX + 315.0f;
-
-	int CloseY = StartY + 3.0f;
-
-	RenderImage(SEASON3B::CNewUIBCustomMenuInfo::IMAGE_LIST::IMAGE_BCUSTOM_WINDOW_32453, CloseX, CloseY, 30.0f, 30.0f);
-
-	if (SEASON3B::CheckMouseIn(CloseX, CloseY, 30, 30) == 1)
+	// CORREÇÃO: Chamada correta da função com bloco if
+	if (g_pBCustomMenuInfo->gDrawWindowCustom(&StartX, &StartY, MainWidth, MainHeight, eRankPANEL_MAIN, this->rankname))
 	{
-		if (GetKeyState(VK_LBUTTON) & 0x8000 && GetTickCount() - gInterface.Data[eRankPANEL_MAIN].EventTick > 300)
+		EnableAlphaTest();
+		glColor3f(1.0, 1.0, 1.0);
+		gInterface.DrawFormat(eYellow, StartX + 37.0f, StartY + 13.0f, 100, 1, "Ranking [F3]");
+
+		// CORREÇÃO: Posição do botão de fechar ajustada
+		int CloseX = StartX + MainWidth - 35.0f;
+		int CloseY = StartY + 3.0f;
+
+		RenderImage(SEASON3B::CNewUIBCustomMenuInfo::IMAGE_LIST::IMAGE_BCUSTOM_WINDOW_32453, CloseX, CloseY, 30.0f, 30.0f);
+
+		if (SEASON3B::CheckMouseIn(CloseX, CloseY, 30, 30) == 1)
 		{
-
-			gInterface.Data[eRankPANEL_MAIN].Close();
-		}
-		RenderImage(SEASON3B::CNewUIBCustomMenuInfo::IMAGE_LIST::IMAGE_BCUSTOM_WINDOW_32453, CloseX, CloseY, 30, 30, 0, 0, RGBA(255, 255, 255, 255));
-	}
-
-	DisableAlphaBlend();
-	if (SEASON3B::IsPress(VK_ESCAPE) == true)
-	{
-		gInterface.Data[eRankPANEL_MAIN].OnShow ^= 1;
-		PlayBuffer(SOUND_CLICK01);
-	}
-
-	{
-		DWORD Color = eGray100;
-
-		float SizeButtonW = 80.0;
-
-		if (this->RankEnable == 1)
-		{
-			EnableAlphaTest();
-			glColor3f(1.0, 1.0, 1.0);
-			gInterface.DrawFormat(eWhite, StartX + 45 + X, StartY + 40, 110, 1, "Top");
-
-			gInterface.DrawFormat(eWhite, StartX + 80 + X, StartY + 40, 110, 1, "%s", this->col1);
-
-			gInterface.DrawFormat(eWhite, StartX + 160 + X, StartY + 40, 110, 1, "%s", this->col2);
-
-			gInterface.DrawFormat(eWhite, StartX + 230 + X, StartY + 40, 110, 1, "%s", this->col3);
-
-			gInterface.DrawFormat(eWhite, StartX + 300 + X, StartY + 40, 110, 1, "%s - Reset", this->col4);
-			DisableAlphaBlend();
-			char* name = (char*)(CharacterAttribute->Name);
-
-			for (int n = 0, i = (PageBank * MaxPerPageBank); n < MaxPerPageBank && i < this->count; i++)
-
+			if (GetKeyState(VK_LBUTTON) & 0x8000 && GetTickCount() - gInterface.Data[eRankPANEL_MAIN].EventTick > 300)
 			{
-				Color = eWhite;
+				gInterface.Data[eRankPANEL_MAIN].Close();
+			}
+			RenderImage(SEASON3B::CNewUIBCustomMenuInfo::IMAGE_LIST::IMAGE_BCUSTOM_WINDOW_32453, CloseX, CloseY, 30, 30, 0, 0, RGBA(255, 255, 255, 255));
+		}
 
-				if (i >= 0)
-				{
-					EnableAlphaTest();
-					glColor3f(1.0, 1.0, 1.0);
+		DisableAlphaBlend();
+		if (SEASON3B::IsPress(VK_ESCAPE) == true)
+		{
+			gInterface.Data[eRankPANEL_MAIN].OnShow ^= 1;
+			PlayBuffer(SOUND_CLICK01);
+		}
 
-					if (i < 4)
-					{
-						Color = eYellow;
-					}
-					else
-					{
-						Color = eWhite;
-					}
+		{
+			DWORD Color = eGray100;
 
-					gInterface.DrawFormat(Color, StartX + 48 + X, StartY + 80 + (20 * n) + y, 52, 2, "%d", (i + 1));
-					DisableAlphaBlend();
-				}
+			if (this->RankEnable == 1)
+			{
+				EnableAlphaTest();
+				glColor3f(1.0, 1.0, 1.0);
 
-				
-				if (strcmp(name, this->gCustomRanking[i].Value1) == 0)
+				// CORREÇÃO: Cabeçalhos das colunas com posicionamento ajustado
+				gInterface.DrawFormat(eWhite, StartX + 25.0f, StartY + 40.0f, 110, 1, "Top");
+				gInterface.DrawFormat(eWhite, StartX + 60.0f, StartY + 40.0f, 110, 1, "%s", this->col1);
+				gInterface.DrawFormat(eWhite, StartX + 140.0f, StartY + 40.0f, 110, 1, "%s", this->col2);
+				gInterface.DrawFormat(eWhite, StartX + 210.0f, StartY + 40.0f, 110, 1, "%s", this->col3);
+				gInterface.DrawFormat(eWhite, StartX + 280.0f, StartY + 40.0f, 110, 1, "%s", this->col4);
+				DisableAlphaBlend();
+
+				char* name = (char*)(CharacterAttribute->Name);
+
+				for (int n = 0, i = (PageBank * MaxPerPageBank); n < MaxPerPageBank && i < this->count; i++)
 				{
 					Color = eWhite;
-				}
 
+					if (i >= 0)
+					{
+						EnableAlphaTest();
+						glColor3f(1.0, 1.0, 1.0);
 
-				g_pBCustomMenuInfo->RenderRanking(StartX + 36 + X, StartY + 75 + (20 * n) + y, 330, 22, 0x00000096, 0, 0);
+						if (i < 3)
+						{
+							Color = eYellow;
+						}
+						else
+						{
+							Color = eWhite;
+						}
 
-				if (SEASON3B::CheckMouseIn(StartX + 36 + X, StartY + 75 + (20 * n) + y, 330, 22))
-				{
-					FrameTarget(StartX + 37 + X, StartY + 75 + (20 * n) + y, 326, 17, RGBA(31, 144, 255, 0xff));
+						gInterface.DrawFormat(Color, StartX + 28.0f, StartY + 60.0f + (20 * n), 52, 2, "%d", (i + 1));
+						DisableAlphaBlend();
+					}
 
-				}
+					if (strcmp(name, this->gCustomRanking[i].Value1) == 0)
+					{
+						Color = eGold;
+					}
 
-				if (i > 2)
-				{
+					// CORREÇÃO: Renderização de fundo da linha ajustada
+					g_pBCustomMenuInfo->RenderRanking(StartX + 16.0f, StartY + 55.0f + (20 * n), 330, 22, 0x00000096, 0, 0);
+
+					if (SEASON3B::CheckMouseIn(StartX + 16.0f, StartY + 55.0f + (20 * n), 330, 22))
+					{
+						FrameTarget(StartX + 17.0f, StartY + 55.0f + (20 * n), 326, 17, RGBA(31, 144, 255, 0xff));
+					}
 
 					EnableAlphaTest();
 					glColor3f(1.0, 1.0, 1.0);
-					gInterface.DrawFormat(eWhite, StartX + 160 + X, StartY + 80 + (20 * n) + y, 110, 1, "%s" ,this->gCustomRanking[i].Value1);
-					int value = atoi(this->gCustomRanking[i].Value2); // Chuyển chuỗi thành số
-					gInterface.DrawFormat(eWhite, StartX + 230 + X, StartY + 80 + (20 * n) + y, 110, 1, "%s", gInterface.NumberFormat(value));
-					gInterface.DrawFormat(eWhite, StartX + 295 + X, StartY + 80 + (20 * n) + y, 110, 1, "%s", this->gCustomRanking[i].Value4);
+
+					// CORREÇÃO: Dados das colunas com posicionamento ajustado
+					gInterface.DrawFormat(Color, StartX + 60.0f, StartY + 60.0f + (20 * n), 110, 1, "%s", this->gCustomRanking[i].Value1);
+					int value = atoi(this->gCustomRanking[i].Value2);
+					gInterface.DrawFormat(eWhite, StartX + 140.0f, StartY + 60.0f + (20 * n), 110, 1, "%s", gInterface.NumberFormat(value));
+					gInterface.DrawFormat(eWhite, StartX + 210.0f, StartY + 60.0f + (20 * n), 110, 1, "%s", this->gCustomRanking[i].Value3);
+					gInterface.DrawFormat(eWhite, StartX + 280.0f, StartY + 60.0f + (20 * n), 110, 1, "%s", this->gCustomRanking[i].Value4);
 					DisableAlphaBlend();
 
+					// Renderização de ícone se houver
+					if (atoi(this->gCustomRanking[i].Value3) > 0)
+					{
+						EnableAlphaTest();
+						glColor3f(1.0, 1.0, 1.0);
+						RenderBitmap(150000 + atoi(this->gCustomRanking[i].Value3), StartX + 10.0f, StartY + 28.0f + (20 * n), 170.0f, 120.0f, 0.0, 0.0, 1.0, 1.0, 1, 1, 0.0);
+						DisableAlphaBlend();
+					}
+
+					n++;
 				}
-				else
+
+				// CORREÇÃO: Controles de paginação centralizados
+				float CenterX = StartX + (MainWidth / 2.0f);
+				float CenterY = StartY + MainHeight - 25.0f;
+
+				EnableAlphaTest();
+				glColor3f(1.0, 1.0, 1.0);
+
+				int totalPages = (this->count + MaxPerPageBank - 1) / MaxPerPageBank;
+				if (totalPages < 1) totalPages = 1;
+
+				TextDraw(g_hFontBold, CenterX - 15.0f, CenterY, 0xffffffff, 0x0, 60, 0, 3, "%d / %d", PageBank + 1, totalPages);
+				DisableAlphaBlend();
+
+				if (g_pBCustomMenuInfo->DrawButtonGUI(SEASON3B::CNewUIBCustomMenuInfo::IMAGE_LIST::ButtonPageL, CenterX - 60.0f, CenterY, 20, 22, 3))
 				{
-					EnableAlphaTest();
-					glColor3f(1.0, 1.0, 1.0);
-					gInterface.DrawFormat(eWhite, StartX + 160 + X, StartY + 80 + (20 * n) + y, 110, 1, "%s", this->gCustomRanking[i].Value1);
-					int value = atoi(this->gCustomRanking[i].Value2); // Chuyển chuỗi thành số
-					gInterface.DrawFormat(eWhite, StartX + 230 + X, StartY + 80 + (20 * n) + y, 110, 1, "%s", gInterface.NumberFormat(value));
-					gInterface.DrawFormat(eWhite, StartX + 295 + X, StartY + 80 + (20 * n) + y, 110, 1, "%s", this->gCustomRanking[i].Value4);
-					DisableAlphaBlend();
-
+					BPagePrevAction(NULL);
 				}
 
-				if (atoi(this->gCustomRanking[i].Value3) > 0)
+				if (g_pBCustomMenuInfo->DrawButtonGUI(SEASON3B::CNewUIBCustomMenuInfo::IMAGE_LIST::ButtonPageR, CenterX + 40.0f, CenterY, 20, 22, 3))
 				{
-					EnableAlphaTest();
-					glColor3f(1.0, 1.0, 1.0);
-					RenderBitmap(150000 + atoi(this->gCustomRanking[i].Value3), StartX + 30 + X, StartY + 48 + (20 * n) + y, 170.0f, 120.0f, 0.0, 0.0, 1.0, 1.0, 1, 1, 0.0);
-					DisableAlphaBlend();
+					BPageNextAction(NULL);
 				}
-
-				n++;
-
-			}
-			float CenterX = StartX + (400 / 2) + 145;
-			float CenterY = (StartY + 390) - 43;
-			const BYTE state[3] = { 0, 1, 2 };
-			EnableAlphaTest();
-			glColor3f(1.0, 1.0, 1.0);
-			TextDraw(g_hFontBold, CenterX - (380 / 2), CenterY - 115 + 5, 0xffffffff, 0x0, 60, 0, 3, "%d / %d", PageBank + 1, (this->count / MaxPerPageBank));
-			DisableAlphaBlend();
-			if (g_pBCustomMenuInfo->DrawButtonGUI(SEASON3B::CNewUIBCustomMenuInfo::IMAGE_LIST::ButtonPageL, CenterX - (360 / 2) - 26, CenterY - 115, 20, 22, 3))
-			{
-				BPagePrevAction(NULL);
-			}
-			
-			if (g_pBCustomMenuInfo->DrawButtonGUI(SEASON3B::CNewUIBCustomMenuInfo::IMAGE_LIST::ButtonPageR, CenterX - (290 / 2) + 8, CenterY - 115, 20, 22, 3))
-			{
-				BPagePrevAction(NULL);
 			}
 		}
 	}

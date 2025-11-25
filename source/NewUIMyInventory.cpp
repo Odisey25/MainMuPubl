@@ -14,6 +14,7 @@
 #include "CDirection.h"
 #include "GMCryWolf1st.h"
 #include "GMCryingWolf2nd.h"
+#include "zzzMixInventory.h"
 #include "ZzzInventory.h"
 #include "wsclientinline.h"
 #include "MixMgr.h"
@@ -175,6 +176,11 @@ void CNewUIMyInventory::UnequipItem(int iIndex)
 
 			if (pEquippedItem->Type != ITEM_HELPER + 5)
 				DeleteEquippingEffectBug(pEquippedItem);
+
+			if (gCustomPet2.CheckCustomPetByItem(pEquippedItem->Type))
+			{
+				DeleteBug(&Hero->Object);
+			}
 
 			pEquippedItem->Type = -1;
 			pEquippedItem->Level = 0;
