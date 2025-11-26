@@ -1,376 +1,376 @@
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\BAiFindPath.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\BAiFindPath.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\BlackWin.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\BlackWin.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\BoneManager.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\BoneManager.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\BuffIcon.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\BuffIcon.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Builder.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\Builder.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Button.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\Button.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CameraMove.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CameraMove.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CBInterface.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CBInterface.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CBInterfaceVIPChar.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CBInterfaceVIPChar.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CBTMessageBox.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CBTMessageBox.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CComGem.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CComGem.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CDirection.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CDirection.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ChangeClass.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ChangeClass.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ChangeRingManager.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ChangeRingManager.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CharacterManager.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CharacterManager.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CharInfoBalloon.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CharInfoBalloon.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CharInfoBalloonMng.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CharInfoBalloonMng.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CharMakeWin.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CharMakeWin.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CharSelMainWin.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CharSelMainWin.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CKANTURUDirection.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CKANTURUDirection.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CMVP1stDirection.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CMVP1stDirection.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CreditInfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CreditInfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CreditWin.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CreditWin.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CSChaosCastle.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CSChaosCastle.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CSEventMatch.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CSEventMatch.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CSItemOption.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CSItemOption.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CSMapServer.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CSMapServer.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CSParts.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CSParts.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CSPetSystem.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CSPetSystem.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CSQuest.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CSQuest.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CSWaterTerrain.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CSWaterTerrain.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CUIController.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CUIController.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CustomBow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CustomBow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CustomBuyVip.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CustomBuyVip.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CustomCloak.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CustomCloak.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CustomEventTime.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CustomEventTime.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CustomGloves.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CustomGloves.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CustomItem.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CustomItem.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CustomItemStack.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CustomItemStack.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CustomJewel.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CustomJewel.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CustomLucChien.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CustomLucChien.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CustomMap.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CustomMap.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CustomMessage.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CustomMessage.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CustomMonster.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CustomMonster.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CustomMonsterGlow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CustomMonsterGlow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CustomNpcName.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CustomNpcName.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CustomPet.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CustomPet.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CustomPetEffect.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CustomPetEffect.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CustomRanking.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CustomRanking.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CustomRankUser.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CustomRankUser.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CustomRingPen.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CustomRingPen.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\CustomWing.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CustomWing.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\DialogInfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\DialogInfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\DSplaysound.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\DSplaysound.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\DSwaveIO.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\DSwaveIO.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\DuelMgr.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\DuelMgr.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\DynamicEffect.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\DynamicEffect.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Event.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\Event.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ExplanationInfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ExplanationInfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ExternalObject\Leaf\callstackdmp.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\callstackdmp.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ExternalObject\Leaf\checkintegrity.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\checkintegrity.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ExternalObject\Leaf\ExceptionHandler.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ExceptionHandler.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ExternalObject\Leaf\html_log.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\html_log.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ExternalObject\Leaf\peimage.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\peimage.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ExternalObject\Leaf\stdleaf.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\stdleaf.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ExternalObject\Leaf\sysinfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\sysinfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ExternalObject\Leaf\xortrans.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\xortrans.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ExternalObject\Leaf\xstreambuf.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\xstreambuf.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\FilterInfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\FilterInfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\FilterNameInfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\FilterNameInfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Font.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\Font.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GambleSystem.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GambleSystem.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameCensorship.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GameCensorship.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\FileDownloader\DownloadInfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\DownloadInfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\FileDownloader\FileDownloader.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\FileDownloader.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\FileDownloader\FTPConnecter.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\FTPConnecter.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\FileDownloader\HTTPConnecter.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\HTTPConnecter.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\InGameShopSystem.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\InGameShopSystem.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\MsgBoxIGSBuyConfirm.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MsgBoxIGSBuyConfirm.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\MsgBoxIGSBuyPackageItem.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MsgBoxIGSBuyPackageItem.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\MsgBoxIGSBuySelectItem.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MsgBoxIGSBuySelectItem.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\MsgBoxIGSCommon.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MsgBoxIGSCommon.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\MsgBoxIGSDeleteItemConfirm.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MsgBoxIGSDeleteItemConfirm.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\MsgBoxIGSGiftStorageItemInfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MsgBoxIGSGiftStorageItemInfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\MsgBoxIGSSendGift.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MsgBoxIGSSendGift.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\MsgBoxIGSSendGiftConfirm.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MsgBoxIGSSendGiftConfirm.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\MsgBoxIGSStorageItemInfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MsgBoxIGSStorageItemInfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\MsgBoxIGSUseBuffConfirm.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MsgBoxIGSUseBuffConfirm.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\MsgBoxIGSUseItemConfirm.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MsgBoxIGSUseItemConfirm.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\NewUIInGameShop.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIInGameShop.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\ShopListManager\BannerInfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\BannerInfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\ShopListManager\BannerInfoList.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\BannerInfoList.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\ShopListManager\BannerListManager.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\BannerListManager.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\ShopListManager\FTPFileDownLoader.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\FTPFileDownLoader.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\ShopListManager\interface\PathMethod\Path.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\Path.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\ShopListManager\interface\WZResult\WZResult.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\WZResult.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\ShopListManager\ListManager.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ListManager.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\ShopListManager\ShopCategory.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ShopCategory.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\ShopListManager\ShopCategoryList.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ShopCategoryList.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\ShopListManager\ShopList.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ShopList.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\ShopListManager\ShopListManager.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ShopListManager.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\ShopListManager\ShopPackage.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ShopPackage.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\ShopListManager\ShopPackageList.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ShopPackageList.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\ShopListManager\ShopProduct.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ShopProduct.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\ShopListManager\ShopProductList.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ShopProductList.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\ShopListManager\StringMethod.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\StringMethod.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GameShop\ShopListManager\StringToken.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\StringToken.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GaugeBar.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GaugeBar.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GIPetManager.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GIPetManager.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GlobalBitmap.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GlobalBitmap.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GM3rdChangeUp.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GM3rdChangeUp.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GMAida.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GMAida.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GMBattleCastle.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GMBattleCastle.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GMCryingWolf2nd.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GMCryingWolf2nd.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GMCrywolf1st.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GMCrywolf1st.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GMDoppelGanger1.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GMDoppelGanger1.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GMDoppelGanger2.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GMDoppelGanger2.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GMDoppelGanger3.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GMDoppelGanger3.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GMDoppelGanger4.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GMDoppelGanger4.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GMDuelArena.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GMDuelArena.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GMEmpireGuardian1.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GMEmpireGuardian1.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GMEmpireGuardian2.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GMEmpireGuardian2.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GMEmpireGuardian3.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GMEmpireGuardian3.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GMEmpireGuardian4.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GMEmpireGuardian4.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GMHellas.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GMHellas.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GMHuntingGround.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GMHuntingGround.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GMKarutan1.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GMKarutan1.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GMNewTown.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GMNewTown.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GMSantaTown.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GMSantaTown.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GMSwampOfQuiet.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GMSwampOfQuiet.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GMUnitedMarketPlace.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GMUnitedMarketPlace.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GM_kanturu_1st.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GM_kanturu_1st.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GM_Kanturu_2nd.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GM_Kanturu_2nd.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GM_Kanturu_3rd.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GM_Kanturu_3rd.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GM_PK_Field.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GM_PK_Field.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GM_Raklion.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GM_Raklion.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GOBoid.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GOBoid.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GuildCache.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GuildCache.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\GuildManager.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\GuildManager.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Input.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\Input.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ItemAddOptioninfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ItemAddOptioninfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ItemInfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ItemInfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ItemManager.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ItemManager.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ItemTooltip.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ItemTooltip.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ItemTRSData.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ItemTRSData.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\KeyGenerater.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\KeyGenerater.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\LoadData.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\LoadData.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\LoadingScene.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\LoadingScene.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Local.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\Local.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\LoginMainWin.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\LoginMainWin.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\LoginWin.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\LoginWin.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\MainLoad.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MainLoad.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\MapManager.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MapManager.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\MatchEvent.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MatchEvent.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Math\ZzzMathLib.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzMathLib.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\MemScript.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MemScript.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\MenuCustom.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MenuCustom.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\MixMgr.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MixMgr.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\MonkSystem.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MonkSystem.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\MonsterEffect.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MonsterEffect.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\MoveCommandData.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MoveCommandData.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\MovereqInfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MovereqInfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\MovieScene.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MovieScene.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\MsgWin.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MsgWin.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\MultiLanguage.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MultiLanguage.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewBloodCastleSystem.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewBloodCastleSystem.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewChaosCastleSystem.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewChaosCastleSystem.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUI3DRenderMng.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUI3DRenderMng.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIBattleSoccerScore.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIBattleSoccerScore.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIBCustomMenu.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIBCustomMenu.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIBloodCastleEnter.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIBloodCastleEnter.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIBloodCastleTime.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIBloodCastleTime.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIBMacro.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIBMacro.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIBuffWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIBuffWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIButton.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIButton.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUICastleWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUICastleWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUICatapultWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUICatapultWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIChaosCastleTime.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIChaosCastleTime.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUICharacterInfoWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUICharacterInfoWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIChatInputBox.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIChatInputBox.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIChatLogWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIChatLogWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUICommandWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUICommandWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUICommon.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUICommon.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUICommonMessageBox.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUICommonMessageBox.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUICryWolf.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUICryWolf.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUICursedTempleEnter.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUICursedTempleEnter.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUICursedTempleResult.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUICursedTempleResult.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUICursedTempleSystem.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUICursedTempleSystem.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUICustomMessageBox.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUICustomMessageBox.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIDoppelGangerFrame.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIDoppelGangerFrame.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIDoppelGangerWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIDoppelGangerWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIDuelWatchMainFrameWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIDuelWatchMainFrameWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIDuelWatchUserListWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIDuelWatchUserListWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIDuelWatchWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIDuelWatchWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIDuelWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIDuelWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIEmpireGuardianNPC.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIEmpireGuardianNPC.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIEmpireGuardianTimer.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIEmpireGuardianTimer.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIEnterDevilSquare.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIEnterDevilSquare.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIExchangeLuckyCoin.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIExchangeLuckyCoin.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIFriendWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIFriendWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIGatemanWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIGatemanWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIGateSwitchWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIGateSwitchWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIGensRanking.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIGensRanking.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIGoldBowmanLena.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIGoldBowmanLena.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIGoldBowmanWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIGoldBowmanWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIGroup.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIGroup.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIGuardWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIGuardWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIGuildInfoWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIGuildInfoWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIGuildMakeWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIGuildMakeWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIHelpWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIHelpWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIHeroPositionInfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIHeroPositionInfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIHotKey.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIHotKey.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIInventoryCtrl.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIInventoryCtrl.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIInventoryExtension.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIInventoryExtension.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIItemEnduranceInfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIItemEnduranceInfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIItemExplanationWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIItemExplanationWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIItemMng.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIItemMng.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIKanturuEvent.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIKanturuEvent.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUILuckyItemWnd.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUILuckyItemWnd.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIMainFrameWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIMainFrameWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIManager.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIManager.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIMasterLevel.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIMasterLevel.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIMasterSkillTree.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIMasterSkillTree.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIMessageBox.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIMessageBox.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIMiniMap.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIMiniMap.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIMixInventory.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIMixInventory.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIMoveCommandWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIMoveCommandWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIMuHelper.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIMuHelper.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIMyInventory.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIMyInventory.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIMyQuestInfoWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIMyQuestInfoWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIMyShopInventory.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIMyShopInventory.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUINameWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUINameWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUINPCDialogue.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUINPCDialogue.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUINPCQuest.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUINPCQuest.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUINPCShop.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUINPCShop.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIOptionWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIOptionWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIPartyInfoWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIPartyInfoWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIPartyListWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIPartyListWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIPetInfoWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIPetInfoWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIPurchaseShopInventory.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIPurchaseShopInventory.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIQuestProgress.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIQuestProgress.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIQuestProgressByEtc.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIQuestProgressByEtc.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIQuickCommandWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIQuickCommandWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIRegistrationLuckyCoin.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIRegistrationLuckyCoin.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIRenderNumber.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIRenderNumber.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIScrollBar.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIScrollBar.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUISeigeWarfare.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUISeigeWarfare.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUISetItemExplanation.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUISetItemExplanation.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUISiegeWarBase.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUISiegeWarBase.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUISiegeWarCommander.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUISiegeWarCommander.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUISiegeWarObserver.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUISiegeWarObserver.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUISiegeWarSoldier.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUISiegeWarSoldier.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUISlideWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUISlideWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIStorageInventory.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIStorageInventory.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIStorageInventoryExt.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIStorageInventoryExt.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUISystem.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUISystem.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUITextBox.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUITextBox.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUITrade.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUITrade.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIUnitedMarketPlaceWindow.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIUnitedMarketPlaceWindow.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\NewUIWindowMenu.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\NewUIWindowMenu.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\npcBreeder.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\npcBreeder.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\npcCatapult.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\npcCatapult.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\npcGateSwitch.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\npcGateSwitch.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Observer.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\Observer.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\OptionWin.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\OptionWin.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Other.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\Other.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\PacketManager.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\PacketManager.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\PartyManager.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\PartyManager.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\PersonalShopTitleImp.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\PersonalShopTitleImp.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\PetProtocol.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\PetProtocol.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\PhysicsManager.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\PhysicsManager.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\PList.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\PList.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\PortalMgr.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\PortalMgr.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Protect.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\Protect.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ProtectSysKey.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ProtectSysKey.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Protocol.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\Protocol.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ProtocolSend.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ProtocolSend.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\QuestInfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\QuestInfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\QuestMng.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\QuestMng.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Reconnect.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\Reconnect.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ServerGroup.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ServerGroup.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ServerInfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ServerInfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ServerListManager.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ServerListManager.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ServerMsgWin.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ServerMsgWin.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ServerSelWin.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ServerSelWin.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ShadowVolume.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ShadowVolume.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\SideHair.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\SideHair.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\SkillEffectMgr.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\SkillEffectMgr.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\SkillInfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\SkillInfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\SkillManager.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\SkillManager.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\SlideInfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\SlideInfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Slider.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\Slider.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\SMD.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\SMD.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\SMD2BMD.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\SMD2BMD.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\SocketSystem.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\SocketSystem.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Sprite.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\Sprite.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Stack.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\Stack.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\StackWalker.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\StackWalker.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\StaticEffect.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\StaticEffect.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\StatsAdvance.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\StatsAdvance.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\StdAfx.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\StdAfx.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\SummonSystem.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\SummonSystem.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\SysMenuWin.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\SysMenuWin.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\TestEventMap.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\TestEventMap.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\TextureScript.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\TextureScript.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Time\CTimCheck.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CTimCheck.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Time\Timer.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\Timer.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\TrayMode.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\TrayMode.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\UIControls.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\UIControls.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\UIDefaultBase.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\UIDefaultBase.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\UIGateKeeper.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\UIGateKeeper.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\UIGuardsMan.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\UIGuardsMan.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\UIGuildInfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\UIGuildInfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\UIGuildMaster.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\UIGuildMaster.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\UIJewelHarmony.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\UIJewelHarmony.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\UIManager.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\UIManager.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\UIMapName.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\UIMapName.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\UIMng.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\UIMng.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\UIPopup.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\UIPopup.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\UISenatus.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\UISenatus.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\UIWindows.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\UIWindows.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\UsefulDef.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\UsefulDef.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Util.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\Util.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Utilities\CCRC32.Cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\CCRC32.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Utilities\Log\DebugAngel.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\DebugAngel.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Utilities\Log\ErrorReport.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ErrorReport.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Utilities\Log\muConsoleDebug.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\muConsoleDebug.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Utilities\Log\WindowsConsole.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\WindowsConsole.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Utilities\Memory\MemoryLock.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\MemoryLock.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Win.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\Win.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\WinEx.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\WinEx.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Winmain.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\Winmain.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\WSclient.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\WSclient.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\WSctlc.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\WSctlc.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\w_BasePet.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\w_BasePet.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\w_Buff.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\w_Buff.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\w_BuffScriptLoader.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\w_BuffScriptLoader.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\w_BuffStateSystem.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\w_BuffStateSystem.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\w_BuffStateValueControl.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\w_BuffStateValueControl.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\w_BuffTimeControl.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\w_BuffTimeControl.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\w_CharacterInfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\w_CharacterInfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\w_CursedTemple.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\w_CursedTemple.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\w_MapProcess.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\w_MapProcess.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\w_ObjectInfo.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\w_ObjectInfo.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\w_PetActionCollecter.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\w_PetActionCollecter.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\w_PetActionCollecter_Add.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\w_PetActionCollecter_Add.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\w_PetActionDemon.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\w_PetActionDemon.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\w_PetActionRound.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\w_PetActionRound.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\w_PetActionStand.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\w_PetActionStand.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\w_PetActionUnicorn.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\w_PetActionUnicorn.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\w_PetProcess.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\w_PetProcess.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ZzzAI.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzAI.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ZzzBMD.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzBMD.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ZzzCharacter.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzCharacter.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ZzzEffect.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzEffect.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ZzzEffectBlurSpark.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzEffectBlurSpark.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ZzzEffectFireLeave.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzEffectFireLeave.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ZzzEffectJoint.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzEffectJoint.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ZzzEffectMagicSkill.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzEffectMagicSkill.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ZzzEffectNoUse.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzEffectNoUse.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ZzzEffectParticle.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzEffectParticle.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ZzzEffectPoint.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzEffectPoint.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ZzzEffectPointer.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzEffectPointer.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\zzzeffectsprite.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\zzzeffectsprite.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ZzzInfomation.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzInfomation.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ZzzInterface.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzInterface.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ZzzInventory.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzInventory.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ZzzLodTerrain.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzLodTerrain.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\zzzMixInvetory.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\zzzMixInvetory.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ZzzObject.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzObject.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ZzzOpenData.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzOpenData.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ZzzOpenglUtil.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzOpenglUtil.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\zzzpath.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\zzzpath.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ZzzScene.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzScene.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\ZzzTexture.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\ZzzTexture.obj
-C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\_GlobalFunctions.cpp;C:\Users\mobitec\Desktop\server\Source Pegasus 5.2\Source\6.Main_UP52_Full\source\Global Release\_GlobalFunctions.obj
+E:\server\Src\Main6.3\Main.6.3\source\BAiFindPath.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\BAiFindPath.obj
+E:\server\Src\Main6.3\Main.6.3\source\BlackWin.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\BlackWin.obj
+E:\server\Src\Main6.3\Main.6.3\source\BoneManager.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\BoneManager.obj
+E:\server\Src\Main6.3\Main.6.3\source\BuffIcon.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\BuffIcon.obj
+E:\server\Src\Main6.3\Main.6.3\source\Builder.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\Builder.obj
+E:\server\Src\Main6.3\Main.6.3\source\Button.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\Button.obj
+E:\server\Src\Main6.3\Main.6.3\source\CameraMove.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CameraMove.obj
+E:\server\Src\Main6.3\Main.6.3\source\CBInterface.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CBInterface.obj
+E:\server\Src\Main6.3\Main.6.3\source\CBInterfaceVIPChar.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CBInterfaceVIPChar.obj
+E:\server\Src\Main6.3\Main.6.3\source\CBTMessageBox.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CBTMessageBox.obj
+E:\server\Src\Main6.3\Main.6.3\source\CComGem.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CComGem.obj
+E:\server\Src\Main6.3\Main.6.3\source\CDirection.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CDirection.obj
+E:\server\Src\Main6.3\Main.6.3\source\ChangeClass.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ChangeClass.obj
+E:\server\Src\Main6.3\Main.6.3\source\ChangeRingManager.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ChangeRingManager.obj
+E:\server\Src\Main6.3\Main.6.3\source\CharacterManager.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CharacterManager.obj
+E:\server\Src\Main6.3\Main.6.3\source\CharInfoBalloon.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CharInfoBalloon.obj
+E:\server\Src\Main6.3\Main.6.3\source\CharInfoBalloonMng.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CharInfoBalloonMng.obj
+E:\server\Src\Main6.3\Main.6.3\source\CharMakeWin.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CharMakeWin.obj
+E:\server\Src\Main6.3\Main.6.3\source\CharSelMainWin.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CharSelMainWin.obj
+E:\server\Src\Main6.3\Main.6.3\source\CKANTURUDirection.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CKANTURUDirection.obj
+E:\server\Src\Main6.3\Main.6.3\source\CMVP1stDirection.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CMVP1stDirection.obj
+E:\server\Src\Main6.3\Main.6.3\source\CreditInfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CreditInfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\CreditWin.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CreditWin.obj
+E:\server\Src\Main6.3\Main.6.3\source\CSChaosCastle.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CSChaosCastle.obj
+E:\server\Src\Main6.3\Main.6.3\source\CSEventMatch.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CSEventMatch.obj
+E:\server\Src\Main6.3\Main.6.3\source\CSItemOption.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CSItemOption.obj
+E:\server\Src\Main6.3\Main.6.3\source\CSMapServer.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CSMapServer.obj
+E:\server\Src\Main6.3\Main.6.3\source\CSParts.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CSParts.obj
+E:\server\Src\Main6.3\Main.6.3\source\CSPetSystem.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CSPetSystem.obj
+E:\server\Src\Main6.3\Main.6.3\source\CSQuest.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CSQuest.obj
+E:\server\Src\Main6.3\Main.6.3\source\CSWaterTerrain.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CSWaterTerrain.obj
+E:\server\Src\Main6.3\Main.6.3\source\CUIController.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CUIController.obj
+E:\server\Src\Main6.3\Main.6.3\source\CustomBow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CustomBow.obj
+E:\server\Src\Main6.3\Main.6.3\source\CustomBuyVip.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CustomBuyVip.obj
+E:\server\Src\Main6.3\Main.6.3\source\CustomCloak.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CustomCloak.obj
+E:\server\Src\Main6.3\Main.6.3\source\CustomEventTime.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CustomEventTime.obj
+E:\server\Src\Main6.3\Main.6.3\source\CustomGloves.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CustomGloves.obj
+E:\server\Src\Main6.3\Main.6.3\source\CustomItem.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CustomItem.obj
+E:\server\Src\Main6.3\Main.6.3\source\CustomItemStack.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CustomItemStack.obj
+E:\server\Src\Main6.3\Main.6.3\source\CustomJewel.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CustomJewel.obj
+E:\server\Src\Main6.3\Main.6.3\source\CustomLucChien.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CustomLucChien.obj
+E:\server\Src\Main6.3\Main.6.3\source\CustomMap.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CustomMap.obj
+E:\server\Src\Main6.3\Main.6.3\source\CustomMessage.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CustomMessage.obj
+E:\server\Src\Main6.3\Main.6.3\source\CustomMonster.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CustomMonster.obj
+E:\server\Src\Main6.3\Main.6.3\source\CustomMonsterGlow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CustomMonsterGlow.obj
+E:\server\Src\Main6.3\Main.6.3\source\CustomNpcName.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CustomNpcName.obj
+E:\server\Src\Main6.3\Main.6.3\source\CustomPet.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CustomPet.obj
+E:\server\Src\Main6.3\Main.6.3\source\CustomPetEffect.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CustomPetEffect.obj
+E:\server\Src\Main6.3\Main.6.3\source\CustomRanking.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CustomRanking.obj
+E:\server\Src\Main6.3\Main.6.3\source\CustomRankUser.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CustomRankUser.obj
+E:\server\Src\Main6.3\Main.6.3\source\CustomRingPen.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CustomRingPen.obj
+E:\server\Src\Main6.3\Main.6.3\source\CustomWing.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CustomWing.obj
+E:\server\Src\Main6.3\Main.6.3\source\DialogInfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\DialogInfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\DSplaysound.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\DSplaysound.obj
+E:\server\Src\Main6.3\Main.6.3\source\DSwaveIO.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\DSwaveIO.obj
+E:\server\Src\Main6.3\Main.6.3\source\DuelMgr.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\DuelMgr.obj
+E:\server\Src\Main6.3\Main.6.3\source\DynamicEffect.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\DynamicEffect.obj
+E:\server\Src\Main6.3\Main.6.3\source\Event.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\Event.obj
+E:\server\Src\Main6.3\Main.6.3\source\ExplanationInfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ExplanationInfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\ExternalObject\Leaf\callstackdmp.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\callstackdmp.obj
+E:\server\Src\Main6.3\Main.6.3\source\ExternalObject\Leaf\checkintegrity.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\checkintegrity.obj
+E:\server\Src\Main6.3\Main.6.3\source\ExternalObject\Leaf\ExceptionHandler.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ExceptionHandler.obj
+E:\server\Src\Main6.3\Main.6.3\source\ExternalObject\Leaf\html_log.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\html_log.obj
+E:\server\Src\Main6.3\Main.6.3\source\ExternalObject\Leaf\peimage.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\peimage.obj
+E:\server\Src\Main6.3\Main.6.3\source\ExternalObject\Leaf\stdleaf.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\stdleaf.obj
+E:\server\Src\Main6.3\Main.6.3\source\ExternalObject\Leaf\sysinfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\sysinfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\ExternalObject\Leaf\xortrans.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\xortrans.obj
+E:\server\Src\Main6.3\Main.6.3\source\ExternalObject\Leaf\xstreambuf.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\xstreambuf.obj
+E:\server\Src\Main6.3\Main.6.3\source\FilterInfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\FilterInfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\FilterNameInfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\FilterNameInfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\Font.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\Font.obj
+E:\server\Src\Main6.3\Main.6.3\source\GambleSystem.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GambleSystem.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameCensorship.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GameCensorship.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\FileDownloader\DownloadInfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\DownloadInfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\FileDownloader\FileDownloader.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\FileDownloader.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\FileDownloader\FTPConnecter.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\FTPConnecter.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\FileDownloader\HTTPConnecter.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\HTTPConnecter.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\InGameShopSystem.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\InGameShopSystem.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\MsgBoxIGSBuyConfirm.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MsgBoxIGSBuyConfirm.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\MsgBoxIGSBuyPackageItem.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MsgBoxIGSBuyPackageItem.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\MsgBoxIGSBuySelectItem.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MsgBoxIGSBuySelectItem.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\MsgBoxIGSCommon.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MsgBoxIGSCommon.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\MsgBoxIGSDeleteItemConfirm.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MsgBoxIGSDeleteItemConfirm.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\MsgBoxIGSGiftStorageItemInfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MsgBoxIGSGiftStorageItemInfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\MsgBoxIGSSendGift.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MsgBoxIGSSendGift.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\MsgBoxIGSSendGiftConfirm.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MsgBoxIGSSendGiftConfirm.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\MsgBoxIGSStorageItemInfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MsgBoxIGSStorageItemInfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\MsgBoxIGSUseBuffConfirm.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MsgBoxIGSUseBuffConfirm.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\MsgBoxIGSUseItemConfirm.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MsgBoxIGSUseItemConfirm.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\NewUIInGameShop.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIInGameShop.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\ShopListManager\BannerInfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\BannerInfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\ShopListManager\BannerInfoList.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\BannerInfoList.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\ShopListManager\BannerListManager.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\BannerListManager.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\ShopListManager\FTPFileDownLoader.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\FTPFileDownLoader.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\ShopListManager\interface\PathMethod\Path.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\Path.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\ShopListManager\interface\WZResult\WZResult.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\WZResult.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\ShopListManager\ListManager.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ListManager.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\ShopListManager\ShopCategory.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ShopCategory.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\ShopListManager\ShopCategoryList.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ShopCategoryList.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\ShopListManager\ShopList.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ShopList.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\ShopListManager\ShopListManager.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ShopListManager.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\ShopListManager\ShopPackage.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ShopPackage.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\ShopListManager\ShopPackageList.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ShopPackageList.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\ShopListManager\ShopProduct.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ShopProduct.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\ShopListManager\ShopProductList.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ShopProductList.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\ShopListManager\StringMethod.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\StringMethod.obj
+E:\server\Src\Main6.3\Main.6.3\source\GameShop\ShopListManager\StringToken.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\StringToken.obj
+E:\server\Src\Main6.3\Main.6.3\source\GaugeBar.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GaugeBar.obj
+E:\server\Src\Main6.3\Main.6.3\source\GIPetManager.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GIPetManager.obj
+E:\server\Src\Main6.3\Main.6.3\source\GlobalBitmap.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GlobalBitmap.obj
+E:\server\Src\Main6.3\Main.6.3\source\GM3rdChangeUp.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GM3rdChangeUp.obj
+E:\server\Src\Main6.3\Main.6.3\source\GMAida.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GMAida.obj
+E:\server\Src\Main6.3\Main.6.3\source\GMBattleCastle.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GMBattleCastle.obj
+E:\server\Src\Main6.3\Main.6.3\source\GMCryingWolf2nd.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GMCryingWolf2nd.obj
+E:\server\Src\Main6.3\Main.6.3\source\GMCrywolf1st.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GMCrywolf1st.obj
+E:\server\Src\Main6.3\Main.6.3\source\GMDoppelGanger1.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GMDoppelGanger1.obj
+E:\server\Src\Main6.3\Main.6.3\source\GMDoppelGanger2.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GMDoppelGanger2.obj
+E:\server\Src\Main6.3\Main.6.3\source\GMDoppelGanger3.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GMDoppelGanger3.obj
+E:\server\Src\Main6.3\Main.6.3\source\GMDoppelGanger4.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GMDoppelGanger4.obj
+E:\server\Src\Main6.3\Main.6.3\source\GMDuelArena.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GMDuelArena.obj
+E:\server\Src\Main6.3\Main.6.3\source\GMEmpireGuardian1.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GMEmpireGuardian1.obj
+E:\server\Src\Main6.3\Main.6.3\source\GMEmpireGuardian2.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GMEmpireGuardian2.obj
+E:\server\Src\Main6.3\Main.6.3\source\GMEmpireGuardian3.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GMEmpireGuardian3.obj
+E:\server\Src\Main6.3\Main.6.3\source\GMEmpireGuardian4.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GMEmpireGuardian4.obj
+E:\server\Src\Main6.3\Main.6.3\source\GMHellas.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GMHellas.obj
+E:\server\Src\Main6.3\Main.6.3\source\GMHuntingGround.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GMHuntingGround.obj
+E:\server\Src\Main6.3\Main.6.3\source\GMKarutan1.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GMKarutan1.obj
+E:\server\Src\Main6.3\Main.6.3\source\GMNewTown.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GMNewTown.obj
+E:\server\Src\Main6.3\Main.6.3\source\GMSantaTown.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GMSantaTown.obj
+E:\server\Src\Main6.3\Main.6.3\source\GMSwampOfQuiet.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GMSwampOfQuiet.obj
+E:\server\Src\Main6.3\Main.6.3\source\GMUnitedMarketPlace.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GMUnitedMarketPlace.obj
+E:\server\Src\Main6.3\Main.6.3\source\GM_kanturu_1st.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GM_kanturu_1st.obj
+E:\server\Src\Main6.3\Main.6.3\source\GM_Kanturu_2nd.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GM_Kanturu_2nd.obj
+E:\server\Src\Main6.3\Main.6.3\source\GM_Kanturu_3rd.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GM_Kanturu_3rd.obj
+E:\server\Src\Main6.3\Main.6.3\source\GM_PK_Field.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GM_PK_Field.obj
+E:\server\Src\Main6.3\Main.6.3\source\GM_Raklion.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GM_Raklion.obj
+E:\server\Src\Main6.3\Main.6.3\source\GOBoid.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GOBoid.obj
+E:\server\Src\Main6.3\Main.6.3\source\GuildCache.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GuildCache.obj
+E:\server\Src\Main6.3\Main.6.3\source\GuildManager.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\GuildManager.obj
+E:\server\Src\Main6.3\Main.6.3\source\Input.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\Input.obj
+E:\server\Src\Main6.3\Main.6.3\source\ItemAddOptioninfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ItemAddOptioninfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\ItemInfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ItemInfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\ItemManager.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ItemManager.obj
+E:\server\Src\Main6.3\Main.6.3\source\ItemTooltip.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ItemTooltip.obj
+E:\server\Src\Main6.3\Main.6.3\source\ItemTRSData.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ItemTRSData.obj
+E:\server\Src\Main6.3\Main.6.3\source\KeyGenerater.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\KeyGenerater.obj
+E:\server\Src\Main6.3\Main.6.3\source\LoadData.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\LoadData.obj
+E:\server\Src\Main6.3\Main.6.3\source\LoadingScene.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\LoadingScene.obj
+E:\server\Src\Main6.3\Main.6.3\source\Local.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\Local.obj
+E:\server\Src\Main6.3\Main.6.3\source\LoginMainWin.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\LoginMainWin.obj
+E:\server\Src\Main6.3\Main.6.3\source\LoginWin.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\LoginWin.obj
+E:\server\Src\Main6.3\Main.6.3\source\MainLoad.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MainLoad.obj
+E:\server\Src\Main6.3\Main.6.3\source\MapManager.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MapManager.obj
+E:\server\Src\Main6.3\Main.6.3\source\MatchEvent.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MatchEvent.obj
+E:\server\Src\Main6.3\Main.6.3\source\Math\ZzzMathLib.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzMathLib.obj
+E:\server\Src\Main6.3\Main.6.3\source\MemScript.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MemScript.obj
+E:\server\Src\Main6.3\Main.6.3\source\MenuCustom.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MenuCustom.obj
+E:\server\Src\Main6.3\Main.6.3\source\MixMgr.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MixMgr.obj
+E:\server\Src\Main6.3\Main.6.3\source\MonkSystem.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MonkSystem.obj
+E:\server\Src\Main6.3\Main.6.3\source\MonsterEffect.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MonsterEffect.obj
+E:\server\Src\Main6.3\Main.6.3\source\MoveCommandData.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MoveCommandData.obj
+E:\server\Src\Main6.3\Main.6.3\source\MovereqInfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MovereqInfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\MovieScene.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MovieScene.obj
+E:\server\Src\Main6.3\Main.6.3\source\MsgWin.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MsgWin.obj
+E:\server\Src\Main6.3\Main.6.3\source\MultiLanguage.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MultiLanguage.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewBloodCastleSystem.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewBloodCastleSystem.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewChaosCastleSystem.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewChaosCastleSystem.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUI3DRenderMng.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUI3DRenderMng.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIBattleSoccerScore.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIBattleSoccerScore.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIBCustomMenu.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIBCustomMenu.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIBloodCastleEnter.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIBloodCastleEnter.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIBloodCastleTime.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIBloodCastleTime.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIBMacro.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIBMacro.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIBuffWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIBuffWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIButton.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIButton.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUICastleWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUICastleWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUICatapultWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUICatapultWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIChaosCastleTime.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIChaosCastleTime.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUICharacterInfoWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUICharacterInfoWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIChatInputBox.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIChatInputBox.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIChatLogWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIChatLogWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUICommandWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUICommandWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUICommon.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUICommon.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUICommonMessageBox.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUICommonMessageBox.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUICryWolf.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUICryWolf.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUICursedTempleEnter.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUICursedTempleEnter.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUICursedTempleResult.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUICursedTempleResult.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUICursedTempleSystem.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUICursedTempleSystem.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUICustomMessageBox.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUICustomMessageBox.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIDoppelGangerFrame.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIDoppelGangerFrame.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIDoppelGangerWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIDoppelGangerWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIDuelWatchMainFrameWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIDuelWatchMainFrameWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIDuelWatchUserListWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIDuelWatchUserListWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIDuelWatchWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIDuelWatchWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIDuelWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIDuelWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIEmpireGuardianNPC.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIEmpireGuardianNPC.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIEmpireGuardianTimer.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIEmpireGuardianTimer.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIEnterDevilSquare.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIEnterDevilSquare.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIExchangeLuckyCoin.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIExchangeLuckyCoin.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIFriendWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIFriendWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIGatemanWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIGatemanWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIGateSwitchWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIGateSwitchWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIGensRanking.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIGensRanking.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIGoldBowmanLena.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIGoldBowmanLena.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIGoldBowmanWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIGoldBowmanWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIGroup.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIGroup.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIGuardWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIGuardWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIGuildInfoWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIGuildInfoWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIGuildMakeWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIGuildMakeWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIHelpWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIHelpWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIHeroPositionInfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIHeroPositionInfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIHotKey.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIHotKey.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIInventoryCtrl.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIInventoryCtrl.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIInventoryExtension.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIInventoryExtension.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIItemEnduranceInfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIItemEnduranceInfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIItemExplanationWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIItemExplanationWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIItemMng.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIItemMng.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIKanturuEvent.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIKanturuEvent.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUILuckyItemWnd.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUILuckyItemWnd.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIMainFrameWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIMainFrameWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIManager.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIManager.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIMasterLevel.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIMasterLevel.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIMasterSkillTree.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIMasterSkillTree.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIMessageBox.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIMessageBox.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIMiniMap.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIMiniMap.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIMixInventory.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIMixInventory.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIMoveCommandWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIMoveCommandWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIMuHelper.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIMuHelper.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIMyInventory.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIMyInventory.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIMyQuestInfoWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIMyQuestInfoWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIMyShopInventory.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIMyShopInventory.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUINameWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUINameWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUINPCDialogue.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUINPCDialogue.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUINPCQuest.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUINPCQuest.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUINPCShop.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUINPCShop.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIOptionWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIOptionWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIPartyInfoWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIPartyInfoWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIPartyListWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIPartyListWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIPetInfoWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIPetInfoWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIPurchaseShopInventory.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIPurchaseShopInventory.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIQuestProgress.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIQuestProgress.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIQuestProgressByEtc.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIQuestProgressByEtc.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIQuickCommandWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIQuickCommandWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIRegistrationLuckyCoin.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIRegistrationLuckyCoin.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIRenderNumber.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIRenderNumber.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIScrollBar.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIScrollBar.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUISeigeWarfare.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUISeigeWarfare.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUISetItemExplanation.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUISetItemExplanation.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUISiegeWarBase.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUISiegeWarBase.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUISiegeWarCommander.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUISiegeWarCommander.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUISiegeWarObserver.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUISiegeWarObserver.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUISiegeWarSoldier.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUISiegeWarSoldier.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUISlideWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUISlideWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIStorageInventory.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIStorageInventory.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIStorageInventoryExt.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIStorageInventoryExt.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUISystem.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUISystem.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUITextBox.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUITextBox.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUITrade.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUITrade.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIUnitedMarketPlaceWindow.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIUnitedMarketPlaceWindow.obj
+E:\server\Src\Main6.3\Main.6.3\source\NewUIWindowMenu.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\NewUIWindowMenu.obj
+E:\server\Src\Main6.3\Main.6.3\source\npcBreeder.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\npcBreeder.obj
+E:\server\Src\Main6.3\Main.6.3\source\npcCatapult.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\npcCatapult.obj
+E:\server\Src\Main6.3\Main.6.3\source\npcGateSwitch.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\npcGateSwitch.obj
+E:\server\Src\Main6.3\Main.6.3\source\Observer.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\Observer.obj
+E:\server\Src\Main6.3\Main.6.3\source\OptionWin.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\OptionWin.obj
+E:\server\Src\Main6.3\Main.6.3\source\Other.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\Other.obj
+E:\server\Src\Main6.3\Main.6.3\source\PacketManager.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\PacketManager.obj
+E:\server\Src\Main6.3\Main.6.3\source\PartyManager.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\PartyManager.obj
+E:\server\Src\Main6.3\Main.6.3\source\PersonalShopTitleImp.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\PersonalShopTitleImp.obj
+E:\server\Src\Main6.3\Main.6.3\source\PetProtocol.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\PetProtocol.obj
+E:\server\Src\Main6.3\Main.6.3\source\PhysicsManager.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\PhysicsManager.obj
+E:\server\Src\Main6.3\Main.6.3\source\PList.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\PList.obj
+E:\server\Src\Main6.3\Main.6.3\source\PortalMgr.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\PortalMgr.obj
+E:\server\Src\Main6.3\Main.6.3\source\Protect.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\Protect.obj
+E:\server\Src\Main6.3\Main.6.3\source\ProtectSysKey.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ProtectSysKey.obj
+E:\server\Src\Main6.3\Main.6.3\source\Protocol.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\Protocol.obj
+E:\server\Src\Main6.3\Main.6.3\source\ProtocolSend.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ProtocolSend.obj
+E:\server\Src\Main6.3\Main.6.3\source\QuestInfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\QuestInfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\QuestMng.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\QuestMng.obj
+E:\server\Src\Main6.3\Main.6.3\source\Reconnect.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\Reconnect.obj
+E:\server\Src\Main6.3\Main.6.3\source\ServerGroup.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ServerGroup.obj
+E:\server\Src\Main6.3\Main.6.3\source\ServerInfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ServerInfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\ServerListManager.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ServerListManager.obj
+E:\server\Src\Main6.3\Main.6.3\source\ServerMsgWin.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ServerMsgWin.obj
+E:\server\Src\Main6.3\Main.6.3\source\ServerSelWin.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ServerSelWin.obj
+E:\server\Src\Main6.3\Main.6.3\source\ShadowVolume.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ShadowVolume.obj
+E:\server\Src\Main6.3\Main.6.3\source\SideHair.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\SideHair.obj
+E:\server\Src\Main6.3\Main.6.3\source\SkillEffectMgr.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\SkillEffectMgr.obj
+E:\server\Src\Main6.3\Main.6.3\source\SkillInfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\SkillInfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\SkillManager.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\SkillManager.obj
+E:\server\Src\Main6.3\Main.6.3\source\SlideInfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\SlideInfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\Slider.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\Slider.obj
+E:\server\Src\Main6.3\Main.6.3\source\SMD.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\SMD.obj
+E:\server\Src\Main6.3\Main.6.3\source\SMD2BMD.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\SMD2BMD.obj
+E:\server\Src\Main6.3\Main.6.3\source\SocketSystem.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\SocketSystem.obj
+E:\server\Src\Main6.3\Main.6.3\source\Sprite.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\Sprite.obj
+E:\server\Src\Main6.3\Main.6.3\source\Stack.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\Stack.obj
+E:\server\Src\Main6.3\Main.6.3\source\StackWalker.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\StackWalker.obj
+E:\server\Src\Main6.3\Main.6.3\source\StaticEffect.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\StaticEffect.obj
+E:\server\Src\Main6.3\Main.6.3\source\StatsAdvance.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\StatsAdvance.obj
+E:\server\Src\Main6.3\Main.6.3\source\StdAfx.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\StdAfx.obj
+E:\server\Src\Main6.3\Main.6.3\source\SummonSystem.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\SummonSystem.obj
+E:\server\Src\Main6.3\Main.6.3\source\SysMenuWin.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\SysMenuWin.obj
+E:\server\Src\Main6.3\Main.6.3\source\TestEventMap.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\TestEventMap.obj
+E:\server\Src\Main6.3\Main.6.3\source\TextureScript.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\TextureScript.obj
+E:\server\Src\Main6.3\Main.6.3\source\Time\CTimCheck.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CTimCheck.obj
+E:\server\Src\Main6.3\Main.6.3\source\Time\Timer.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\Timer.obj
+E:\server\Src\Main6.3\Main.6.3\source\TrayMode.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\TrayMode.obj
+E:\server\Src\Main6.3\Main.6.3\source\UIControls.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\UIControls.obj
+E:\server\Src\Main6.3\Main.6.3\source\UIDefaultBase.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\UIDefaultBase.obj
+E:\server\Src\Main6.3\Main.6.3\source\UIGateKeeper.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\UIGateKeeper.obj
+E:\server\Src\Main6.3\Main.6.3\source\UIGuardsMan.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\UIGuardsMan.obj
+E:\server\Src\Main6.3\Main.6.3\source\UIGuildInfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\UIGuildInfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\UIGuildMaster.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\UIGuildMaster.obj
+E:\server\Src\Main6.3\Main.6.3\source\UIJewelHarmony.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\UIJewelHarmony.obj
+E:\server\Src\Main6.3\Main.6.3\source\UIManager.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\UIManager.obj
+E:\server\Src\Main6.3\Main.6.3\source\UIMapName.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\UIMapName.obj
+E:\server\Src\Main6.3\Main.6.3\source\UIMng.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\UIMng.obj
+E:\server\Src\Main6.3\Main.6.3\source\UIPopup.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\UIPopup.obj
+E:\server\Src\Main6.3\Main.6.3\source\UISenatus.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\UISenatus.obj
+E:\server\Src\Main6.3\Main.6.3\source\UIWindows.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\UIWindows.obj
+E:\server\Src\Main6.3\Main.6.3\source\UsefulDef.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\UsefulDef.obj
+E:\server\Src\Main6.3\Main.6.3\source\Util.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\Util.obj
+E:\server\Src\Main6.3\Main.6.3\source\Utilities\CCRC32.Cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\CCRC32.obj
+E:\server\Src\Main6.3\Main.6.3\source\Utilities\Log\DebugAngel.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\DebugAngel.obj
+E:\server\Src\Main6.3\Main.6.3\source\Utilities\Log\ErrorReport.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ErrorReport.obj
+E:\server\Src\Main6.3\Main.6.3\source\Utilities\Log\muConsoleDebug.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\muConsoleDebug.obj
+E:\server\Src\Main6.3\Main.6.3\source\Utilities\Log\WindowsConsole.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\WindowsConsole.obj
+E:\server\Src\Main6.3\Main.6.3\source\Utilities\Memory\MemoryLock.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\MemoryLock.obj
+E:\server\Src\Main6.3\Main.6.3\source\Win.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\Win.obj
+E:\server\Src\Main6.3\Main.6.3\source\WinEx.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\WinEx.obj
+E:\server\Src\Main6.3\Main.6.3\source\Winmain.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\Winmain.obj
+E:\server\Src\Main6.3\Main.6.3\source\WSclient.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\WSclient.obj
+E:\server\Src\Main6.3\Main.6.3\source\WSctlc.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\WSctlc.obj
+E:\server\Src\Main6.3\Main.6.3\source\w_BasePet.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\w_BasePet.obj
+E:\server\Src\Main6.3\Main.6.3\source\w_Buff.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\w_Buff.obj
+E:\server\Src\Main6.3\Main.6.3\source\w_BuffScriptLoader.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\w_BuffScriptLoader.obj
+E:\server\Src\Main6.3\Main.6.3\source\w_BuffStateSystem.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\w_BuffStateSystem.obj
+E:\server\Src\Main6.3\Main.6.3\source\w_BuffStateValueControl.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\w_BuffStateValueControl.obj
+E:\server\Src\Main6.3\Main.6.3\source\w_BuffTimeControl.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\w_BuffTimeControl.obj
+E:\server\Src\Main6.3\Main.6.3\source\w_CharacterInfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\w_CharacterInfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\w_CursedTemple.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\w_CursedTemple.obj
+E:\server\Src\Main6.3\Main.6.3\source\w_MapProcess.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\w_MapProcess.obj
+E:\server\Src\Main6.3\Main.6.3\source\w_ObjectInfo.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\w_ObjectInfo.obj
+E:\server\Src\Main6.3\Main.6.3\source\w_PetActionCollecter.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\w_PetActionCollecter.obj
+E:\server\Src\Main6.3\Main.6.3\source\w_PetActionCollecter_Add.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\w_PetActionCollecter_Add.obj
+E:\server\Src\Main6.3\Main.6.3\source\w_PetActionDemon.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\w_PetActionDemon.obj
+E:\server\Src\Main6.3\Main.6.3\source\w_PetActionRound.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\w_PetActionRound.obj
+E:\server\Src\Main6.3\Main.6.3\source\w_PetActionStand.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\w_PetActionStand.obj
+E:\server\Src\Main6.3\Main.6.3\source\w_PetActionUnicorn.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\w_PetActionUnicorn.obj
+E:\server\Src\Main6.3\Main.6.3\source\w_PetProcess.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\w_PetProcess.obj
+E:\server\Src\Main6.3\Main.6.3\source\ZzzAI.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzAI.obj
+E:\server\Src\Main6.3\Main.6.3\source\ZzzBMD.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzBMD.obj
+E:\server\Src\Main6.3\Main.6.3\source\ZzzCharacter.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzCharacter.obj
+E:\server\Src\Main6.3\Main.6.3\source\ZzzEffect.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzEffect.obj
+E:\server\Src\Main6.3\Main.6.3\source\ZzzEffectBlurSpark.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzEffectBlurSpark.obj
+E:\server\Src\Main6.3\Main.6.3\source\ZzzEffectFireLeave.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzEffectFireLeave.obj
+E:\server\Src\Main6.3\Main.6.3\source\ZzzEffectJoint.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzEffectJoint.obj
+E:\server\Src\Main6.3\Main.6.3\source\ZzzEffectMagicSkill.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzEffectMagicSkill.obj
+E:\server\Src\Main6.3\Main.6.3\source\ZzzEffectNoUse.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzEffectNoUse.obj
+E:\server\Src\Main6.3\Main.6.3\source\ZzzEffectParticle.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzEffectParticle.obj
+E:\server\Src\Main6.3\Main.6.3\source\ZzzEffectPoint.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzEffectPoint.obj
+E:\server\Src\Main6.3\Main.6.3\source\ZzzEffectPointer.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzEffectPointer.obj
+E:\server\Src\Main6.3\Main.6.3\source\zzzeffectsprite.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\zzzeffectsprite.obj
+E:\server\Src\Main6.3\Main.6.3\source\ZzzInfomation.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzInfomation.obj
+E:\server\Src\Main6.3\Main.6.3\source\ZzzInterface.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzInterface.obj
+E:\server\Src\Main6.3\Main.6.3\source\ZzzInventory.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzInventory.obj
+E:\server\Src\Main6.3\Main.6.3\source\ZzzLodTerrain.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzLodTerrain.obj
+E:\server\Src\Main6.3\Main.6.3\source\zzzMixInvetory.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\zzzMixInvetory.obj
+E:\server\Src\Main6.3\Main.6.3\source\ZzzObject.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzObject.obj
+E:\server\Src\Main6.3\Main.6.3\source\ZzzOpenData.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzOpenData.obj
+E:\server\Src\Main6.3\Main.6.3\source\ZzzOpenglUtil.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzOpenglUtil.obj
+E:\server\Src\Main6.3\Main.6.3\source\zzzpath.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\zzzpath.obj
+E:\server\Src\Main6.3\Main.6.3\source\ZzzScene.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzScene.obj
+E:\server\Src\Main6.3\Main.6.3\source\ZzzTexture.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\ZzzTexture.obj
+E:\server\Src\Main6.3\Main.6.3\source\_GlobalFunctions.cpp;E:\server\Src\Main6.3\Main.6.3\source\Global Release\_GlobalFunctions.obj

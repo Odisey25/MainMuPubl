@@ -158,12 +158,9 @@ bool CSkillManager::CheckSkillDelay ( int SkillIndex )
 
 	if (Skill == AT_SKILL_MUITENPHUONGHOANG) return true;
 	//== Fix Buff SKill
-	if (gCharacterManager.GetBaseClass(Hero->Class) == CLASS_ELF)
+	if (Skill == AT_SKILL_INFINITY_ARROW)
 	{
-		if (Skill == AT_SKILL_INFINITY_ARROW || Skill == MASTER_SKILL_ADD_INFINITY_ARROW_IMPROVED)
-		{
-			return true;
-		}
+		return true;
 	}
 
     if ( Delay>0 )
@@ -274,7 +271,7 @@ int CSkillManager::MasterSkillToBaseSkillIndex(int iMasterSkillIndex)
 	case AT_SKILL_BLOW_UP+3:
 	case AT_SKILL_BLOW_UP+4:
 		{
-			iBaseSkillIndex = AT_SKILL_DEATHSTAB;
+			iBaseSkillIndex = AT_SKILL_ONETOONE;
 		}
 		break;	
 	case AT_SKILL_ANGER_SWORD_UP:
