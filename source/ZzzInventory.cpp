@@ -7559,7 +7559,7 @@ void RenderSkillInfo(int sx,int sy,int Type,int SkillNum, int iRenderPoint /*= S
 				|| CharacterAttribute->Skill[Type]==AT_SKILL_FURY_STRIKE 
 				|| CharacterAttribute->Skill[Type]==MASTER_SKILL_ADD_RAGEFUL_BLOW_IMPROVED
 				|| CharacterAttribute->Skill[Type]==MASTER_SKILL_ADD_RAGEFUL_BLOW_ENHANCED
-				|| CharacterAttribute->Skill[Type]==AT_SKILL_ONETOONE 
+				|| CharacterAttribute->Skill[Type]==AT_SKILL_DEATHSTAB
 				|| CharacterAttribute->Skill[Type]==MASTER_SKILL_ADD_DEATH_STAB_IMPROVED
 				|| CharacterAttribute->Skill[Type]==MASTER_SKILL_ADD_DEATH_STAB_ENHANCED
 				|| CharacterAttribute->Skill[Type]==MASTER_SKILL_ADD_DEATH_STAB_MASTERED

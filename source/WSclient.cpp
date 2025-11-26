@@ -4185,11 +4185,11 @@ BOOL ReceiveMagic(const BYTE* ReceiveBuffer, int Size, BOOL bEncrypted)
 	case AT_SKILL_BLOW_UP + 2:
 	case AT_SKILL_BLOW_UP + 3:
 	case AT_SKILL_BLOW_UP + 4:
-	case AT_SKILL_ONETOONE:
+	case AT_SKILL_DEATHSTAB:
 	case MASTER_SKILL_ADD_DEATH_STAB_IMPROVED:
 	case MASTER_SKILL_ADD_DEATH_STAB_ENHANCED:
 	case MASTER_SKILL_ADD_DEATH_STAB_MASTERED:
-		SetAction(so, PLAYER_ATTACK_ONETOONE);
+		SetAction(so, PLAYER_ATTACK_DEATHSTAB);
 		if (sc != Hero && so->Type == MODEL_PLAYER)
 		{
 			so->AnimationFrame = 0;
@@ -5445,11 +5445,11 @@ BOOL ReceiveMagicContinue(const BYTE* ReceiveBuffer, int Size, BOOL bEncrypted)
 			case AT_SKILL_BLOW_UP + 2:
 			case AT_SKILL_BLOW_UP + 3:
 			case AT_SKILL_BLOW_UP + 4:
-			case AT_SKILL_ONETOONE:
+			case AT_SKILL_DEATHSTAB:
 			case MASTER_SKILL_ADD_DEATH_STAB_IMPROVED:
 			case MASTER_SKILL_ADD_DEATH_STAB_ENHANCED:
 			case MASTER_SKILL_ADD_DEATH_STAB_MASTERED:
-				SetAction(so, PLAYER_ATTACK_ONETOONE);
+				SetAction(so, PLAYER_ATTACK_DEATHSTAB);
 				break;
 
 			case AT_SKILL_STUN:
@@ -8034,7 +8034,7 @@ void Receive_Master_LevelGetSkill(BYTE* ReceiveBuffer)
 				case MASTER_SKILL_ADD_DEATH_STAB_IMPROVED:
 				case MASTER_SKILL_ADD_DEATH_STAB_ENHANCED:
 				case MASTER_SKILL_ADD_DEATH_STAB_MASTERED:
-					if (AT_SKILL_ONETOONE == CharacterAttribute->Skill[i])
+					if (AT_SKILL_DEATHSTAB == CharacterAttribute->Skill[i])
 						CharacterAttribute->Skill[i] = 0;
 					break;
 				case AT_SKILL_ANGER_SWORD_UP:

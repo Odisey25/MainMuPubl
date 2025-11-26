@@ -816,7 +816,7 @@ void SetAttackSpeed()
 	Models[MODEL_PLAYER].Actions[PLAYER_ATTACK_SKILL_SWORD4].PlaySpeed = 0.30f + AttackSpeed1;
 	Models[MODEL_PLAYER].Actions[PLAYER_ATTACK_SKILL_SWORD5].PlaySpeed = 0.24f + AttackSpeed1;
 	Models[MODEL_PLAYER].Actions[PLAYER_ATTACK_SKILL_WHEEL].PlaySpeed = 0.24f + AttackSpeed1;
-	Models[MODEL_PLAYER].Actions[PLAYER_ATTACK_ONETOONE].PlaySpeed = 0.25f + AttackSpeed1;
+	Models[MODEL_PLAYER].Actions[PLAYER_ATTACK_DEATHSTAB].PlaySpeed = 0.25f + AttackSpeed1;
 	Models[MODEL_PLAYER].Actions[PLAYER_ATTACK_SKILL_SPEAR].PlaySpeed = 0.30f + AttackSpeed1;
 	Models[MODEL_PLAYER].Actions[PLAYER_SKILL_RIDER].PlaySpeed = 0.3f + AttackSpeed1;
 	Models[MODEL_PLAYER].Actions[PLAYER_SKILL_RIDER_FLY].PlaySpeed = 0.3f + AttackSpeed1;
@@ -2507,7 +2507,7 @@ bool AttackStage(CHARACTER* c, OBJECT* o)
 	case AT_SKILL_BLOW_UP + 2:
 	case AT_SKILL_BLOW_UP + 3:
 	case AT_SKILL_BLOW_UP + 4:
-	case AT_SKILL_ONETOONE:
+	case AT_SKILL_DEATHSTAB:
 	case MASTER_SKILL_ADD_DEATH_STAB_IMPROVED:
 	case MASTER_SKILL_ADD_DEATH_STAB_ENHANCED:
 	case MASTER_SKILL_ADD_DEATH_STAB_MASTERED:
@@ -5401,7 +5401,7 @@ void MoveCharacter(CHARACTER* c, OBJECT* o) // Chỉnh Size Nhân Vật Ở Đâ
 			case AT_SKILL_BLOW_UP + 2:
 			case AT_SKILL_BLOW_UP + 3:
 			case AT_SKILL_BLOW_UP + 4:
-			case AT_SKILL_ONETOONE:
+			case AT_SKILL_DEATHSTAB:
 			case MASTER_SKILL_ADD_DEATH_STAB_IMPROVED:
 			case MASTER_SKILL_ADD_DEATH_STAB_ENHANCED:
 			case MASTER_SKILL_ADD_DEATH_STAB_MASTERED:
