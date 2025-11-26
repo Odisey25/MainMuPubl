@@ -59,22 +59,21 @@ void SEASON3B::CNewUIItemEnduranceInfo::Release()
 	}
 }
 //=== HP PET
-void SEASON3B::CNewUIItemEnduranceInfo::SetPos(int x, int y)
+void SEASON3B::CNewUIItemEnduranceInfo::SetPos( int x, int y )
 {
-	m_UIStartPos.x = (GetScreenWidth() + DisplayWinCDepthBox) - PETHP_BAR_WIDTH - 15;
-	m_UIStartPos.y = 370;
-	m_ItemDurUIStartPos.x = (GetScreenWidth() + DisplayWinCDepthBox) - ITEM_DUR_WIDTH - 2;
-	m_ItemDurUIStartPos.y = 140;
+   m_UIStartPos.x = x;
+   m_UIStartPos.y = y;
 
-	m_iTextEndPosX = m_UIStartPos.x + PETHP_FRAME_WIDTH;
+   m_ItemDurUIStartPos.x = GetScreenWidth() - ITEM_DUR_WIDTH - 2;
+   m_ItemDurUIStartPos.y = 140;
+     
+   m_iTextEndPosX = m_UIStartPos.x + PETHP_FRAME_WIDTH;
 }
 
-void SEASON3B::CNewUIItemEnduranceInfo::SetPos(int x)
+void SEASON3B::CNewUIItemEnduranceInfo::SetPos( int x )
 {
-	m_UIStartPos.x = x - PETHP_BAR_WIDTH - 15;
-	m_UIStartPos.y = 370;
-	m_ItemDurUIStartPos.x = x - ITEM_DUR_WIDTH - 2;
-	m_ItemDurUIStartPos.y = 140;
+   m_ItemDurUIStartPos.x = x - ITEM_DUR_WIDTH - 2;
+   m_ItemDurUIStartPos.y = 140;
 }
 
 bool SEASON3B::CNewUIItemEnduranceInfo::UpdateMouseEvent()
