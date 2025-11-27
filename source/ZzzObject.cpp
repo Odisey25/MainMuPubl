@@ -1519,9 +1519,7 @@ void Draw_RenderObject(OBJECT* o, bool Translate, int Select, int ExtraMon)
 													}
 													else if (o->Type == MODEL_MONSTER01 + 60)
 													{
-														if (o->CurrentAction == MONSTER01_DIE ||
-															(MoveSceneFrame - o->InitialSceneFrame) < 25
-															)
+														if (o->CurrentAction == MONSTER01_DIE || (WorldTime - o->InitialSceneTime) < 1000)
 														{
 															if (o->CurrentAction == MONSTER01_DIE)
 															{
@@ -1539,7 +1537,8 @@ void Draw_RenderObject(OBJECT* o, bool Translate, int Select, int ExtraMon)
 															Vector(0.3f, 0.3f, 1.f, b->BodyLight);
 															b->RenderBody(RENDER_BRIGHT | RENDER_METAL, o->Alpha, o->BlendMesh, o->BlendMeshLight, o->BlendMeshTexCoordU, o->BlendMeshTexCoordV, o->HiddenMesh, BITMAP_CHROME);
 														}
-													}
+														}
+
 													else if (o->Type == MODEL_MONSTER01 + 61 && o->CurrentAction == MONSTER01_DIE)
 													{
 														o->Live = false;
