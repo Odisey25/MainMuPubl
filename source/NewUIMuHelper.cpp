@@ -1767,7 +1767,7 @@ void SEASON3B::CNewUIMuHelper::LoadConfig(BYTE* Data)
 	{
 		
 		HELPER_INFO* lpMsg = (HELPER_INFO*)Data;
-		this->Helper.Range[0] = lpMsg->Range & 0x0F;
+		this->Helper.Range[0] = lpMsg->Range & 0xFF;        // 8 bits (0-255)
 		this->Helper.MoveTime = lpMsg->MovementTime;
 		this->Helper.Skill[0] = lpMsg->SkillAttack1;
 		this->Helper.Skill[1] = lpMsg->SkillAttack2;
@@ -1783,7 +1783,7 @@ void SEASON3B::CNewUIMuHelper::LoadConfig(BYTE* Data)
 		this->Helper.PartyHealPercent = 10 * ((lpMsg->PercentFlag >> 12) & 0x0F);
 		this->Helper.PartyBuffTime = lpMsg->BuffPartyTime;
 
-		this->Helper.Range[1] = (lpMsg->Range >> 4) & 0x0F;
+		this->Helper.Range[1] = (lpMsg->Range >> 8) & 0xFF; // 8 bits (0-255)
 		this->Helper.PickJewel = (lpMsg->PickFlag >> 3) & 1;
 		this->Helper.PickExc = (lpMsg->PickFlag >> 4) & 1;
 		this->Helper.PickSet = (lpMsg->PickFlag >> 5) & 1;
@@ -1838,7 +1838,7 @@ HELPER_INFO ConvertToHelperInfo(const HELPER_STRUCT& helperStruct)
 	HELPER_INFO result;
 
 	result.PickFlag = 0;
-	result.Range = (helperStruct.Range[0] & 0x0F) | ((helperStruct.Range[1] & 0x0F) << 4);
+	result.Range = (helperStruct.Range[0] & 0xFF) | ((helperStruct.Range[1] & 0xFF) << 8);
 	result.MovementTime = static_cast<WORD>(helperStruct.MoveTime);
 	result.SkillAttack1 = static_cast<WORD>(helperStruct.Skill[0]);
 	result.SkillAttack2 = static_cast<WORD>(helperStruct.Skill[1]);
@@ -1901,23 +1901,15 @@ HELPER_INFO ConvertToHelperInfo(const HELPER_STRUCT& helperStruct)
 
 void SEASON3B::CNewUIMuHelper::SaveConfig()
 {
-	
-	this->Helper = this->DataAutoMu;
 
+CGSaveDataMuHelper((BYTE*)&ConvertToHelperInfo(this->Helper));
 
+this->Helper = this->DataAutoMu;
+CGSaveDataMuHelper((BYTE*)&ConvertToHelperInfo(this->Helper));
+//memcpy(&this->Helper, &this->DataAutoMu, sizeof(this->Helper));
 
-	if (this->Helper.Range[0] >= 2)
-	{
-		this->Helper.Range[0] = 6; 
-	}
-	// =======================
-	
-	CGSaveDataMuHelper((BYTE*)&ConvertToHelperInfo(this->Helper));
-
-	g_pNewUISystem->Hide(INTERFACE_MuHelper);
+g_pNewUISystem->Hide(INTERFACE_MuHelper);
 }
-
-
 void SEASON3B::CNewUIMuHelper::ResetConfig()
 {
 	memset(&this->DataAutoMu, 0, sizeof(this->DataAutoMu));

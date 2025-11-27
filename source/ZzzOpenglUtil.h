@@ -58,6 +58,7 @@ extern DWORD		MouseRButtonPress;
 extern char         GrabFileName[];
 extern bool         GrabEnable;
 
+
 //  etc
 //void OpenExploper(char *Name,char *para=NULL);
 bool CheckID_HistoryDay(char* Name, WORD day);

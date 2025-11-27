@@ -195,17 +195,18 @@ int   ScreenCenterX;
 int   ScreenCenterY;
 int   ScreenCenterYFlip;
 
+extern bool g_RenderReady;
+
 void GetOpenGLMatrix(float Matrix[3][4])
 {
-	float OpenGLMatrix[16];
-	glGetFloatv(GL_MODELVIEW_MATRIX,OpenGLMatrix);
-	for(int i=0;i<3;i++)
-	{
-		for(int j=0;j<4;j++)
-		{
-			Matrix[i][j] = OpenGLMatrix[j*4+i];
-		}
-	}
+    if (!g_RenderReady)
+        return;
+
+    float OpenGLMatrix[16];
+    glGetFloatv(GL_MODELVIEW_MATRIX, OpenGLMatrix);
+    for (int i = 0; i < 3; ++i)
+        for (int j = 0; j < 4; ++j)
+            Matrix[i][j] = OpenGLMatrix[j*4+i];
 }
 
 void gluPerspective2(float Fov,float Aspect,float ZNear,float ZFar)

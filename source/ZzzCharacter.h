@@ -8,6 +8,8 @@ extern CHARACTER *CharactersClient;
 extern CHARACTER CharacterView;
 extern CHARACTER *Hero;
 
+
+
 DWORD GetGuildRelationShipTextColor( BYTE GuildRelationShip );
 DWORD GetGuildRelationShipBGColor( BYTE GuildRelationShip );
 

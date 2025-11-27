@@ -8565,15 +8565,24 @@ void RenderLinkObject(float x, float y, float z, CHARACTER* c, PART_t* f, int Ty
 
 void RenderLight(OBJECT* o, int Texture, float Scale, int Bone, float x, float y, float z)
 {
-	BMD* b = &Models[o->Type];
-	vec3_t p, Position;
-	Vector(x, y, z, p);
-	b->TransformPosition(o->BoneTransform[Bone], p, Position, true);
-	float Luminosity = sinf(WorldTime * 0.002f) * 0.3f + 0.7f;
-	vec3_t Light;
-	Vector(Luminosity * 1.f, Luminosity * 0.6f, Luminosity * 0.4f, Light);
-	CreateSprite(Texture, Position, Scale, Light, o);
+    if (!o || !o->BoneTransform)    
+        return;
+
+    BMD* b = &Models[o->Type];       
+
+    if (Bone < 0 || Bone >= b->NumBones)
+        return;
+
+    vec3_t p, Position;
+    Vector(x, y, z, p);
+    b->TransformPosition(o->BoneTransform[Bone], p, Position, true);
+    float Luminosity = sinf(WorldTime * 0.002f) * 0.3f + 0.7f;
+    vec3_t Light;
+    Vector(Luminosity * 1.f, Luminosity * 0.6f, Luminosity * 0.4f, Light);
+    CreateSprite(Texture, Position, Scale, Light, o);
 }
+
+
 
 void RenderEye(OBJECT* o, int Left, int Right, float fSize = 1.0f)
 {

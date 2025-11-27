@@ -82,6 +82,8 @@ CMultiLanguage *pMultiLanguage = NULL;
 
 extern DWORD g_dwTopWindow;
 
+bool g_RenderReady = true;
+
 #ifdef MOVIE_DIRECTSHOW
 CMovieScene*	g_pMovieScene = NULL;
 #endif // MOVIE_DIRECTSHOW
