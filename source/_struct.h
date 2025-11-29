@@ -920,6 +920,9 @@ struct HELPER_INFO
 	DWORD OptionFlag;
 	BYTE OtherData[36];
 	char ItemList[MAX_HELPER_ITEM][16];
+
+	short StartX;
+	short StartY;
 };
 struct HELPER_STRUCT
 {

@@ -6,6 +6,8 @@
 #include "Protocol.h"
 #include "NewUIBase.h"
 #include "CBInterface.h"
+#include "_struct.h"
+
 using namespace SEASON3B;
 extern float g_fScreenRate_x;
 extern float g_fScreenRate_y;
@@ -1749,6 +1751,7 @@ void SEASON3B::CNewUIMuHelper::SetConfigData()
 	this->SetCheckBox(19, this->DataAutoMu.PickExc);
 	this->SetCheckBox(20, this->DataAutoMu.PickExtra);
 }
+
 void SEASON3B::CNewUIMuHelper::LoadConfig(BYTE* Data)
 {
 	g_ConsoleDebug->Write(MCD_ERROR, "DEBUG CNewUIMacro::LoadConfig %d", sizeof(Data));
@@ -1756,7 +1759,7 @@ void SEASON3B::CNewUIMuHelper::LoadConfig(BYTE* Data)
 	memset(&this->Helper, 0, sizeof(Helper));
 	this->DataAutoMu.Clear();
 	this->Helper.Clear();
-	//return;
+
 	BYTE v6[256] = { 0 };
 	memcpy_s(v6, sizeof(v6), Data, sizeof(v6));
 	if (sizeof(Data) == 255)
@@ -1765,9 +1768,19 @@ void SEASON3B::CNewUIMuHelper::LoadConfig(BYTE* Data)
 	}
 	else
 	{
-		
 		HELPER_INFO* lpMsg = (HELPER_INFO*)Data;
-		this->Helper.Range[0] = lpMsg->Range & 0xFF;        // 8 bits (0-255)
+
+		// ---------------------------
+		// Unir correctamente Range y limitar a 8 (cliente pick/loot)
+		// ---------------------------
+		WORD unitedRange = (lpMsg->Range & 0xFF) | (((WORD)((lpMsg->Range >> 8) & 0xFF)) << 8);
+		if (unitedRange > 8) unitedRange = 8;
+		this->Helper.Range[0] = unitedRange & 0xFF;
+		this->Helper.Range[1] = (unitedRange >> 8) & 0xFF;
+
+		this->DataAutoMu = this->Helper;
+
+		// El resto de asignaciones exactamente como en tu código original:
 		this->Helper.MoveTime = lpMsg->MovementTime;
 		this->Helper.Skill[0] = lpMsg->SkillAttack1;
 		this->Helper.Skill[1] = lpMsg->SkillAttack2;
@@ -1777,13 +1790,14 @@ void SEASON3B::CNewUIMuHelper::LoadConfig(BYTE* Data)
 		this->Helper.Buff[0] = lpMsg->SkillBuff[0];
 		this->Helper.Buff[1] = lpMsg->SkillBuff[1];
 		this->Helper.Buff[2] = lpMsg->SkillBuff[2];
+
 		this->Helper.PotPercent = 10 * (lpMsg->PercentFlag & 0x0F);
 		this->Helper.HealPercent = 10 * ((lpMsg->PercentFlag >> 4) & 0x0F);
 		this->Helper.DrainPercent = 10 * ((lpMsg->PercentFlag >> 8) & 0x0F);
 		this->Helper.PartyHealPercent = 10 * ((lpMsg->PercentFlag >> 12) & 0x0F);
 		this->Helper.PartyBuffTime = lpMsg->BuffPartyTime;
 
-		this->Helper.Range[1] = (lpMsg->Range >> 8) & 0xFF; // 8 bits (0-255)
+
 		this->Helper.PickJewel = (lpMsg->PickFlag >> 3) & 1;
 		this->Helper.PickExc = (lpMsg->PickFlag >> 4) & 1;
 		this->Helper.PickSet = (lpMsg->PickFlag >> 5) & 1;
@@ -1794,7 +1808,6 @@ void SEASON3B::CNewUIMuHelper::LoadConfig(BYTE* Data)
 		CountItemList = 0;
 		for (int n = 0; n < MAX_HELPER_ITEM; n++)
 		{
-			//memcpy(this->Helper.ItemList[n], CharToLower(lpMsg->ItemList[n]), sizeof(this->Helper.ItemList[n]));
 			memcpy(this->Helper.ItemList[n], (lpMsg->ItemList[n]), sizeof(this->Helper.ItemList[n]));
 			if (strlen(this->Helper.ItemList[n]) > 1) CountItemList++;
 		}
@@ -1804,6 +1817,7 @@ void SEASON3B::CNewUIMuHelper::LoadConfig(BYTE* Data)
 		this->Helper.AutoDrainLife = (lpMsg->OptionFlag >> 2) & 1;
 		this->Helper.LongDistance = (lpMsg->OptionFlag >> 3) & 1;
 		this->Helper.OriginalPosition = (lpMsg->OptionFlag >> 4) & 1;
+
 		this->Helper.Combo = (lpMsg->OptionFlag >> 5) & 1;
 		this->Helper.Party = (lpMsg->OptionFlag >> 6) & 1;
 		this->Helper.PartyAutoHeal = (lpMsg->OptionFlag >> 7) & 1;
@@ -1833,6 +1847,8 @@ void SEASON3B::CNewUIMuHelper::LoadConfig(BYTE* Data)
 	}
 	this->SetConfigData();
 }
+
+
 HELPER_INFO ConvertToHelperInfo(const HELPER_STRUCT& helperStruct)
 {
 	HELPER_INFO result;
@@ -1901,15 +1917,27 @@ HELPER_INFO ConvertToHelperInfo(const HELPER_STRUCT& helperStruct)
 
 void SEASON3B::CNewUIMuHelper::SaveConfig()
 {
+	// Unir los dos bytes actuales del Helper.Range
+	WORD unitedRange = (this->Helper.Range[0]) | (this->Helper.Range[1] << 8);
 
-CGSaveDataMuHelper((BYTE*)&ConvertToHelperInfo(this->Helper));
+	// Limitar a 8 (máximo de pick/loot soportado en cliente)
+	if (unitedRange > 8) unitedRange = 8;
 
-this->Helper = this->DataAutoMu;
-CGSaveDataMuHelper((BYTE*)&ConvertToHelperInfo(this->Helper));
-//memcpy(&this->Helper, &this->DataAutoMu, sizeof(this->Helper));
+	// Guardar dividido otra vez
+	this->Helper.Range[0] = unitedRange & 0xFF;
+	this->Helper.Range[1] = (unitedRange >> 8) & 0xFF;
 
-g_pNewUISystem->Hide(INTERFACE_MuHelper);
+	// Guardado original (no tocar)
+	CGSaveDataMuHelper((BYTE*)&ConvertToHelperInfo(this->Helper));
+
+	this->Helper = this->DataAutoMu;
+	CGSaveDataMuHelper((BYTE*)&ConvertToHelperInfo(this->Helper));
+
+	g_pNewUISystem->Hide(INTERFACE_MuHelper);
 }
+
+
+
 void SEASON3B::CNewUIMuHelper::ResetConfig()
 {
 	memset(&this->DataAutoMu, 0, sizeof(this->DataAutoMu));
