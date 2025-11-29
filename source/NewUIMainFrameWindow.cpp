@@ -2808,15 +2808,24 @@ void SEASON3B::CNewUISkillList::RenderSkillIcon(int iIndex, float x, float y, fl
 {
 
 	WORD bySkillType = (TypeMuHelper == 1) ? iIndex : CharacterAttribute->Skill[iIndex];
-
-	if (bySkillType == 0 || !gSkillManager.FindHeroSkill((ActionSkillType)bySkillType))
-	{
-		return;
-	}
-
 	if (iIndex >= AT_PET_COMMAND_DEFAULT)
 	{
 		bySkillType = iIndex;
+	}
+	else
+	{
+		bySkillType = (TypeMuHelper == 1) ? iIndex : CharacterAttribute->Skill[iIndex];
+	}
+	if (bySkillType == 0)
+	{
+		return;
+	}
+	if (bySkillType < AT_PET_COMMAND_DEFAULT)
+	{
+		if (!gSkillManager.FindHeroSkill((ActionSkillType)bySkillType))
+		{
+			return;
+		}
 	}
 
 	bool bCantSkill = false;
