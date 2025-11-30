@@ -15759,7 +15759,7 @@ bool RenderCharacterBackItem(CHARACTER* c, OBJECT* o, bool bTranslate)
 			iBackupType = iType;
 		}
 
-		if (gMapManager.InBloodCastle() && c->EtcPart != 0)
+		if (gMapManager.InBloodCastle() && c->EtcPart != 0 && !g_isCharacterBuff((&c->Object), eBuff_GMEffect))
 		{
 			PART_t* w = &c->Wing;
 
