@@ -74,3 +74,8 @@
 #define PJH_ADD_PANDA_CHANGERING
 
 #define ASG_ADD_TIME_LIMIT_QUEST_NPC
+
+
+
+//#define  LOGO_LOADING_SCREEN
+#define NEM_ADD_NEW_TYPE_OF_SEPARATOR_FINAL				// Add: "SeparatorFinal()" procedure to: "MuError.log" File Write-Event Final of Session (2021.10.08)

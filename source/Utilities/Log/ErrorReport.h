@@ -5,7 +5,10 @@
 #if !defined(AFX_ERROR_REPORT_H__8C7DEDBA_0557_4B98_AD53_900F41EAC8AD__INCLUDED_)
 #define AFX_ERROR_REPORT_H__8C7DEDBA_0557_4B98_AD53_900F41EAC8AD__INCLUDED_
 
+#if _MSC_VER > 1000
 #pragma once
+#endif // _MSC_VER > 1000
+
 
 #define MAX_LENGTH_CPUNAME	( 128)
 #define MAX_LENGTH_OSINFO	( 128)
@@ -52,6 +55,9 @@ public:
 	void Write( const char* lpszFormat, ...);
 	void HexWrite( void *pBuffer, int iSize);
 
+#ifdef NEM_ADD_NEW_TYPE_OF_SEPARATOR_FINAL
+	void AddSeparatorFinal( void);
+#endif // NEM_ADD_NEW_TYPE_OF_SEPARATOR_FINAL
 	void AddSeparator( void);
 	void WriteLogBegin( void);
 	void WriteCurrentTime( BOOL bLineShift = TRUE);

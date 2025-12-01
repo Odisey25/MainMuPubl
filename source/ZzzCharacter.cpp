@@ -15648,10 +15648,10 @@ bool RenderCharacterBackItem(CHARACTER* c, OBJECT* o, bool bTranslate)
 	if (gMapManager.InBloodCastle() == true)
 	{
 		bBindBack = false;
-		if (IsGMCharacter() == true)
-		{
-			return bBindBack;
-		}
+		//if (IsGMCharacter() == true)
+		//{
+			//return bBindBack;
+		//}
 	}
 	if (gMapManager.InChaosCastle() == true)
 	{

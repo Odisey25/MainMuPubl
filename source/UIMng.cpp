@@ -113,7 +113,7 @@ void CUIMng::CreateTitleSceneUI()
 		false, SPR_SIZING_DATUMS_LT, _fScaleXTemp, _fScaleYTemp);
 	m_asprTitle[UIM_TS_BACK9].SetPosition(1024, 512 + 119);
 
-
+	#ifdef LOGO_LOADING_SCREEN
 	m_asprTitle[UIM_TS_MU].Create(216, 138, BITMAP_TITLE + 2, 0, NULL, 0, 0,
 		false, SPR_SIZING_DATUMS_LT, _fScaleXTemp, _fScaleXTemp);
 
@@ -121,7 +121,7 @@ void CUIMng::CreateTitleSceneUI()
 		m_asprTitle[UIM_TS_MU].SetPosition(640 - 108, 663 + 53);
 	else
 		m_asprTitle[UIM_TS_MU].SetPosition(640 - 108, 663);
-
+	#endif // LOGO_LOADING_SCREEN
 	m_asprTitle[UIM_TS_121518].Create(256, 206, BITMAP_TITLE + 3, 0, NULL, 0, 0,
 		false, SPR_SIZING_DATUMS_LT, fScaleX, fScaleY);
 	m_asprTitle[UIM_TS_121518].SetPosition(544, 60);

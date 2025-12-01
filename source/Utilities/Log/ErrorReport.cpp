@@ -6,16 +6,25 @@
 
 #include "stdafx.h"
 #include <ddraw.h>
-#include <dinput.h>
-#include <dmusicc.h>
-#include <windows.h>
+//#include <dx/dinput.h>
+//#include <dmusici.h>
+#include <dmusics.h>
 #include <eh.h>
 #include <imagehlp.h>
 #include "ErrorReport.h"
 
+#if defined USER_WINDOW_MODE || (defined WINDOWMODE)
+extern BOOL g_bUseWindowMode;
+#endif
+#include <dinput.h>
+
 void DeleteSocket();
 
-#define XOR_KEY_SIZE	(16)
+
+//////////////////////////////////////////////////////////////////////
+// Xor Convert
+
+#define XOR_KEY_SIZE	( 16)
 
 void Xor_ConvertBlock( BYTE *lpBuffer, int iSize, int iKey)
 {
@@ -36,7 +45,7 @@ int Xor_ConvertBuffer( void *lpBuffer, int iSize, int iKey = 0)
 {
 	int iSizeLeft = iSize;
 	BYTE *lpCurrent = ( BYTE*)lpBuffer;
-
+	// 앞부분
 	int iConvertSize = min( ( XOR_KEY_SIZE - iKey) % XOR_KEY_SIZE, iSize);
 	Xor_ConvertBlock( lpCurrent, iConvertSize, iKey);
 	lpCurrent += iConvertSize;
@@ -45,7 +54,7 @@ int Xor_ConvertBuffer( void *lpBuffer, int iSize, int iKey = 0)
 	{
 		return ( iConvertSize + iKey);
 	}
-
+	// 중간
 	while ( iSizeLeft >= XOR_KEY_SIZE)
 	{
 		iConvertSize = XOR_KEY_SIZE;
@@ -53,18 +62,21 @@ int Xor_ConvertBuffer( void *lpBuffer, int iSize, int iKey = 0)
 		lpCurrent += iConvertSize;
 		iSizeLeft -= iConvertSize;
 	}
-
+	// 뒷부분
 	iConvertSize = iSizeLeft;
 	Xor_ConvertBlock( lpCurrent, iConvertSize, 0);
 	return ( iConvertSize);
 }
 
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
 CErrorReport::CErrorReport()
 {
 	Clear();
-//#if(DEBUG)
-//	Create("MuError.log");
-//#endif
+	Create("MuError.log");
 }
 
 CErrorReport::~CErrorReport()
@@ -77,19 +89,55 @@ void CErrorReport::Clear( void)
 	m_hFile = INVALID_HANDLE_VALUE;
 	m_lpszFileName[0] = '\0';
 	m_iKey = 0;
+#ifdef ASG_ADD_MULTI_CLIENT
+	m_nFileCount = 1;
+#endif	// ASG_ADD_MULTI_CLIENT
 }
 
+#ifdef ASG_ADD_MULTI_CLIENT
+void CErrorReport::Create(char* lpszFileName)
+{
+	char szTempFileName[128] = "";
+	::strcpy(szTempFileName, lpszFileName);
+
+	// 로그 파일 생성 시 사용중이라면 파일 이름을 바꿔서 다시 생성.
+	// 2번째 로그 파일은 "MuError2.log"
+	while (1)
+	{
+		m_hFile = ::CreateFile(szTempFileName, GENERIC_READ | GENERIC_WRITE,
+			FILE_SHARE_READ, NULL, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+
+		if (INVALID_HANDLE_VALUE == m_hFile)
+		{
+			if (ERROR_SHARING_VIOLATION == ::GetLastError())
+				::sprintf(szTempFileName, "MuError%d.log", ++m_nFileCount);
+			else
+				break;
+		}
+		else
+			break;
+	}
+
+	::strcpy(m_lpszFileName, szTempFileName);
+	m_iKey = 0;
+	
+	CutHead();
+	SetFilePointer(m_hFile, 0, NULL, FILE_END);
+}
+#else	// ASG_ADD_MULTI_CLIENT
 void CErrorReport::Create( char *lpszFileName)
 {
 	strcpy( m_lpszFileName, lpszFileName);
 
 	//DeleteFile( m_lpszFileName);
 	m_iKey = 0;
-	m_hFile = CreateFile( m_lpszFileName, GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ, NULL, OPEN_ALWAYS,FILE_ATTRIBUTE_NORMAL, NULL);
+	m_hFile = CreateFile( m_lpszFileName, GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ, NULL, OPEN_ALWAYS,
+								FILE_ATTRIBUTE_NORMAL, NULL);
 
 	CutHead();
 	SetFilePointer( m_hFile, 0, NULL, FILE_END);
 }
+#endif	// ASG_ADD_MULTI_CLIENT
 
 void CErrorReport::Destroy( void)
 {
@@ -102,7 +150,7 @@ void CErrorReport::CutHead( void)
 	DWORD dwNumber;
 	char lpszBuffer[128*1024];
 	ReadFile( m_hFile, lpszBuffer, 128*1024-1, &dwNumber, NULL);
-	//m_iKey = Xor_ConvertBuffer( lpszBuffer, dwNumber);
+	m_iKey = Xor_ConvertBuffer( lpszBuffer, dwNumber);
 	lpszBuffer[dwNumber] = '\0';
 	char *lpCut = CheckHeadToCut( lpszBuffer, dwNumber);
 	if ( dwNumber >= 32*1024-1)
@@ -113,7 +161,8 @@ void CErrorReport::CutHead( void)
 	{
 		CloseHandle( m_hFile);
 		DeleteFile( m_lpszFileName);
-		m_hFile = CreateFile( m_lpszFileName, GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ, NULL, OPEN_ALWAYS,FILE_ATTRIBUTE_NORMAL, NULL);
+		m_hFile = CreateFile( m_lpszFileName, GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ, NULL, OPEN_ALWAYS,
+									FILE_ATTRIBUTE_NORMAL, NULL);
 		DWORD dwSize = dwNumber - ( lpCut - lpszBuffer);
 		m_iKey = 0;
 		WriteFile( m_hFile, lpCut, dwSize, &dwNumber, NULL);
@@ -127,14 +176,16 @@ char* CErrorReport::CheckHeadToCut( char *lpszBuffer, DWORD dwNumber)
 
 	char *lpFoundList[128];
 	int iFoundCount = 0;
-
+#ifndef KWAK_FIX_COMPILE_LEVEL4_WARNING_EX
+	char *lpFirstFound = NULL;
+#endif // KWAK_FIX_COMPILE_LEVEL4_WARNING_EX
 	for ( char *lpFind = lpszBuffer; lpFind && *lpFind; )
 	{
 		lpFind = strchr( lpFind, ( int)'#');
 		if ( lpFind)
 		{
 			if ( 0 == strncmp( lpFind, lpszBegin, iLengthOfBegin))
-			{
+			{	//찾음
 				lpFoundList[iFoundCount++] = lpFind;
 				lpFind += iLengthOfBegin;
 			}
@@ -154,7 +205,7 @@ char* CErrorReport::CheckHeadToCut( char *lpszBuffer, DWORD dwNumber)
 
 BOOL CErrorReport::WriteFile( HANDLE hFile, void* lpBuffer, DWORD nNumberOfBytesToWrite, LPDWORD lpNumberOfBytesWritten, LPOVERLAPPED lpOverlapped)
 {
-	//m_iKey = Xor_ConvertBuffer( lpBuffer, nNumberOfBytesToWrite, m_iKey);
+	m_iKey = Xor_ConvertBuffer( lpBuffer, nNumberOfBytesToWrite, m_iKey);
 	return ( ::WriteFile( hFile, lpBuffer, nNumberOfBytesToWrite, lpNumberOfBytesWritten, lpOverlapped));
 }
 
@@ -166,7 +217,7 @@ void CErrorReport::WriteDebugInfoStr( char *lpszToWrite)
 		WriteFile( m_hFile, lpszToWrite, strlen( lpszToWrite), &dwNumber, NULL);
 
 		if ( dwNumber == 0)
-		{
+		{	// 이상이 있으면 다시 연다
 			CloseHandle( m_hFile);
 			Create( m_lpszFileName);
 		}
@@ -175,7 +226,6 @@ void CErrorReport::WriteDebugInfoStr( char *lpszToWrite)
 
 void CErrorReport::Write( const char* lpszFormat, ...)
 {
-
 	char lpszBuffer[1024] = {0, };
 	va_list va;
 	va_start( va, lpszFormat);
@@ -209,6 +259,13 @@ void CErrorReport::HexWrite( void *pBuffer, int iSize)
 	WriteFile( m_hFile, szLine, strlen( szLine), &dwWritten, NULL);
 }
 
+#ifdef NEM_ADD_NEW_TYPE_OF_SEPARATOR_FINAL
+void CErrorReport::AddSeparatorFinal( void)
+{
+	Write( "-------------------------------------------------------------------------------------");
+}
+#endif // NEM_ADD_NEW_TYPE_OF_SEPARATOR_FINAL
+
 void CErrorReport::AddSeparator( void)
 {
 	Write( "-------------------------------------------------------------------------------------\r\n");
@@ -235,17 +292,25 @@ void CErrorReport::WriteSystemInfo( ER_SystemInfo *si)
 	Write( "<System information>\r\n");
 	Write( "OS \t\t\t: %s\r\n", si->m_lpszOS);
 	Write( "CPU \t\t\t: %s\r\n", si->m_lpszCPU);
-	Write( "RAM \t\t\t: %dMB\r\n", 1+( si->m_iMemorySize/1024/1024));
+	Write( "RAM \t\t\t: %d MB\r\n", 1+( si->m_iMemorySize/1024/1024));
 	AddSeparator();
 	Write( "Direct-X \t\t: %s\r\n", si->m_lpszDxVersion);
 }
 
 void CErrorReport::WriteOpenGLInfo( void)
 {
+#ifdef NEM_MOD_OPENGL_INFO_STRING_WRITE_MSG
+	Write( "<OpenGL Information>\r\n");
+	AddSeparator();
+	Write( "Vendor\t\t\t: %s\r\n", ( char*)glGetString( GL_VENDOR));
+	Write( "Render\t\t\t: %s\r\n", ( char*)glGetString( GL_RENDERER));
+	Write( "Version\t\t\t: %s\r\n", ( char*)glGetString( GL_VERSION));
+#else // !NEM_MOD_OPENGL_INFO_STRING_WRITE_MSG
 	Write( "<OpenGL information>\r\n");
 	Write( "Vendor\t\t: %s\r\n", ( char*)glGetString( GL_VENDOR));
 	Write( "Render\t\t: %s\r\n", ( char*)glGetString( GL_RENDERER));
 	Write( "OpenGL version\t: %s\r\n", ( char*)glGetString( GL_VERSION));
+#endif // NEM_MOD_OPENGL_INFO_STRING_WRITE_MSG
 	GLint iResult[2];
 	glGetIntegerv( GL_MAX_TEXTURE_SIZE, iResult);
 	Write( "Max Texture size\t: %d x %d\r\n", iResult[0], iResult[0]);
@@ -336,6 +401,11 @@ void CErrorReport::WriteSoundCardInfo( void)
 
 	AddSeparator();
 }
+
+//////////////////////////////////////////////////////////////////////
+// System Setting check
+//////////////////////////////////////////////////////////////////////
+
 
 void GetOSVersion( ER_SystemInfo *si)
 {
@@ -431,6 +501,34 @@ void GetOSVersion( ER_SystemInfo *si)
 			break;
 		}
 		break;
+#ifdef NEM_ADD_RECOGNIZE_OF_NEW_OS_SYSTEMS
+		case 10: // Windows 10 / Server 2016
+			switch ( osiOne.dwMinorVersion)
+			{
+				case 0: // 10.0
+					strcpy( si->m_lpszOS, "Windows 10 ");
+				break;
+			}
+			break;
+		break;
+		case 6: // Windows Vista, 7, 8, 8.1 / Server 2012
+			switch ( osiOne.dwMinorVersion)
+			{
+				case 3:	// 6.3 - Windows 8.1
+					strcpy( si->m_lpszOS, "Windows 8.1 ");
+				break;
+				case 2:	// 6.2 - Windows 8
+					strcpy( si->m_lpszOS, "Windows 8 ");
+				break;
+				case 1:	// 6.1 - Windows 7
+					strcpy( si->m_lpszOS, "Windows 7 ");
+				break;
+				case 0:	// 6.0 - Windows Vista
+					strcpy( si->m_lpszOS, "Windows Vista ");
+				break;
+			}
+			break;
+#endif // NEM_ADD_RECOGNIZE_OF_NEW_OS_SYSTEMS
 	}
 	switch ( iBuildNumberType)
 	{
@@ -540,6 +638,7 @@ void GetCPUInfo( ER_SystemInfo *si)
 	char *lpszUnknown = "Unknown";
 	char lpszTemp[256];
 
+	// 종류
 	DWORD eaxreg, ebxreg, ecxreg, edxreg;
  
 	// We read the standard CPUID level 0x00000000 which should
@@ -580,6 +679,7 @@ void GetCPUInfo( ER_SystemInfo *si)
 	unsigned int uiFamily   = (eaxreg >> 8) & 0xF;
 	unsigned int uiModel    = (eaxreg >> 4) & 0xF;
 
+	// 종류 찾기
 	switch ( iBrand)
 	{
 		case 0x756E6547:	// GenuineIntel
@@ -698,6 +798,7 @@ void GetCPUInfo( ER_SystemInfo *si)
 			break;
 	}
 
+	// 속도
 	__int64 llFreq = GetCPUFrequency( 50) / 1000000;
 	wsprintf( lpszTemp, " %dMhz", ( int)llFreq);
 	strcat( si->m_lpszCPU, lpszTemp);
@@ -709,6 +810,29 @@ typedef HRESULT(WINAPI * DIRECTDRAWCREATEEX)( GUID*, VOID**, REFIID, IUnknown* )
 typedef HRESULT(WINAPI * DIRECTINPUTCREATE)( HINSTANCE, DWORD, LPDIRECTINPUT*,
                                              IUnknown* );
 
+//-----------------------------------------------------------------------------
+// Name: GetDXVersion()
+// Desc: This function returns the DirectX version number as follows:
+//          0x0000 = No DirectX installed
+//          0x0100 = DirectX version 1 installed
+//          0x0200 = DirectX 2 installed
+//          0x0300 = DirectX 3 installed
+//          0x0500 = At least DirectX 5 installed.
+//          0x0600 = At least DirectX 6 installed.
+//          0x0601 = At least DirectX 6.1 installed.
+//          0x0700 = At least DirectX 7 installed.
+//          0x0800 = At least DirectX 8 installed.
+//          0x0900 = At least DirectX 9 installed.
+// 
+//       Please note that this code is intended as a general guideline. Your
+//       app will probably be able to simply query for functionality (via
+//       QueryInterface) for one or two components.
+//
+//       Please also note:
+//          "if( dwDXVersion != 0x500 ) return FALSE;" is VERY BAD. 
+//          "if( dwDXVersion <  0x500 ) return FALSE;" is MUCH BETTER.
+//       to ensure your app will run on future releases of DirectX.
+//-----------------------------------------------------------------------------
 DWORD GetDXVersion()
 {
     DIRECTDRAWCREATE     DirectDrawCreate   = NULL;
@@ -741,7 +865,9 @@ DWORD GetDXVersion()
         dwDXVersion = 0;
         FreeLibrary( hDDrawDLL );
 
+#ifdef KWAK_ADD_TRACE_FUNC
 		__TraceF(TEXT("===> Couldn't LoadLibrary DDraw\r\n"));
+#endif // KWAK_ADD_TRACE_FUNC
 		return dwDXVersion;
     }
 
@@ -750,7 +876,9 @@ DWORD GetDXVersion()
     {
         dwDXVersion = 0;
         FreeLibrary( hDDrawDLL );
+#ifdef KWAK_ADD_TRACE_FUNC
 		__TraceF(TEXT("===> Couldn't create DDraw\r\n"));
+#endif // KWAK_ADD_TRACE_FUNC
 		return dwDXVersion;
     }
 
@@ -764,7 +892,9 @@ DWORD GetDXVersion()
         // No IDirectDraw2 exists... must be DX1
         pDDraw->Release();
         FreeLibrary( hDDrawDLL );
+#ifdef KWAK_ADD_TRACE_FUNC
 		__TraceF(TEXT("===> Couldn't QI DDraw2\r\n"));
+#endif // KWAK_ADD_TRACE_FUNC
         return dwDXVersion;
     }
 
@@ -782,7 +912,9 @@ DWORD GetDXVersion()
     if( hDInputDLL == NULL )
     {
         // No DInput... must not be DX3
+#ifdef KWAK_ADD_TRACE_FUNC
 		__TraceF(TEXT("===> Couldn't LoadLibrary DInput\r\n"));
+#endif // KWAK_ADD_TRACE_FUNC
         pDDraw->Release();
         return dwDXVersion;
     }
@@ -795,7 +927,9 @@ DWORD GetDXVersion()
         FreeLibrary( hDInputDLL );
         FreeLibrary( hDDrawDLL );
         pDDraw->Release();
+#ifdef KWAK_ADD_TRACE_FUNC
 		__TraceF(TEXT("===> Couldn't GetProcAddress DInputCreate\r\n"));
+#endif // KWAK_ADD_TRACE_FUNC
         return dwDXVersion;
     }
 
@@ -825,7 +959,9 @@ DWORD GetDXVersion()
         pDDraw->Release();
         FreeLibrary( hDDrawDLL );
         dwDXVersion = 0;
+#ifdef KWAK_ADD_TRACE_FUNC
 		__TraceF(TEXT("===> Couldn't Set coop level\r\n"));
+#endif // KWAK_ADD_TRACE_FUNC
         return dwDXVersion;
     }
 
@@ -836,7 +972,9 @@ DWORD GetDXVersion()
         pDDraw->Release();
         FreeLibrary( hDDrawDLL );
         dwDXVersion = 0;
+#ifdef KWAK_ADD_TRACE_FUNC
 		__TraceF(TEXT("===> Couldn't CreateSurface\r\n"));
+#endif // KWAK_ADD_TRACE_FUNC
         return dwDXVersion;
     }
 
@@ -883,7 +1021,9 @@ DWORD GetDXVersion()
                            IID_IDirectMusic, (VOID**)&pDMusic );
     if( FAILED(hr) )
     {
+#ifdef KWAK_ADD_TRACE_FUNC
 		__TraceF(TEXT("===> Couldn't create CLSID_DirectMusic\r\n"));
+#endif // KWAK_ADD_TRACE_FUNC
         FreeLibrary( hDDrawDLL );
         return dwDXVersion;
     }
@@ -962,6 +1102,9 @@ DWORD GetDXVersion()
 
 void GetSystemInfo( ER_SystemInfo *si)
 {
+#ifndef KWAK_FIX_COMPILE_LEVEL4_WARNING_EX
+	char *lpszUnknown = "Unknown";
+#endif // KWAK_FIX_COMPILE_LEVEL4_WARNING_EX
 	ZeroMemory( si, sizeof ( ER_SystemInfo));
 
 	// CPU

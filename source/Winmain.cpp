@@ -1552,7 +1552,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLin
 			}
 		}
 	}
-
+	#ifdef NEM_ADD_NEW_TYPE_OF_SEPARATOR_FINAL
 	g_ErrorReport.Write("\r\n");
 	g_ErrorReport.WriteLogBegin();
 	g_ErrorReport.AddSeparator();
@@ -1567,7 +1567,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLin
 	g_ErrorReport.AddSeparator();
 	g_ErrorReport.WriteSystemInfo(&si);
 	g_ErrorReport.AddSeparator();
-
+	#endif // NEM_ADD_NEW_TYPE_OF_SEPARATOR_FINAL
 	if (!gMainLoad.Load())
 	{
 		return false;
