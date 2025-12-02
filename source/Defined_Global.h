@@ -79,3 +79,7 @@
 
 //#define  LOGO_LOADING_SCREEN
 #define NEM_ADD_NEW_TYPE_OF_SEPARATOR_FINAL				// Add: "SeparatorFinal()" procedure to: "MuError.log" File Write-Event Final of Session (2021.10.08)
+
+#define CSK_LH_DEBUG_CONSOLE					
+
+#define CONSOLE_DEBUG
