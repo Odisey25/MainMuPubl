@@ -522,7 +522,10 @@ bool CNewUIMyInventory::UpdateMouseEvent()
 			const int iSourceIndex = pPickedItem->GetSourceLinealPos();
 			const int tx = (int)(CollisionPosition[0] / TERRAIN_SCALE);
 			const int ty = (int)(CollisionPosition[1] / TERRAIN_SCALE);
-			if (pPickedItem->GetOwnerInventory() == m_pNewInventoryCtrl)
+
+			// Permitir drop tanto do inventário principal quanto das extensões de inventário
+			if (pPickedItem->GetOwnerInventory() == m_pNewInventoryCtrl
+				|| (g_pMyInventoryExt && g_pMyInventoryExt->GetOwnerOf(pPickedItem)))
 			{
 				if (Hero->Dead == false)
 				{
