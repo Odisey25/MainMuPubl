@@ -908,24 +908,23 @@ void Interface::DrawWindowJewelBankVer2()
 	float StartX = (MAX_WIN_WIDTH / 2) - (MainWidth / 2) + 60.0f;
 
 	
-	g_pBCustomMenuInfo->gDrawWindowCustom(&StartX, &StartY, MainWidth, MainHeight, JEWELBANK_WINDOW, "Jewel Bank");
-	StartY -= 30;
+   g_pBCustomMenuInfo->gDrawWindowCustom(&StartX, &StartY, MainWidth, MainHeight, JEWELBANK_WINDOW, "");
+   StartY -= 30;
 
-	::EnableAlphaTest(true);
+   ::EnableAlphaTest(true);
 
-	::glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+   ::glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 
-	
-	StartX += 25;
+   
+   StartX += 25;
 
-	StartY += - 20;
+   StartY += - 20;
 
-	float StartXItem = StartX + 10;
+   float StartXItem = StartX + 20;
 
-	float StartYItem = StartY + 40;
+   float StartYItem = StartY + 82;
 
-	gInterface.DrawFormat(eYellow, StartX + 5.0f, StartY + 46.0f, 100, 1, "Jewel Bank [J]");
-
+   gInterface.DrawFormat(eYellow, StartX + 50.0f, StartY + 62.0f, 100, 1, "Jewel Bank [J]");
 
 	float KhoangCach = 25;
 
