@@ -375,13 +375,16 @@ bool SEASON3B::CNewUINPCShop::InventoryProcess()
 			return true;
 		}
 
-		if (pPickedItem->GetOwnerInventory() == g_pMyInventory->GetInventoryCtrl())
+		// Aceitar itens do inventário principal OU das extensões do inventário
+		if (pPickedItem->GetOwnerInventory() == g_pMyInventory->GetInventoryCtrl()
+			|| (g_pMyInventoryExt && g_pMyInventoryExt->GetOwnerOf(pPickedItem)))
 		{
 			int iSourceIndex = pPickedItem->GetSourceLinealPos();
 			SendRequestSell(iSourceIndex);
 
 			return true;
 		}
+		// Aceitar itens vindos de equipamento (owner == NULL)
 		else if (pPickedItem->GetOwnerInventory() == NULL)
 		{
 			int iSourceIndex = pPickedItem->GetSourceLinealPos();
