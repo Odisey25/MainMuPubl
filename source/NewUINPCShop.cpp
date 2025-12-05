@@ -83,6 +83,15 @@ void SEASON3B::CNewUINPCShop::SetPos(int x, int y)
 {
 	m_Pos.x = x;
 	m_Pos.y = y;
+
+	// Atualiza a posicao do inventario quando a janela se move
+	if (m_pNewInventoryCtrl)
+	{
+		m_pNewInventoryCtrl->SetPos(x + 15, y + 50);
+	}
+
+	// Atualiza os botoes
+	SetButtonInfo();
 }
 
 bool SEASON3B::CNewUINPCShop::UpdateMouseEvent()
