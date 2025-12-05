@@ -13801,7 +13801,7 @@ BOOL TranslateProtocol(int HeadCode, BYTE* ReceiveBuffer, int Size, BOOL bEncryp
 		ReceiveDeleteItemViewport(ReceiveBuffer);
 		break;
 	case 0x22://get item
-		AddDebugText(ReceiveBuffer,Size);
+		//AddDebugText(ReceiveBuffer,Size);
 		ReceiveGetItem(ReceiveBuffer);
 		break;
 	case 0x23://drop item
