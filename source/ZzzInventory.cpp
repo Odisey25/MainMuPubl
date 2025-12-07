@@ -2098,7 +2098,25 @@ int field_11BB64 = -1;
 //==render_item_tooltip
 BOOL pIsAbsoluteWeapon(__int16 a2)
 {
-	return a2 == 19 || a2 == 2066 || a2 == 2570 || a2 == 1037 || a2 == 2596 || a2 == 51;
+
+	return a2 == 19
+		|| a2 == 37
+		|| a2 == 51
+
+		|| a2 == 100
+		|| a2 == 101
+
+		|| a2 == 1037
+		|| a2 == 1124
+
+		|| a2 == 2066
+		|| a2 == 2148
+
+		|| a2 == 2570
+		|| a2 == 2660
+		|| a2 == 2661
+		|| a2 == 2596
+		|| a2 == 2662;
 }
 BOOL pIsEnableOptionWing( __int16 a2)
 {
@@ -2568,6 +2586,11 @@ void RenderItemInfo(int sx, int sy, ITEM* ip, bool Sell, int Inventype, bool bIt
 	{
 		color = TEXT_COLOR_YELLOW;
 	}
+	if (pIsAbsoluteWeapon(ip->Type))
+	{
+		color = TEXT_COLOR_PURPLE;
+	}
+
 	//==pet opt
 	if (ip->Type == ITEM_HELPER + 4 || ip->Type == ITEM_HELPER + 5)
 	{
