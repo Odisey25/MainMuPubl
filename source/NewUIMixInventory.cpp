@@ -49,7 +49,10 @@ bool CNewUIMixInventory::Create(CNewUIManager* pNewUIMng, int x, int y)
 		return false;
 	}
 
+
+
 	LoadImages();
+
 
 	POINT ptBtn = { m_Pos.x + (long)INVENTORY_WIDTH * (long)0.5f - (long)22.f, m_Pos.y + (long)380 };
 
@@ -196,46 +199,11 @@ void CNewUIMixInventory::SetPos(int x, int y)
 
 bool CNewUIMixInventory::UpdateMouseEvent()
 {
-
-	if (SEASON3B::IsPress(VK_RBUTTON))
-	{
-		if (m_pNewInventoryCtrl && CheckMouseIn(m_Pos.x, m_Pos.y, INVENTORY_WIDTH, INVENTORY_HEIGHT))
-		{
-			ITEM* pItemObj = m_pNewInventoryCtrl->FindItemAtPt(MouseX, MouseY);
-			if (pItemObj)
-			{
-				int iCurInventory = g_MixRecipeMgr.GetMixInventoryEquipmentIndex();
-				int nSrcIndex = m_pNewInventoryCtrl->GetIndex(pItemObj->x, pItemObj->y);
-				int iTargetIndex = g_pMyInventory->FindEmptySlot(pItemObj);
-				if (iTargetIndex != -1)
-				{
-					if (SendRequestEquipmentItem(iCurInventory, nSrcIndex, pItemObj, 0, iTargetIndex))
-					{
-						if (m_pNewInventoryCtrl)
-						{
-							m_pNewInventoryCtrl->RemoveItem(pItemObj);
-						}
-					}
-				}
-
-				MouseRButton = false;
-				MouseRButtonPop = false;
-				MouseRButtonPush = false;
-
-				return false;
-			}
-		}
-	}
-
 	if (m_pNewInventoryCtrl && false == m_pNewInventoryCtrl->UpdateMouseEvent())
-	{
 		return false;
-	}
 
 	if (true == InventoryProcess())
-	{
 		return false;
-	}
 
 	if (true == BtnProcess())
 		return false;
@@ -331,6 +299,8 @@ bool CNewUIMixInventory::Render()
 		g_pNewUI3DRenderMng->RenderUI2DEffect(INVENTORY_CAMERA_Z_ORDER, UI2DEffectCallback, this, 0, 0);
 
 	DisableAlphaBlend();
+
+
 
 	return true;
 }
@@ -954,7 +924,7 @@ bool CNewUIMixInventory::Mix()
 		g_pChatListBox->AddText("", GlobalText[3286], SEASON3B::TYPE_ERROR_MESSAGE);
 		return FALSE;
 	}
-#endif
+#endif //LJH_MOD_CANNOT_USE_CHARMITEM_AND_CHAOSCHARMITEM_SIMULTANEOUSLY
 
 	if (CNewUIInventoryCtrl::GetPickedItem() == NULL)
 	{
@@ -975,7 +945,7 @@ bool CNewUIMixInventory::InventoryProcess()
 		bool  GetClick = GetKeyState(VK_LBUTTON) & 0x8000;
 		ITEM* pItemObj = pPickedItem->GetItem();
 		if (GetMixState() == MIX_READY && g_MixRecipeMgr.IsMixSource(pPickedItem->GetItem()) &&
-			pPickedItem->GetOwnerInventory() == g_pMyInventory->GetInventoryCtrl() || g_pMyInventoryExt->GetOwnerOf(pPickedItem))
+			pPickedItem->GetOwnerInventory() == g_pMyInventory->GetInventoryCtrl() || g_pMyInventoryExt->GetOwnerOf(pPickedItem)) //==Inv -> Mix
 		{
 			m_pNewInventoryCtrl->SetSquareColorNormal(m_fInventoryColor[0], m_fInventoryColor[1], m_fInventoryColor[2]);
 			if (SEASON3B::IsPress(VK_LBUTTON) || GetClick)
@@ -991,9 +961,9 @@ bool CNewUIMixInventory::InventoryProcess()
 					}
 				}
 			}
-
+			//g_ConsoleDebug->Write(MCD_ERROR, "@SendRequestEquipmentItem Inv -> Ware %d %d ", pPickedItem->GetSourceLinealPos(), pPickedItem->GetTargetLinealPos(m_pNewInventoryCtrl));
 		}
-		else if (pPickedItem->GetOwnerInventory() == m_pNewInventoryCtrl)
+		else if (pPickedItem->GetOwnerInventory() == m_pNewInventoryCtrl) //Mix -> Inv
 		{
 			m_pNewInventoryCtrl->SetSquareColorNormal(m_fInventoryColor[0], m_fInventoryColor[1], m_fInventoryColor[2]);
 			if (SEASON3B::IsPress(VK_LBUTTON) || GetClick)
@@ -1031,7 +1001,7 @@ bool CNewUIMixInventory::InventoryProcess()
 			m_pNewInventoryCtrl->SetSquareColorNormal(m_fInventoryWarningColor[0], m_fInventoryWarningColor[1], m_fInventoryWarningColor[2]);
 		}
 	}
-	else if (SEASON3B::IsPress(VK_RBUTTON))
+	else if (SEASON3B::IsPress(VK_RBUTTON)) /// Trade -> Inv
 	{
 		g_pMyInventory->BMoveItemNew(2);
 	}
@@ -1089,6 +1059,7 @@ void CNewUIMixInventory::RenderMixEffect()
 	}
 	DisableAlphaBlend();
 }
+
 
 int SEASON3B::CNewUIMixInventory::GetPointedItemIndex()
 {
