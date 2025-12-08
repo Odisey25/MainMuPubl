@@ -2806,109 +2806,106 @@ void SEASON3B::CNewUISkillList::RenderPetSkill()
 
 void SEASON3B::CNewUISkillList::RenderSkillIcon(int iIndex, float x, float y, float width, float height, int TypeMuHelper)
 {
+    WORD bySkillType = (TypeMuHelper == 1) ? iIndex : CharacterAttribute->Skill[iIndex];
 
-	WORD bySkillType = (TypeMuHelper == 1) ? iIndex : CharacterAttribute->Skill[iIndex];
-	if (iIndex >= AT_PET_COMMAND_DEFAULT)
-	{
-		bySkillType = iIndex;
-	}
-	else
-	{
-		bySkillType = (TypeMuHelper == 1) ? iIndex : CharacterAttribute->Skill[iIndex];
-	}
-	if (bySkillType == 0)
-	{
-		return;
-	}
-	if (bySkillType < AT_PET_COMMAND_DEFAULT)
-	{
-		if (!gSkillManager.FindHeroSkill((ActionSkillType)bySkillType))
-		{
-			return;
-		}
-	}
+    if (bySkillType == 0 || !gSkillManager.FindHeroSkill((ActionSkillType)bySkillType))
+    {
+        return;
+    }
 
-	bool bCantSkill = false;
+    if (iIndex >= AT_PET_COMMAND_DEFAULT)
+    {
+        bySkillType = iIndex;
+    }
 
-	BYTE bySkillUseType = SkillAttribute[bySkillType].SkillUseType;
-	int Skill_Icon = SkillAttribute[bySkillType].Magic_Icon;
+    bool bCantSkill = false;
 
-	if (!gSkillManager.DemendConditionCheckSkill(bySkillType))
-	{
-		bCantSkill = true;
-	}
+    BYTE bySkillUseType = SkillAttribute[bySkillType].SkillUseType;
+    int Skill_Icon = SkillAttribute[bySkillType].Magic_Icon;
 
-	if (IsCanBCSkill(bySkillType) == false)
-	{
-		bCantSkill = true;
-	}
-	if (g_isCharacterBuff((&Hero->Object), eBuff_AddSkill) && bySkillUseType == SKILL_USE_TYPE_BRAND)
-	{
-		bCantSkill = true;
-	}
+    if (bySkillType > 0 && bySkillType < 500)
+    {
+        if (!gSkillManager.DemendConditionCheckSkill(bySkillType))
+        {
+            bCantSkill = true;
+        }
+    }
+    else
+    {
+        bCantSkill = true;
+    }
 
-	if (bySkillType == AT_SKILL_SPEAR && (Hero->Helper.Type<MODEL_HELPER + 2 || Hero->Helper.Type>MODEL_HELPER + 3) && Hero->Helper.Type != MODEL_HELPER + 37)
-	{
-		bCantSkill = true;
-	}
+    if (IsCanBCSkill(bySkillType) == false)
+    {
+        bCantSkill = true;
+    }
+    if (g_isCharacterBuff((&Hero->Object), eBuff_AddSkill) && bySkillUseType == SKILL_USE_TYPE_BRAND)
+    {
+        bCantSkill = true;
+    }
 
-	if (bySkillType == AT_SKILL_SPEAR && (Hero->Helper.Type == MODEL_HELPER + 2 || Hero->Helper.Type == MODEL_HELPER + 3 || Hero->Helper.Type == MODEL_HELPER + 37))
-	{
-		int iTypeL = CharacterMachine->Equipment[EQUIPMENT_WEAPON_LEFT].Type;
-		int iTypeR = CharacterMachine->Equipment[EQUIPMENT_WEAPON_RIGHT].Type;
-		if ((iTypeL < ITEM_SPEAR || iTypeL >= ITEM_BOW) && (iTypeR < ITEM_SPEAR || iTypeR >= ITEM_BOW))
-		{
-			bCantSkill = true;
-		}
-	}
+    if (bySkillType == AT_SKILL_SPEAR && (Hero->Helper.Type<MODEL_HELPER + 2 || Hero->Helper.Type>MODEL_HELPER + 3) && Hero->Helper.Type != MODEL_HELPER + 37)
+    {
+        bCantSkill = true;
+    }
 
-	if (
-		bySkillType == MASTER_SKILL_ADD_CYCLONE_IMPROVED1 ||
-		bySkillType == MASTER_SKILL_ADD_CYCLONE_IMPROVED2 ||
-		bySkillType == MASTER_SKILL_ADD_SLASH_IMPROVED ||
-		bySkillType == MASTER_SKILL_ADD_LUNGE_IMPROVED ||
-		bySkillType >= AT_SKILL_BLOCKING && bySkillType <= AT_SKILL_SWORD5 && (Hero->Helper.Type == MODEL_HELPER + 2 || Hero->Helper.Type == MODEL_HELPER + 3 || Hero->Helper.Type == MODEL_HELPER + 37))
-	{
-		bCantSkill = true;
-	}
+    if (bySkillType == AT_SKILL_SPEAR && (Hero->Helper.Type == MODEL_HELPER + 2 || Hero->Helper.Type == MODEL_HELPER + 3 || Hero->Helper.Type == MODEL_HELPER + 37))
+    {
+        int iTypeL = CharacterMachine->Equipment[EQUIPMENT_WEAPON_LEFT].Type;
+        int iTypeR = CharacterMachine->Equipment[EQUIPMENT_WEAPON_RIGHT].Type;
+        if ((iTypeL < ITEM_SPEAR || iTypeL >= ITEM_BOW) && (iTypeR < ITEM_SPEAR || iTypeR >= ITEM_BOW))
+        {
+            bCantSkill = true;
+        }
+    }
 
-	if ((bySkillType == AT_SKILL_ICE_BLADE ||
-		bySkillType == MASTER_SKILL_ADD_POWER_SLASH_IMPROVED ||
-		(AT_SKILL_POWER_SLASH_UP <= bySkillType && AT_SKILL_POWER_SLASH_UP + 4 >= bySkillType)) && (Hero->Helper.Type == MODEL_HELPER + 2 || Hero->Helper.Type == MODEL_HELPER + 3 || Hero->Helper.Type == MODEL_HELPER + 37))
-	{
-		bCantSkill = true;
-	}
+    if (
+        bySkillType == MASTER_SKILL_ADD_CYCLONE_IMPROVED1 ||
+        bySkillType == MASTER_SKILL_ADD_CYCLONE_IMPROVED2 ||
+        bySkillType == MASTER_SKILL_ADD_SLASH_IMPROVED ||
+        bySkillType == MASTER_SKILL_ADD_LUNGE_IMPROVED ||
+        bySkillType >= AT_SKILL_BLOCKING && bySkillType <= AT_SKILL_SWORD5 && (Hero->Helper.Type == MODEL_HELPER + 2 || Hero->Helper.Type == MODEL_HELPER + 3 || Hero->Helper.Type == MODEL_HELPER + 37))
+    {
+        bCantSkill = true;
+    }
 
-	int iEnergy = CharacterAttribute->Energy + CharacterAttribute->AddEnergy;
+    if ((bySkillType == AT_SKILL_ICE_BLADE ||
+        bySkillType == MASTER_SKILL_ADD_POWER_SLASH_IMPROVED ||
+        (AT_SKILL_POWER_SLASH_UP <= bySkillType && AT_SKILL_POWER_SLASH_UP + 4 >= bySkillType)) && (Hero->Helper.Type == MODEL_HELPER + 2 || Hero->Helper.Type == MODEL_HELPER + 3 || Hero->Helper.Type == MODEL_HELPER + 37))
+    {
+        bCantSkill = true;
+    }
 
-	if (g_csItemOption.IsDisableSkill(bySkillType, iEnergy))
-	{
-		bCantSkill = true;
-	}
+    int iEnergy = CharacterAttribute->Energy + CharacterAttribute->AddEnergy;
 
-	if (bySkillType == AT_SKILL_PARTY_TELEPORT && PartyNumber <= 0)
-	{
-		bCantSkill = true;
-	}
+    if (g_csItemOption.IsDisableSkill(bySkillType, iEnergy))
+    {
+        bCantSkill = true;
+    }
 
-	if (bySkillType == AT_SKILL_PARTY_TELEPORT && (IsDoppelGanger1() || IsDoppelGanger2() || IsDoppelGanger3() || IsDoppelGanger4()))
-	{
-		bCantSkill = true;
-	}
+    if (bySkillType == AT_SKILL_PARTY_TELEPORT && PartyNumber <= 0)
+    {
+        bCantSkill = true;
+    }
 
-	if (bySkillType == AT_SKILL_DARK_HORSE ||
-		bySkillType == MASTER_SKILL_ADD_EARTHQUAKE_IMPROVED ||
-		bySkillType == MASTER_SKILL_ADD_EARTHQUAKE_ENHANCED
-		|| (AT_SKILL_ASHAKE_UP <= bySkillType && bySkillType <= AT_SKILL_ASHAKE_UP + 4))
-	{
-		BYTE byDarkHorseLife = 0;
-		byDarkHorseLife = CharacterMachine->Equipment[EQUIPMENT_HELPER].Durability;
-		if (byDarkHorseLife == 0 || Hero->Helper.Type != MODEL_HELPER + 4)
-		{
-			bCantSkill = true;
+    if (bySkillType == AT_SKILL_PARTY_TELEPORT && (IsDoppelGanger1() || IsDoppelGanger2() || IsDoppelGanger3() || IsDoppelGanger4()))
+    {
+        bCantSkill = true;
+    }
 
-		}
-	}
+    if (bySkillType == AT_SKILL_DARK_HORSE ||
+        bySkillType == MASTER_SKILL_ADD_EARTHQUAKE_IMPROVED ||
+        bySkillType == MASTER_SKILL_ADD_EARTHQUAKE_ENHANCED
+        || (AT_SKILL_ASHAKE_UP <= bySkillType && bySkillType <= AT_SKILL_ASHAKE_UP + 4))
+    {
+        BYTE byDarkHorseLife = 0;
+        byDarkHorseLife = CharacterMachine->Equipment[EQUIPMENT_HELPER].Durability;
+        if (byDarkHorseLife == 0 || Hero->Helper.Type != MODEL_HELPER + 4)
+        {
+            bCantSkill = true;
+
+        }
+    }
 #ifdef PJH_FIX_SPRIT
 	/*¹ÚÁ¾ÈÆ*/
 	if (bySkillType >= AT_PET_COMMAND_DEFAULT && bySkillType < AT_PET_COMMAND_END)

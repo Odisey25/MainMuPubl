@@ -349,7 +349,7 @@ bool SEASON3B::CNewUIMuHelper::UpdateMouseEvent()
 
     int Identificador = UpdateMouseBtnList();
 
-    g_ConsoleDebug->Write(MCD_RECEIVE, "MouseBtn Identificador: %d", Identificador);
+    //g_ConsoleDebug->Write(MCD_RECEIVE, "MouseBtn Identificador: %d", Identificador);
 
     if (Identificador == 15)
     {

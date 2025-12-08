@@ -1,4 +1,4 @@
-//////////////////////////////////////////////////////////////////////////
+﻿//////////////////////////////////////////////////////////////////////////
 //  
 //  GOBoid.cpp
 //  
@@ -565,7 +565,7 @@ bool MoveBug(OBJECT* o, bool bForceRender)
 #endif //PBG_ADD_NEWCHAR_MONK_ANI
 				)
 			{
-				//  �䰡����.
+				//  Æä°¡¼ö½º.
 				if (o->Type == MODEL_PEGASUS)
 				{
 					if (gMapManager.WorldActive == WD_8TARKAN || gMapManager.WorldActive == WD_10HEAVEN || g_Direction.m_CKanturu.IsMayaScene())
@@ -665,90 +665,169 @@ bool MoveBug(OBJECT* o, bool bForceRender)
 		b->CurrentAction = o->CurrentAction;
 		b->PlayAnimation(&o->AnimationFrame, &o->PriorAnimationFrame, &o->PriorAction, o->Velocity, o->Position, o->Angle);
 		//==//Custom Pet Move
-		if (gCustomPet2.GetInfoPetType(o->Type - 1171) == 8)
-		{
+     if (gCustomPet2.GetInfoPetType(o->Type - 1171) == 8)
+        {
+            if (!o->Owner)
+                return TRUE;
 
+            // 先取出当前主人的动作
+            int ca = o->Owner->CurrentAction;
 
-			if (o->Owner->CurrentAction >= PLAYER_WALK_MALE && o->Owner->CurrentAction <= PLAYER_RUN_RIDE_WEAPON
-				|| o->Owner->CurrentAction == PLAYER_FLY_RIDE || o->Owner->CurrentAction == PLAYER_FLY_RIDE_WEAPON
-				|| o->Owner->CurrentAction == PLAYER_RAGE_UNI_RUN || o->Owner->CurrentAction == PLAYER_RAGE_UNI_RUN_ONE_RIGHT
-				)
-			{
-				if (SceneFlag == MAIN_SCENE)
-				{
-					if (!o->Owner->Live || o->Owner->Kind != KIND_PLAYER)
-					{
-						o->Live = false;
-						return TRUE;
-					}
-				}
-				
-				{
-					if (o->Owner->Teleport == TELEPORT_BEGIN || o->Owner->Teleport == TELEPORT)
-					{
-						o->Alpha -= 0.1f;
-						if (o->Alpha < 0) o->Alpha = 0.f;
-					}
-					else
-					{
-						o->Alpha = 1.f;
-					}
-					// ----
-					if (o->Owner && !g_isCharacterBuff(o->Owner, eBuff_Cloaking))
-					{
-						FlyRange = 150.f;
-						vec3_t Position, Light;
-						Vector(0.4f, 0.4f, 0.4f, Light);
-						// ----
-						for (int j = 0; j < 4; j++)
-						{
-							Vector((float)(rand() % 16 - 8), (float)(rand() % 16 - 8), (float)(rand() % 16 - 8), Position);
-							VectorAdd(Position, o->Position, Position);
-							
-						}
-					}
-				}
-				// ----
-				float playspeed = 0.5f;
-				
-				{
-					FlyRange = 160.f;
+            // ① 统一定义：什么算“站立动作”
+            //    所有 PLAYER_STOP_*** 范围内的动作为站立（拿剑站、拿弓站、骑乘停住、飞行停住等）
+            bool bOwnerStopState =
+                (ca >= PLAYER_STOP_MALE && ca <= PLAYER_STOP_RIDE_WEAPON) ||
+                (ca == PLAYER_DARKLORD_STAND) ||
+                (ca == PLAYER_IDLE1_DARKHORSE) ||
+                (ca == PLAYER_IDLE2_DARKHORSE);
 
-					vec3_t Range;
-					VectorSubtract(TargetPosition, o->Position, Range);
-					float Distance = Range[0] * Range[0] + Range[1] * Range[1];
+            // ② 移动状态（原来你定义的一堆走路/跑步/骑乘跑/神兽跑等）——主要用于“是否进入逻辑”的过滤
+            bool bOwnerMovingState =
+                (ca >= PLAYER_WALK_MALE && ca <= PLAYER_RUN_RIDE_WEAPON) ||
+                (ca == PLAYER_FLY) ||
+                (ca == PLAYER_FLY_CROSSBOW) ||
+                (ca == PLAYER_FLY_RIDE) ||
+                (ca == PLAYER_FLY_RIDE_WEAPON) ||
+                (ca == PLAYER_RAGE_UNI_RUN) ||
+                (ca == PLAYER_RAGE_UNI_RUN_ONE_RIGHT) ||
+                (ca == PLAYER_DARKLORD_WALK) ||
+                (ca == PLAYER_RUN_RIDE_HORSE);
 
-					// ----
-					if (Distance >= FlyRange * FlyRange)
-					{
-						float Angle = CreateAngle(o->Position[0], o->Position[1], TargetPosition[0], TargetPosition[1]);
-						o->Angle[2] = TurnAngle2(o->Angle[2], Angle, 20.f);
-						SetAction(o, 2);
-					}
-					else
-					{
-						playspeed = 0.1f;
-						SetAction(o, FENRIR_RUN_DELAY);
-					}
+            // 只要是“站立”或者“移动”的正常动作，就进入宠物逻辑
+            if (bOwnerStopState || bOwnerMovingState)
+            {
+                // =====================================================================================
+                // ① 主场景检查：如果主人死亡 / 不是玩家，则宠物消失
+                // =====================================================================================
+                if (SceneFlag == MAIN_SCENE)
+                {
+                    // 如果主人已经死亡 或者 主人不是玩家（可能是 NPC），宠物消失
+                    if (!o->Owner->Live || o->Owner->Kind != KIND_PLAYER)
+                    {
+                        o->Live = false; // 让宠物对象从场景中移除
+                        return TRUE;
+                    }
+                }
 
+                // =====================================================================================
+                // ② 处理透明度（用于传送期间淡出）
+                // =====================================================================================
+                {
+                    if (o->Owner->Teleport == TELEPORT_BEGIN || o->Owner->Teleport == TELEPORT) // 如果主人正在传送中（进入传送或传送阶段）
+                    {
+                        o->Alpha -= 0.1f; // 逐渐减透明度
+                        if (o->Alpha < 0) o->Alpha = 0.f;
+                    }
+                    else
+                    {
+                        o->Alpha = 1.f; // 正常情况下透明度恢复到 1
+                    }
 
+                    // 如果主人不是隐身状态（Cloaking Buff）
+                    if (o->Owner && !g_isCharacterBuff(o->Owner, eBuff_Cloaking))
+                    {
+                        FlyRange = 150.f; // 这里你用来控制“触发跟随”范围，保留
+                        vec3_t Position, Light;
+                        Vector(0.4f, 0.4f, 0.4f, Light); // 光照（可能本来打算给宠物加光效）
+                        // 创建 4 个偏移点，用于随机抖动 / 微小粒子效果
+                        for (int j = 0; j < 4; j++)
+                        {
+                            Vector((float)(rand() % 16 - 8),
+                                (float)(rand() % 16 - 8),
+                                (float)(rand() % 16 - 8),
+                                Position);
+                            VectorAdd(Position, o->Position, Position);
+                        }
+                    }
+                }
 
-					AngleMatrix(o->Angle, o->Matrix);
-					vec3_t Direction;
-					VectorRotate(o->Direction, o->Matrix, Direction);
-					VectorAdd(o->Position, Direction, o->Position);
-					
+                // 播放速度（动画速度）——目前没直接用到，但先保留
+                float playspeed = 0.5f;
 
-					float Speed = (FlyRange >= Distance) ? 0.5f : (float)log(Distance) * 1.1f;
+                // =====================================================================================
+                // ③ 宠物移动行为控制：动作只看主人站立/移动，距离只控制位移，不控制动作
+                // =====================================================================================
+                {
+                    // 原来的跟随距离逻辑，保留
+                    FlyRange = 100.f; // 需要跟随的距离
 
-					o->Direction[0] = 0.0f;
-					o->Direction[1] = -Speed;
-					o->Direction[2] = 0.0f;
+                    // 计算主人与宠物之间的 XY 平面距离平方（注意：这是“平方距离”）
+                    vec3_t Range;
+                    VectorSubtract(TargetPosition, o->Position, Range);
+                    float Distance = Range[0] * Range[0] + Range[1] * Range[1];
 
-				
-				}
-			}
-		}
+                    // 加速跟随的距离阈值（保持你之前的逻辑）
+                    const float FastRange = 150.0f;
+                    const float FastRangeSq = FastRange * FastRange;
+
+                    // ===== ① 使用统一的“站立判断” =====
+                    bool bOwnerStanding = bOwnerStopState;  // 所有 STOP_* + DARKLORD_STAND + 马站立
+                    bool bOwnerMoving = !bOwnerStanding;  // 其他都视作移动 / 战斗 / 技能
+
+                    // ===== ② 只根据“站立 / 移动”来切宠物动作，不看距离 =====
+                    if (bOwnerStanding)
+                    {
+                        // 主人站立 → 宠物始终使用站立动作
+                        if (o->CurrentAction != FENRIR_STAND)
+                        {
+                            SetAction(o, FENRIR_WALK);
+                        }
+                    }
+                    else // 主人在移动 / 攻击 / 施法等
+                    {
+                        // 主人不站立 → 宠物始终使用奔跑动作
+                        if (o->CurrentAction != FENRIR_RUN)
+                        {
+                            SetAction(o, FENRIR_RUN);
+                        }
+                    }
+
+                    // ===== ③ 距离只用来控制“要不要移动、多快移动”，不再改动作 =====
+
+                    // 距离超过跟随范围 → 需要向主人靠近
+                    if (Distance >= FlyRange * FlyRange)
+                    {
+                        // 计算朝向主人方向的角度，并缓慢旋转
+                        float Angle = CreateAngle(o->Position[0], o->Position[1],
+                            TargetPosition[0], TargetPosition[1]);
+                        o->Angle[2] = TurnAngle2(o->Angle[2], Angle, 20.f);
+
+                        // 根据角度生成 3D 旋转矩阵
+                        AngleMatrix(o->Angle, o->Matrix);
+                        vec3_t Direction;
+                        VectorRotate(o->Direction, o->Matrix, Direction);
+
+                        // 保留你原来的速度公式（距离越远越快）
+                        float Speed = (FlyRange * FlyRange >= Distance)
+                            ? 0.5f
+                            : (float)log(Distance) * 1.1f;
+
+                        // 距离更远时额外加速（保持你之前的加速逻辑）
+                        if (Distance > FastRangeSq)
+                        {
+                            Speed *= 1.5f;
+                        }
+
+                        // 设置最终的移动方向（本地坐标系：Y 负方向为前进）
+                        o->Direction[0] = 0.0f;
+                        o->Direction[1] = -Speed;
+                        o->Direction[2] = 0.0f;
+
+                        // 按方向推进宠物位置，FPS_ANIMATION_FACTOR 用于帧平滑
+                        VectorAddScaled(o->Position, Direction, o->Position, FPS_ANIMATION_FACTOR);
+                        float terrainZ = RequestTerrainHeight(o->Position[0], o->Position[1]);
+                        o->Position[2] = terrainZ + 5.0f;   // +5 可自行调整，让宠物略微悬浮
+                    }
+                    else
+                    {
+                   
+                        o->Direction[0] = 0.0f;
+                        o->Direction[1] = 0.0f;
+                        o->Direction[2] = 0.0f;
+                    }
+                }
+            }
+        }
 		if (o->Type == MODEL_HELPER || o->Type == MODEL_HELPER + 1 || gCustomPet2.GetInfoPetType(o->Type - 1171) == 0 || gCustomPet2.GetInfoPetType(o->Type - 1171) == 10 || gCustomPet2.GetInfoPetType(o->Type - 1171) == 11)
 		{
 			vec3_t Range;
