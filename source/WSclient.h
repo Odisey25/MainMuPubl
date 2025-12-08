@@ -3969,5 +3969,3 @@ struct PMSG_HELPER_DATA_SEND
 	BYTE result;
 	BYTE data[256];
 };
-
-BOOL ReceiveEquipmentItem(BYTE* ReceiveBuffer, BOOL bEncrypted);
