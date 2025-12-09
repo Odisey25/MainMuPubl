@@ -59,6 +59,7 @@ namespace SEASON3B
         bool Render();
 
         float GetLayerDepth();	//. 2.5f
+        ITEM* FindItem(int iIndex) const;
         DWORD m_dwStandbyItemKey;
         void SetStandbyItemKey(DWORD dwItemKey);
         ITEM* GetStandbyItem() const;
