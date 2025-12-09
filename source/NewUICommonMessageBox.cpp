@@ -1840,24 +1840,23 @@ bool SEASON3B::CChaosCastleTimeCheckMsgBoxLayout::SetLayout()
 	return true;
 }
 
-CALLBACK_RESULT SEASON3B::CChaosCastleTimeCheckMsgBoxLayout::OkBtnDown(class CNewUIMessageBoxBase* pOwner, const leaf::xstreambuf& xParam)
+CALLBACK_RESULT SEASON3B::CChaosCastleTimeCheckMsgBoxLayout::OkBtnDown(
+	CNewUIMessageBoxBase* pOwner, const leaf::xstreambuf& xParam)
 {
 	ITEM* pItem = g_pMyInventory->GetStandbyItem();
+
 	if (pItem)
 	{
-		int iSrcIndex = g_pMyInventory->GetStandbyItemIndex();
-		SendRequestMoveToEventMatch2(((pItem->Level >> 3) & 15), iSrcIndex);
-	}
-	else
-	{
-		__asm { int 3 };
+		int idx = g_pMyInventory->GetStandbyItemIndex();
+		SendRequestMoveToEventMatch2(((pItem->Level >> 3) & 15), idx);
 	}
 
-	PlayBuffer(SOUND_CLICK01);
+	// Cerrar mensaje
 	g_MessageBox->SendEvent(pOwner, MSGBOX_EVENT_DESTROY);
 
 	return CALLBACK_BREAK;
 }
+
 
 CALLBACK_RESULT SEASON3B::CChaosCastleTimeCheckMsgBoxLayout::CancelBtnDown(class CNewUIMessageBoxBase* pOwner, const leaf::xstreambuf& xParam)
 {
