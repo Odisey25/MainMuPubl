@@ -254,11 +254,11 @@ public:
 
 	char        OwnerID[32];
 		
-	private: 
+private: 
 	ST_POSTMOVE_PROCESS*
 				m_pPostMoveProcess;
 
-	public:
+public:
 	void*		m_pTempParts;
 	int			m_iTempKey;	
 	WORD		m_CursedTempleCurSkill;
