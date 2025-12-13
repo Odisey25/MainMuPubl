@@ -1840,21 +1840,49 @@ bool SEASON3B::CChaosCastleTimeCheckMsgBoxLayout::SetLayout()
 	return true;
 }
 
-CALLBACK_RESULT SEASON3B::CChaosCastleTimeCheckMsgBoxLayout::OkBtnDown(
-	CNewUIMessageBoxBase* pOwner, const leaf::xstreambuf& xParam)
+CALLBACK_RESULT SEASON3B::CChaosCastleTimeCheckMsgBoxLayout::OkBtnDown(class CNewUIMessageBoxBase* pOwner, const leaf::xstreambuf& xParam)
 {
-	ITEM* pItem = g_pMyInventory->GetStandbyItem();
+    ITEM* pItem = g_pMyInventory->GetStandbyItem();
+    int iSrcIndex = -1;
 
-	if (pItem)
-	{
-		int idx = g_pMyInventory->GetStandbyItemIndex();
-		SendRequestMoveToEventMatch2(((pItem->Level >> 3) & 15), idx);
-	}
+    if (pItem)
+    {
+        iSrcIndex = g_pMyInventory->GetStandbyItemIndex();
+    }
+    else if (g_pMyInventoryExt)
+    {
+        DWORD dwStandbyItemKey = g_pMyInventory->GetStandbyItemKey();
+        if (dwStandbyItemKey != 0)
+        {
+            for (int extIdx = 0; extIdx < CharacterAttribute->InventoryExtensions; ++extIdx)
+            {
+                CNewUIInventoryCtrl* pExtCtrl = g_pMyInventoryExt->GetInventoryCtrl(extIdx);
+                if (pExtCtrl)
+                {
+                    pItem = pExtCtrl->FindItemByKey(dwStandbyItemKey);
+                    if (pItem)
+                    {
+                        iSrcIndex = pItem->y * pExtCtrl->GetNumberOfColumn() + pItem->x + MAX_MY_INVENTORY_INDEX + extIdx * MAX_INVENTORY_EXT_ONE;
+                        break;
+                    }
+                }
+            }
+        }
+    }
 
-	// Cerrar mensaje
-	g_MessageBox->SendEvent(pOwner, MSGBOX_EVENT_DESTROY);
+    if (pItem && iSrcIndex != -1)
+    {
+        SendRequestMoveToEventMatch2(((pItem->Level >> 3) & 15), iSrcIndex);
+        PlayBuffer(SOUND_CLICK01);
+        g_MessageBox->SendEvent(pOwner, MSGBOX_EVENT_DESTROY);
+        return CALLBACK_BREAK;
+    }
 
-	return CALLBACK_BREAK;
+    SEASON3B::CreateOkMessageBox(GlobalText[854]);
+    PlayBuffer(SOUND_CLICK01);
+    g_MessageBox->SendEvent(pOwner, MSGBOX_EVENT_DESTROY);
+
+    return CALLBACK_BREAK;
 }
 
 

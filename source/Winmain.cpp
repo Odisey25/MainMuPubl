@@ -1226,11 +1226,11 @@ BOOL OpenInitFile()
 #if(WIDE_SCREEN)	
 	switch (m_Resolution) //Resolution
 	{
-	case 0:WindowWidth = 640; WindowHeight = 480; break;
-	case 1:WindowWidth = 1280; WindowHeight = 768; break;
-	case 2:WindowWidth = 1280; WindowHeight = 1024; break;
+	case 0:WindowWidth = 1366; WindowHeight = 768; break;
+	case 1:WindowWidth = 1366; WindowHeight = 768; break;
+	case 2:WindowWidth = 1366; WindowHeight = 768; break;
 	case 3:WindowWidth = 1366; WindowHeight = 768; break;
-	case 4:WindowWidth = 1600; WindowHeight = 1280; break;
+	case 4:WindowWidth = 1366; WindowHeight = 768; break;
 	case 5:WindowWidth = 1400; WindowHeight = 900; break;
 	case 6:WindowWidth = 1600; WindowHeight = 900; break;
 	case 7:WindowWidth = 1680; WindowHeight = 1050; break;
@@ -1259,6 +1259,7 @@ BOOL OpenInitFile()
 	g_ConsoleDebug->Write(MCD_NORMAL, "[Resolusion] %d %dx%d", m_Resolution, WindowWidth,WindowHeight);
 	return TRUE;
 }
+
 
 BOOL Util_CheckOption( char *lpszCommandLine, unsigned char cOption, char *lpszString)
 {

@@ -101,7 +101,10 @@ namespace SEASON3B
 		void RenderContents();
 		void RenderCustomFrame();
 		void RenderButtons();
-
+		 // Añade estas líneas:
+    int m_iWindowWidth;
+    int m_iWindowHeight;
+ 
 	private:
 		CNewUIManager*				m_pNewUIMng;
 		POINT						m_Pos;

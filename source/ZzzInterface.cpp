@@ -553,7 +553,7 @@ void CreateNotice(char* Text, int Color)
 void MoveNotices()
 {
 	NoticeTime -= FPS_ANIMATION_FACTOR;
-	if (NoticeTime-- <= 0)
+	if (NoticeTime <= 0)
 	{
 		NoticeTime = 300;
 		CreateNotice("", 0);

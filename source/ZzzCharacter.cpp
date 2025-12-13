@@ -8544,24 +8544,67 @@ void RenderLinkObject(float x, float y, float z, CHARACTER* c, PART_t* f, int Ty
 		}
 	}
 	break;
-	case MODEL_SWORD_35_WING:
-		vec3_t vLight;
-		float fSize = (double)(rand() % 30) / 300.0;
-		Vector(0.18f, 0.45f, 0.22f, vLight);
-		Vector(0.f, 0.f, 0.f, p);
-		for (int i = 0; i < 8; ++i)
-		{
-			b->TransformPosition(BoneTransform[3 + i], p, Position, true);
-			CreateSprite(BITMAP_LIGHT_MARKS, Position, fSize + 0.3f, vLight, Object, rand() % 360);
-		}
-		for (int i = 0; i < 8; ++i)
-		{
-			b->TransformPosition(BoneTransform[13 + i], p, Position, true);
-			CreateSprite(BITMAP_LIGHT_MARKS, Position, fSize + 0.3f, vLight, Object, rand() % 360);
-		}
-		break;
-	}
+case MODEL_SWORD_35_WING:
+{
+    vec3_t vLight;
+    float fSize = (double)(rand() % 30) / 300.0;
+    Vector(0.18f, 0.45f, 0.22f, vLight);
+    Vector(0.f, 0.f, 0.f, p);
+    
+    for (int i = 0; i < 8; ++i)
+    {
+        b->TransformPosition(BoneTransform[3 + i], p, Position, true);
+        CreateSprite(BITMAP_LIGHT_MARKS, Position, fSize + 0.3f, vLight, Object, rand() % 360);
+    }
+    for (int i = 0; i < 8; ++i)
+    {
+        b->TransformPosition(BoneTransform[13 + i], p, Position, true);
+        CreateSprite(BITMAP_LIGHT_MARKS, Position, fSize + 0.3f, vLight, Object, rand() % 360);
+    }
 }
+break;
+
+// Renderizado de sombras para alas y capas
+default:
+    if (gMapManager.WorldActive != WD_10HEAVEN && !gMapManager.InHellas() && !g_Direction.m_CKanturu.IsMayaScene())
+    {
+        bool handled = false;
+        
+        // Alas sin tela física
+        if (Type == MODEL_WINGS_OF_ELF || Type == MODEL_WINGS_OF_HEAVEN || 
+            Type == MODEL_WINGS_OF_SATAN || Type == MODEL_WING_OF_CURSE ||
+            Type == MODEL_WINGS_OF_SPIRITS || Type == MODEL_WINGS_OF_SOUL ||
+            Type == MODEL_WINGS_OF_DRAGON || Type == MODEL_WINGS_OF_DARKNESS ||
+            Type == MODEL_WINGS_OF_DESPAIR || Type == MODEL_WING_OF_STORM ||
+            Type == MODEL_WING_OF_ETERNAL || Type == MODEL_WING_OF_ILLUSION ||
+            Type == MODEL_WING_OF_RUIN || Type == MODEL_WING_OF_DIMENSION ||
+            Type == MODEL_WING + 131 || Type == MODEL_WING + 132 ||
+            Type == MODEL_WING + 133 || Type == MODEL_WING + 134)
+        {
+            b->RenderBodyShadow();
+            handled = true;
+        }
+        // Capas con tela física
+        else if (Type == MODEL_CAPE_OF_LORD || Type == MODEL_CAPE_OF_FIGHTER ||
+                 Type == MODEL_CAPE_OF_EMPEROR || Type == MODEL_CAPE_OF_OVERRULE ||
+                 Type == MODEL_WING + 130 || Type == MODEL_WING + 135)
+        {
+            b->RenderBodyShadow(-1, -1, -1, -1, o->m_pCloth, o->m_byNumCloth);
+            handled = true;
+        }
+        
+        // Caso por defecto: verificar si tiene cloth
+        if (!handled)
+        {
+            if (o->m_pCloth && o->m_byNumCloth > 0)
+                b->RenderBodyShadow(-1, -1, -1, -1, o->m_pCloth, o->m_byNumCloth);
+            else
+                b->RenderBodyShadow();
+        }
+    }
+		break;
+		}
+	}
 
 void RenderLight(OBJECT* o, int Texture, float Scale, int Bone, float x, float y, float z)
 {
@@ -8716,11 +8759,9 @@ void RenderCharacter(CHARACTER* c, OBJECT* o, int Select)
 	if (byRender == CHARACTER_ANIMATION)
 		Calc_ObjectAnimation(o, Translate, Select);
 
-	if (o->Alpha >= 0.5f && c->HideShadow == false)
+		if (o->Alpha >= 0.5f && c->HideShadow == false)
 	{
-		if (gMapManager.WorldActive != WD_10HEAVEN && (o->Type == MODEL_PLAYER) && (!(MODEL_HELPER + 2 <= c->Helper.Type && c->Helper.Type <= MODEL_HELPER + 3) || c->SafeZone)
-			&& gMapManager.InHellas() == false
-			)
+		if (gMapManager.WorldActive != WD_10HEAVEN && (o->Type == MODEL_PLAYER) && gMapManager.InHellas() == false)
 		{
 			if (gMapManager.InBloodCastle() && o->m_bActionStart && c->Dead > 0)
 			{
@@ -8731,7 +8772,21 @@ void RenderCharacter(CHARACTER* c, OBJECT* o, int Select)
 				}
 			}
 			o->EnableShadow = true;
-			RenderPartObject(&c->Object, MODEL_SHADOW_BODY, NULL, c->Light, o->Alpha, 0, 0, 0, false, false, Translate);
+			for (int i = MAX_BODYPART - 1; i >= 0; i--)
+			{
+				PART_t* p = &c->BodyPart[i];
+				if (p->Type != -1)
+				{
+					int Type = p->Type;
+
+					RenderPartObject(&c->Object, Type, p, c->Light, o->Alpha, 0, 0, 0, false, false, Translate);
+				}
+				else
+				{
+					RenderPartObject(&c->Object, MODEL_SHADOW_BODY, NULL, c->Light, o->Alpha, 0, 0, 0, false, false, Translate);
+				}
+			}
+
 			o->EnableShadow = false;
 		}
 	}

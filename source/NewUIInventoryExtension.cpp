@@ -305,6 +305,14 @@ CNewUIInventoryCtrl* CNewUIInventoryExtension::TryGetExtensionByInventoryIndex(i
 }
 
 
+CNewUIInventoryCtrl* SEASON3B::CNewUIInventoryExtension::GetInventoryCtrl(int i) const
+{
+    if (i < 0 || i >= MAX_INVENTORY_EXT_COUNT)
+        return nullptr;
+
+    return m_extensions[i];
+}
+
 ITEM* CNewUIInventoryExtension::FindItem(int iIndex) const
 
 {
