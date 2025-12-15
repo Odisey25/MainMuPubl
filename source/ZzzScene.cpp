@@ -2557,6 +2557,10 @@ void MainScene(HDC hDC)
 	{
 		if (SocketClient.GetSocket() == INVALID_SOCKET)
 		{
+			if (g_pReconnect->s_Data.ReconnectStatus == g_pReconnect->RECONNECT_STATUS_RECONNECT)
+			{
+				return;
+			}
 			static BOOL s_bClosed = FALSE;
 			if (!s_bClosed)
 			{
@@ -2564,9 +2568,11 @@ void MainScene(HDC hDC)
 				g_ErrorReport.Write("> Connection closed. ");
 				g_ErrorReport.WriteCurrentTime();
 				SEASON3B::CreateMessageBox(MSGBOX_LAYOUT_CLASS(SEASON3B::CServerLostMsgBoxLayout));
+				
 			}
 		}
 	}
+
 
 	if (SceneFlag == MAIN_SCENE)
 	{
