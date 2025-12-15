@@ -50,3 +50,4 @@ vendor/
 # OS files
 .DS_Store
 Thumbs.db
+/source/Global Release/Main.pch
