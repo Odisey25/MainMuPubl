@@ -691,9 +691,9 @@ constexpr int MAX_ITEM = MAX_ITEM_TYPE * MAX_ITEM_INDEX;
 #define GET_ITEM(x, y)					((x * 512) + y)
 #define ITEM2(x, y)					((x * 512) + y + ITEM_INTER)
 //===Config Size
-#define TOOLTIP_LEVEL_SIZE							128
-#define TOOLTIP_TEXT_SIZE							512
-#define TOOLTIP_SIZE									60
+#define TOOLTIP_LEVEL_SIZE						128
+#define TOOLTIP_TEXT_SIZE						512
+#define TOOLTIP_SIZE							60
 #define USE_ITEMTOOLTIP_SS6						1
 
 
@@ -749,7 +749,7 @@ constexpr int MAX_ITEM = MAX_ITEM_TYPE * MAX_ITEM_INDEX;
 #define WIDE_SCREEN								1	//WIde
 #define UseNewMacroUI							0 //Su dung khung toa do mini map moi
 #define ShadowText								1 //Name Text Moi
-#define ShowLogoGuild							1
+#define ShowLogoGuild							0
 #define FixDmgQWORD								0
 
 #define UseReconnect							1

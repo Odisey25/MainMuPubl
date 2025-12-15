@@ -1114,7 +1114,7 @@ void RenderBoolean2(int x, int y, CHAT* c)
 		}
 		g_pRenderText->SetShadowText(0);
 	}
-}
+
 //#else
 void RenderBoolean(int x, int y, CHAT* c)
 {
