@@ -9345,155 +9345,167 @@ void RenderTournamentInterface()
 //	glColor3f(1.f, 1.f, 1.f);
 //}
 
-void RenderHPBar() // Show Nhân Vật Chính
+static HFONT s_Font = NULL;
+void RenderHPBar()
 {
+	if (gMapManager.InBloodCastle()) return;
+	if (gMapManager.InChaosCastle()) return;
+	if (!mShowHPBar) return;
+	if (g_pRenderText == NULL) return;
 
-	if (gMapManager.InBloodCastle() == true)
-	{
-		return;
+	const float Width = 100.0f;
+	const float Height = 10.0f;
+
+	if (!s_Font) {
+		s_Font = CreateFontA(14, 0, 0, 0, 800, 0, 0, 0, 0x1, 0, 0, 3u, 0, "Arial");
 	}
-	else if (gMapManager.InChaosCastle() == true)
-	{
-		return;
-	}
-	float   Width = 100;
-	float   Height = 10;
-	char    Text[100];
-	char    TextLV[100];
-	char    SD[100];
-	char    Name[100];
 
-	if (mShowHPBar)
-	{
+	GLboolean wasDepth = glIsEnabled(GL_DEPTH_TEST);
+	GLboolean wasBlend = glIsEnabled(GL_BLEND);
 
-		for (int j = 0; j < MAX_CHARACTERS_CLIENT; ++j)
+	glDisable(GL_DEPTH_TEST);
+	glDepthMask(GL_FALSE);
+
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+	EnableAlphaTest();
+	glColor4f(1.f, 1.f, 1.f, 1.f);
+
+	for (int j = 0; j < MAX_CHARACTERS_CLIENT; ++j)
+	{
+		CHARACTER* c = &CharactersClient[j];
+		OBJECT* o = &c->Object;
+
+		if (!o->Live) continue;
+
+		if (!(o->Kind == c->InfoHealBar.Type || c == Hero)) continue;
+
+		int curHP = 0, maxHP = 0, curSD = 0, maxSD = 0;
+
+		if (c == Hero)
 		{
-
-			CHARACTER* c = &CharactersClient[j]; //SelectedCharacter
-			OBJECT* o = &c->Object;
-
-
-			if (c == Hero)
-			{
-				goto Jump;
-			}
-
-			if (!c || !o->Live || c->InfoHealBar.Life < 1) continue;
-
-
-		Jump:
-			if (o->Kind == c->InfoHealBar.Type || c == Hero)
-			{
-				OBJECT* o = &c->Object;
-				vec3_t      Position;
-				int         ScreenX, ScreenY;
-
-				Vector(o->Position[0], o->Position[1], o->Position[2] + o->BoundingBoxMax[2] + 100.f, Position);
-				Projection(Position, &ScreenX, &ScreenY);
-				ScreenX -= (int)(Width / 2);
-
-				EnableAlphaTest();
-				glColor4f(1.f, 1.f, 1.f, 1.0f);
-
-				if (o->Kind == KIND_MONSTER)
-				{
-					RenderImageFFF(g_pBCustomMenuInfo->IMAGE_HP_BG, (float)(ScreenX + 1), (float)(ScreenY + 1), Width + 4.f, Height, 0.0, 0.0, 151, 12);
-				}
-				else if (o->Kind == KIND_PLAYER && c != Hero)
-				{
-					RenderImageFFF(g_pBCustomMenuInfo->IMAGE_HP_BG, (float)(ScreenX + 1), (float)(ScreenY + 1), Width / 2, Height, 0.0, 0.0, 151, 12);
-					RenderImageFFF(g_pBCustomMenuInfo->IMAGE_HP_BG, (float)(ScreenX + 1) + Width / 2, (float)(ScreenY + 1), Width / 2, Height, 0.0, 0.0, 151, 12);
-				}
-
-				if (o->Kind == KIND_MONSTER)
-				{
-					RenderImageFFF(g_pBCustomMenuInfo->IMAGE_HP_HP, (float)(ScreenX + 2), (float)(ScreenY + 3), (Width * (c->InfoHealBar.Life * 100 / c->InfoHealBar.MaxLife) / 100) + 5, Height - 4, 0.0, 0.0, 151, 12);
-				}
-				else if (o->Kind == KIND_PLAYER && c != Hero)
-				{
-					RenderImageFFF(g_pBCustomMenuInfo->IMAGE_HP_PLAYER, (float)(ScreenX + 2), (float)(ScreenY + 3), ((Width / 2) * (c->InfoHealBar.Life * 100 / c->InfoHealBar.MaxLife) / 100), Height - 4, 0.0, 0.0, 151, 12);
-					RenderImageFFF(g_pBCustomMenuInfo->IMAGE_HP_SD, (float)(ScreenX + 2) + Width / 2, (float)(ScreenY + 3), ((Width / 2) * (c->InfoHealBar.SD * 100 / c->InfoHealBar.MaxSD) / 100) - 1, Height - 4, 0.0, 0.0, 151, 12);
-
-				}
-				if (c == Hero)
-				{
-
-					RenderImageFFF(g_pBCustomMenuInfo->IMAGE_HP_BG, (float)(ScreenX + 1), (float)(ScreenY + 1), Width / 2, Height, 0.0, 0.0, 151, 12);
-					RenderImageFFF(g_pBCustomMenuInfo->IMAGE_HP_BG, (float)(ScreenX + 1) + Width / 2, (float)(ScreenY + 1), Width / 2, Height, 0.0, 0.0, 151, 12);
-
-
-					RenderImageFFF(g_pBCustomMenuInfo->IMAGE_HP_PLAYER, (float)(ScreenX + 2), (float)(ScreenY + 3), ((Width / 2) * (CharacterAttribute->PrintPlayer.ViewCurHP * 100 / CharacterAttribute->PrintPlayer.ViewMaxHP) / 100), Height - 4, 0.0, 0.0, 151, 12);
-					RenderImageFFF(g_pBCustomMenuInfo->IMAGE_HP_SD, (float)(ScreenX + 2) + Width / 2, (float)(ScreenY + 3), ((Width / 2) * (CharacterAttribute->PrintPlayer.ViewCurSD * 100 / CharacterAttribute->PrintPlayer.ViewMaxSD) / 100) - 1, Height - 4, 0.0, 0.0, 151, 12);
-
-
-				}
-				::EnableAlphaTest();
-				::glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-				{
-
-					if (c->InfoHealBar.Level < 100)
-					{
-						g_pRenderText->SetTextColor(CLRDW_DARKYELLOW);
-					}
-					else
-					{
-						g_pRenderText->SetTextColor(CLRDW_ORANGE);
-
-					}
-					g_pRenderText->SetShadowText(2);
-					g_pRenderText->SetBgColor(0);
-					sprintf(Name, "%s", c->ID);
-					if (c == Hero)
-					{
-						sprintf(Text, "%s", gInterface.NumberFormat(CharacterAttribute->PrintPlayer.ViewCurHP));
-						sprintf(SD, "%s", gInterface.NumberFormat(CharacterAttribute->PrintPlayer.ViewCurSD));
-					}
-					else
-					{
-						sprintf(Text, "%s", gInterface.NumberFormat(c->InfoHealBar.Life));
-						sprintf(SD, "%s", gInterface.NumberFormat(c->InfoHealBar.SD));
-					}
-
-					sprintf(TextLV, "Lv %d", c->InfoHealBar.Level);
-
-					if (o->Kind == KIND_MONSTER)
-					{
-						HFONT CHFontVIPRank = CreateFontA(14, 0, 0, 0, 800, 0, 0, 0, 0x1, 0, 0, 3u, 0, "Arial");
-						g_pRenderText->SetFont(CHFontVIPRank);
-						g_pRenderText->SetTextColor(255, 255, 255, 255);
-						g_pRenderText->RenderText(ScreenX - 10, ScreenY - 10, Name, Width + 26, 0, RT3_SORT_CENTER);
-						DeleteObject(CHFontVIPRank);
-					}
-
-					g_pRenderText->SetFont(g_hFontMini);
-					if (o->Kind == KIND_MONSTER)
-					{
-						HFONT CHFontVIPRank = CreateFontA(14, 0, 0, 0, 800, 0, 0, 0, 0x1, 0, 0, 3u, 0, "Arial");
-						g_pRenderText->SetFont(CHFontVIPRank);
-						g_pRenderText->SetTextColor(255, 255, 255, 255);
-						g_pRenderText->RenderText(ScreenX, ScreenY + 0.5, Text, Width + 6, 0, RT3_SORT_CENTER);
-						DeleteObject(CHFontVIPRank);
-
-					}
-					if (o->Kind == KIND_PLAYER)
-					{
-						HFONT CHFontVIPRank = CreateFontA(14, 0, 0, 0, 800, 0, 0, 0, 0x1, 0, 0, 3u, 0, "Arial");
-						g_pRenderText->SetFont(CHFontVIPRank);
-						g_pRenderText->SetTextColor(255, 255, 255, 255);
-						g_pRenderText->RenderText(ScreenX - (Width / 2) + 23.0f, ScreenY + 1.5, Text, Width + 6, 0, RT3_SORT_CENTER);
-						g_pRenderText->RenderText(ScreenX + 23.0f, ScreenY + 1.5, SD, Width + 6, 0, RT3_SORT_CENTER);
-						DeleteObject(CHFontVIPRank);
-					}
-					g_pRenderText->SetShadowText(0); //clear shadow
-				}
-				DisableAlphaBlend();
-			}
+			if (!CharacterAttribute) continue;
+			curHP = CharacterAttribute->PrintPlayer.ViewCurHP;
+			maxHP = CharacterAttribute->PrintPlayer.ViewMaxHP;
+			curSD = CharacterAttribute->PrintPlayer.ViewCurSD;
+			maxSD = CharacterAttribute->PrintPlayer.ViewMaxSD;
 		}
+		else
+		{
+			if (c->InfoHealBar.Life < 1) continue;
+			curHP = c->InfoHealBar.Life;
+			maxHP = c->InfoHealBar.MaxLife;
+			curSD = c->InfoHealBar.SD;
+			maxSD = c->InfoHealBar.MaxSD;
+		}
+
+		if (maxHP <= 0) continue;
+
+		vec3_t Position;
+		int ScreenX = 0, ScreenY = 0;
+
+		Vector(o->Position[0], o->Position[1],
+			o->Position[2] + o->BoundingBoxMax[2] + 100.f, Position);
+
+		Projection(Position, &ScreenX, &ScreenY);
+
+		ScreenX -= (int)(Width / 2);
+
+		float hpPct = (float)curHP / (float)maxHP;
+		if (hpPct < 0.f) hpPct = 0.f; if (hpPct > 1.f) hpPct = 1.f;
+
+		float sdPct = 0.f;
+		if (maxSD > 0) {
+			sdPct = (float)curSD / (float)maxSD;
+			if (sdPct < 0.f) sdPct = 0.f; if (sdPct > 1.f) sdPct = 1.f;
+		}
+
+		if (o->Kind == KIND_MONSTER)
+		{
+			RenderImageFFF(g_pBCustomMenuInfo->IMAGE_HP_BG,
+				(float)(ScreenX + 1), (float)(ScreenY + 1),
+				Width + 4.f, Height, 0.0, 0.0, 151, 12);
+		}
+		else
+		{
+			RenderImageFFF(g_pBCustomMenuInfo->IMAGE_HP_BG,
+				(float)(ScreenX + 1), (float)(ScreenY + 1),
+				Width / 2, Height, 0.0, 0.0, 151, 12);
+
+			RenderImageFFF(g_pBCustomMenuInfo->IMAGE_HP_BG,
+				(float)(ScreenX + 1) + Width / 2, (float)(ScreenY + 1),
+				Width / 2, Height, 0.0, 0.0, 151, 12);
+		}
+
+		if (o->Kind == KIND_MONSTER)
+		{
+			RenderImageFFF(g_pBCustomMenuInfo->IMAGE_HP_HP,
+				(float)(ScreenX + 2), (float)(ScreenY + 3),
+				(Width * hpPct) + 5.f, Height - 4, 0.0, 0.0, 151, 12);
+		}
+		else
+		{
+			RenderImageFFF(g_pBCustomMenuInfo->IMAGE_HP_PLAYER,
+				(float)(ScreenX + 2), (float)(ScreenY + 3),
+				(Width / 2) * hpPct, Height - 4, 0.0, 0.0, 151, 12);
+
+			RenderImageFFF(g_pBCustomMenuInfo->IMAGE_HP_SD,
+				(float)(ScreenX + 2) + Width / 2, (float)(ScreenY + 3),
+				((Width / 2) * sdPct > 1.f ? ((Width / 2) * sdPct - 1.f) : 0.f),
+				Height - 4, 0.0, 0.0, 151, 12);
+		}
+
+		char Name[100];   Name[0] = '\0';
+		char TextLV[64];  TextLV[0] = '\0';
+		char Text[100];   Text[0] = '\0';
+		char SD[100];     SD[0] = '\0';
+
+		if (c->ID) sprintf(Name, "%s", c->ID);
+		sprintf(TextLV, "Lv %d", c->InfoHealBar.Level);
+
+		sprintf(Text, "%s", gInterface.NumberFormat(curHP));
+		sprintf(SD, "%s", gInterface.NumberFormat(curSD));
+
+		g_pRenderText->SetFont(s_Font);
+		g_pRenderText->SetShadowText(2);
+		g_pRenderText->SetBgColor(0);
+
+		if (c->InfoHealBar.Level < 100) g_pRenderText->SetTextColor(CLRDW_DARKYELLOW);
+		else                           g_pRenderText->SetTextColor(CLRDW_ORANGE);
+
+		if (o->Kind == KIND_MONSTER && Name[0] != '\0')
+		{
+			g_pRenderText->SetTextColor(255, 255, 255, 255);
+			g_pRenderText->RenderText(ScreenX - 10, ScreenY - 10, Name, (int)(Width + 26), 0, RT3_SORT_CENTER);
+
+			g_pRenderText->RenderText(ScreenX, (int)(ScreenY + 0.5f), Text, (int)(Width + 6), 0, RT3_SORT_CENTER);
+		}
+
+		if (o->Kind == KIND_PLAYER)
+		{
+			g_pRenderText->SetTextColor(255, 255, 255, 255);
+
+			if (Text[0] != '\0')
+				g_pRenderText->RenderText((int)(ScreenX - (Width / 2) + 23.0f), (int)(ScreenY + 1.5f),
+					Text, (int)(Width + 6), 0, RT3_SORT_CENTER);
+
+			if (SD[0] != '\0')
+				g_pRenderText->RenderText((int)(ScreenX + 23.0f), (int)(ScreenY + 1.5f),
+					SD, (int)(Width + 6), 0, RT3_SORT_CENTER);
+		}
+
+		g_pRenderText->SetShadowText(0);
 	}
-	DisableAlphaBlend();
+
+	glDepthMask(GL_TRUE);
+	if (wasDepth) glEnable(GL_DEPTH_TEST); else glDisable(GL_DEPTH_TEST);
+	if (wasBlend) glEnable(GL_BLEND); else glDisable(GL_BLEND);
+
 	glColor3f(1.f, 1.f, 1.f);
 	g_pRenderText->SetFont(g_hFont);
 }
+
 
 
 void RenderBooleans()

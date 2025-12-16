@@ -9711,21 +9711,28 @@ void RenderPartObjectEffect(OBJECT* o, int Type, vec3_t Light, float Alpha, int 
 	}
 
 
+	// Type-Specific Level Mapping
 	switch (Type)
 	{
-	case MODEL_HELPER + 3:Level = 8; break;
-	case MODEL_HELPER + 39:Level = 13; break;
-	case MODEL_HELPER + 40:Level = 13; break;
-	case MODEL_HELPER + 41:Level = 13; break;
-	case MODEL_POTION + 51:Level = 13; break;
-	case MODEL_HELPER + 42:Level = 13; break;
-	case MODEL_HELPER + 10:Level = 8; break;
+		// Fixed levels
+	case MODEL_HELPER + 3: Level = 8; break;
+	case MODEL_HELPER + 39: Level = 13; break;
+	case MODEL_HELPER + 40: Level = 13; break;
+	case MODEL_HELPER + 41: Level = 13; break;
+	case MODEL_POTION + 51: Level = 13; break;
+	case MODEL_HELPER + 42: Level = 13; break;
+	case MODEL_HELPER + 10: Level = 8; break;
+
 	case MODEL_HELPER + 30:
 #ifdef PBG_ADD_NEWCHAR_MONK_ITEM
 	case MODEL_WING + 49:
-#endif //PBG_ADD_NEWCHAR_MONK_ITEM
-		Level = 0; break;
+#endif
+		Level = 0;
+		break;
+
 	case MODEL_EVENT + 16: Level = 0; break;
+
+		// Potions and jewels
 	case MODEL_POTION + 13:
 	case MODEL_POTION + 14:
 	case MODEL_POTION + 16:
@@ -9735,7 +9742,11 @@ void RenderPartObjectEffect(OBJECT* o, int Type, vec3_t Light, float Alpha, int 
 	case MODEL_WING + 141:
 	case MODEL_COMPILED_CELE:
 	case MODEL_COMPILED_SOUL:
-	case MODEL_WING + 15:Level = 8; break;
+	case MODEL_WING + 15:
+		Level = 8;
+		break;
+
+		// Wings with fixed levels
 	case MODEL_WING + 36:
 	case MODEL_WING + 37:
 	case MODEL_WING + 38:
@@ -9752,10 +9763,14 @@ void RenderPartObjectEffect(OBJECT* o, int Type, vec3_t Light, float Alpha, int 
 	case MODEL_WING + 1:
 #ifdef PBG_ADD_NEWCHAR_MONK_ITEM
 	case MODEL_WING + 50:
-#endif //PBG_ADD_NEWCHAR_MONK_ITEM
-	case MODEL_WING + 2:Level = 0; break;
-	case MODEL_WING + 7:Level = 9; break;
-	case MODEL_WING + 11:Level = 0; break;
+#endif
+	case MODEL_WING + 2:
+		Level = 0;
+		break;
+
+	case MODEL_WING + 7: Level = 9; break;
+	case MODEL_WING + 11: Level = 0; break;
+
 	case MODEL_WING + 12:
 	case MODEL_WING + 13:
 	case MODEL_WING + 16:
@@ -9766,20 +9781,16 @@ void RenderPartObjectEffect(OBJECT* o, int Type, vec3_t Light, float Alpha, int 
 	case MODEL_WING + 45:
 	case MODEL_WING + 46:
 	case MODEL_WING + 47:
-	{
 		Level = 9;
 		break;
-	}
-	case MODEL_WING + 14:
-		Level = 9;
-		break;
-	case MODEL_POTION + 12:
-		Level = 8;
-		break;
+
+	case MODEL_WING + 14: Level = 9; break;
+	case MODEL_POTION + 12: Level = 8; break;
+
+		// Potions with conditional logic
 	case MODEL_POTION + 17:
 	case MODEL_POTION + 18:
 	case MODEL_POTION + 19:
-	{
 		if (Level <= 6)
 		{
 			Level *= 2;
@@ -9788,32 +9799,34 @@ void RenderPartObjectEffect(OBJECT* o, int Type, vec3_t Light, float Alpha, int 
 		{
 			Level = 13;
 		}
-	}
-	break;
-	case MODEL_POTION + 20:Level = 9; break;
-	case MODEL_POTION + 22:Level = 8; break;
-	case MODEL_WING + 137:Level = 8; break;
-	case MODEL_POTION + 25:Level = 8; break;
-	case MODEL_POTION + 26:Level = 8; break;
+		break;
+
+	case MODEL_POTION + 20: Level = 9; break;
+	case MODEL_POTION + 22: Level = 8; break;
+	case MODEL_WING + 137: Level = 8; break;
+	case MODEL_POTION + 25: Level = 8; break;
+	case MODEL_POTION + 26: Level = 8; break;
+
 	case MODEL_WING + 139:
 	case MODEL_WING + 140:
 	case MODEL_WING + 142:
 	case MODEL_WING + 143:
 	case MODEL_POTION + 41:
-		Level = 0; break;
 	case MODEL_POTION + 42:
-		Level = 0; break;
 	case MODEL_POTION + 43:
-		Level = 0; break;
 	case MODEL_POTION + 44:
-		Level = 0; break;
+		Level = 0;
+		break;
+
 	case MODEL_HELPER + 50:
 	case MODEL_POTION + 64:
-		Level = 0; break;
 	case MODEL_HELPER + 52:
 	case MODEL_HELPER + 53:
-		Level = 0; break;
-	case MODEL_EVENT + 4:Level = 0; break;
+		Level = 0;
+		break;
+
+	case MODEL_EVENT + 4: Level = 0; break;
+
 	case MODEL_EVENT + 6:
 		if (Level == 13)
 		{
@@ -9824,47 +9837,54 @@ void RenderPartObjectEffect(OBJECT* o, int Type, vec3_t Light, float Alpha, int 
 			Level = 9;
 		}
 		break;
-	case MODEL_EVENT + 7:Level = 0; break;
-	case MODEL_EVENT + 8:Level = 0; break;
-	case MODEL_EVENT + 9:Level = 8; break;
-	case MODEL_EVENT + 5:
-	{
+
+	case MODEL_EVENT + 7:
+	case MODEL_EVENT + 8:
 		Level = 0;
-	}
-	break;
-	case MODEL_EVENT + 10:
-		Level = (Level - 8) * 2 + 1;
 		break;
+
+	case MODEL_EVENT + 9: Level = 8; break;
+	case MODEL_EVENT + 5: Level = 0; break;
+
+	case MODEL_EVENT + 10:
+		Level = ((Level - 8) * 2) + 1;
+		break;
+
 	case MODEL_EVENT + 11:
 		Level--;
 		break;
+
 	case MODEL_EVENT + 12:
-		Level = 0;
-		break;
 	case MODEL_EVENT + 13:
 		Level = 0;
 		break;
-	case MODEL_EVENT + 14:
-		Level += 7;
-		break;
-	case MODEL_EVENT + 15:
+
+	case MODEL_EVENT + 14: Level = 7; break;
+	case MODEL_EVENT + 15: Level = 8; break;
+	case MODEL_EVENT:
+	case MODEL_EVENT + 1:
 		Level = 8;
 		break;
-	case MODEL_EVENT:
-	case MODEL_EVENT + 1:Level = 8; break;
-	case MODEL_BOW + 7: Level >= 1 ? Level = Level * 2 + 1 : Level = 0; break;//CustomArrow No
-	case MODEL_BOW + 15:Level >= 1 ? Level = Level * 2 + 1 : Level = 0; break;//CustomArrow Cung
+
+		// Bows with formula
+	case MODEL_BOW + 7:
+	case MODEL_BOW + 15:
+		Level = (Level >= 1) ? (Level * 2 + 1) : 0;
+		break;
+
 #ifdef LJH_ADD_ITEMS_EQUIPPED_FROM_INVENTORY_SYSTEM
 	case MODEL_HELPER + 134:
 		Level = 13;
 		break;
-#endif //LJH_ADD_ITEMS_EQUIPPED_FROM_INVENTORY_SYSTEM
+#endif
 	}
-	//==WingDisableLevelGlow
-	if (gCustomWing.CheckCustomWingByItemGlow(Type - MODEL_ITEM) || g_pNewUISystem->GetUI_NewOptionWindow()->OnOffGrap[g_pNewUISystem->GetUI_NewOptionWindow()->eGlowEffect] == 0)
+
+	// WingDisableLevelGlow
+	if (gCustomWing.CheckCustomWingByItemGlow(Type - MODEL_ITEM))
 	{
-		Level = 0;
+		Level = 0;  // Disable glow for custom wings
 	}
+
 
 
 	if (g_pOption->GetRenderLevel() < 4)
@@ -9882,27 +9902,68 @@ void RenderPartObjectEffect(OBJECT* o, int Type, vec3_t Light, float Alpha, int 
 	}
 	else if (o->Type == MODEL_POTION + 27)
 	{
+		// Level-based mesh rendering
 		Vector(1.f, 1.f, 1.f, b->BodyLight);
 		b->StreamMesh = 0;
-		b->RenderMesh(0, RENDER_TEXTURE, o->Alpha, -1, o->BlendMeshLight, o->BlendMeshTexCoordU, o->BlendMeshTexCoordV);
+		b->RenderMesh(0, RENDER_TEXTURE, o->Alpha, -1, o->BlendMeshLight,
+			o->BlendMeshTexCoordU, o->BlendMeshTexCoordV);
+
 		if (Level == 1)
 		{
+			// Base only - no glow meshes
 		}
 		else if (Level == 2)
 		{
-			b->RenderMesh(1, RENDER_TEXTURE, o->Alpha, -1, o->BlendMeshLight, o->BlendMeshTexCoordU, o->BlendMeshTexCoordV);
+			b->RenderMesh(1, RENDER_TEXTURE, o->Alpha, -1, o->BlendMeshLight,
+				o->BlendMeshTexCoordU, o->BlendMeshTexCoordV);
 			Vector(0.75f, 0.65f, 0.5f, b->BodyLight);
-			b->RenderMesh(1, RENDER_BRIGHT | RENDER_CHROME, o->Alpha, -1, o->BlendMeshLight, o->BlendMeshTexCoordU, o->BlendMeshTexCoordV, BITMAP_CHROME);
+			b->RenderMesh(1, RENDER_BRIGHT | RENDER_CHROME, o->Alpha, -1,
+				o->BlendMeshLight, o->BlendMeshTexCoordU, o->BlendMeshTexCoordV,
+				BITMAP_CHROME);
 		}
 		else if (Level == 3)
 		{
-			b->RenderMesh(1, RENDER_TEXTURE, o->Alpha, -1, o->BlendMeshLight, o->BlendMeshTexCoordU, o->BlendMeshTexCoordV);
-			b->RenderMesh(2, RENDER_TEXTURE, o->Alpha, -1, o->BlendMeshLight, o->BlendMeshTexCoordU, o->BlendMeshTexCoordV);
+			b->RenderMesh(1, RENDER_TEXTURE, o->Alpha, -1, o->BlendMeshLight,
+				o->BlendMeshTexCoordU, o->BlendMeshTexCoordV);
+			b->RenderMesh(2, RENDER_TEXTURE, o->Alpha, -1, o->BlendMeshLight,
+				o->BlendMeshTexCoordU, o->BlendMeshTexCoordV);
 			Vector(0.75f, 0.65f, 0.5f, b->BodyLight);
-			b->RenderMesh(1, RENDER_BRIGHT | RENDER_CHROME, o->Alpha, -1, o->BlendMeshLight, o->BlendMeshTexCoordU, o->BlendMeshTexCoordV, BITMAP_CHROME);
-			b->RenderMesh(2, RENDER_BRIGHT | RENDER_CHROME, o->Alpha, -1, o->BlendMeshLight, o->BlendMeshTexCoordU, o->BlendMeshTexCoordV, BITMAP_CHROME);
+			b->RenderMesh(1, RENDER_BRIGHT | RENDER_CHROME, o->Alpha, -1,
+				o->BlendMeshLight, o->BlendMeshTexCoordU, o->BlendMeshTexCoordV,
+				BITMAP_CHROME);
+			b->RenderMesh(2, RENDER_BRIGHT | RENDER_CHROME, o->Alpha, -1,
+				o->BlendMeshLight, o->BlendMeshTexCoordU, o->BlendMeshTexCoordV,
+				BITMAP_CHROME);
 		}
+
 		b->StreamMesh = -1;
+		return;
+	}
+	else if (o->Type == MODEL_HELPER + 15)
+	{
+		// Level-based colors
+		switch (Level)
+		{
+		case 0:
+			Vector(0.0f, 0.5f, 1.0f, b->BodyLight);
+			break;
+		case 1:
+			Vector(1.0f, 0.2f, 0.0f, b->BodyLight);
+			break;
+		case 2:
+			Vector(1.0f, 0.8f, 0.0f, b->BodyLight);
+			break;
+		case 3:
+			Vector(0.6f, 0.8f, 0.4f, b->BodyLight);
+			break;
+		}
+
+		b->RenderBody(RENDER_METAL, o->Alpha, o->BlendMesh, o->BlendMeshLight,
+			o->BlendMeshTexCoordU, o->BlendMeshTexCoordV, o->HiddenMesh,
+			BITMAP_CHROME + 1);
+		b->RenderBody(RENDER_BRIGHT | RENDER_CHROME, o->Alpha, o->BlendMesh,
+			o->BlendMeshLight, o->BlendMeshTexCoordU, o->BlendMeshTexCoordV,
+			o->HiddenMesh, BITMAP_CHROME + 1);
 		return;
 	}
 	else if (o->Type == MODEL_POTION + 63)
