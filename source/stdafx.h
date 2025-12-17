@@ -30,9 +30,11 @@
 // Exclude rarely-used stuff from Windows headers
 #define WIN32_LEAN_AND_MEAN	
 	
-#ifndef _USE_32BIT_TIME_T
-	#define _USE_32BIT_TIME_T
-#endif //_USE_32BIT_TIME_T
+#if defined(_WIN32) && !defined(_WIN64)
+    #ifndef _USE_32BIT_TIME_T
+        #define _USE_32BIT_TIME_T
+    #endif
+#endif
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define _CRT_NONSTDC_NO_DEPRECATE
