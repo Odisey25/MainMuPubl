@@ -1,7 +1,0 @@
-# Método 1: Web interface
-1. https://github.com/Odisey25/Main.6.3/settings
-2. Scroll to "Danger Zone" (muy abajo)
-3. "Change visibility" → "Public" → Confirmar
-
-# Método 2: GitHub CLI
-gh repo edit Odisey25/Main.6.3 --visibility=public
