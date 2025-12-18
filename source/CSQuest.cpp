@@ -18,6 +18,15 @@
 #include "NewUIInventoryCtrl.h"
 #include "CharacterManager.h"
 
+// Macro para sprintf compatible con 32 y 64 bits
+#ifdef _WIN64
+#define SPRINTF_SAFE(buffer, size, format, ...) sprintf_s(buffer, size, format, __VA_ARGS__)
+#define SPRINTF_SAFE_STR(buffer, format, ...) sprintf_s(buffer, sizeof(buffer), format, __VA_ARGS__)
+#else
+#define SPRINTF_SAFE(buffer, size, format, ...) sprintf(buffer, format, __VA_ARGS__)
+#define SPRINTF_SAFE_STR(buffer, format, ...) sprintf(buffer, format, __VA_ARGS__)
+#endif
+
 bool bCheckNPC;
 extern  int  g_iMessageTextStart;
 extern  char g_cMessageTextCurrNum;
@@ -121,30 +130,72 @@ int CSQuest::GetEventCount(BYTE byType)
 	return m_byEventCount[byType];
 }
 
-bool CSQuest::OpenQuestScript ( char* filename )
+bool CSQuest::OpenQuestScript(char* filename)
 {
-	FILE* fp = fopen ( filename, "rb" );
-	if ( fp==NULL )                
-	{
-		char Text[256];
-    	sprintf ( Text,"%s - File not exist.",filename );
-		return  FALSE;
-	}
+    FILE* fp = fopen(filename, "rb");
+    if (fp == NULL)
+    {
+        char Text[256];
+#ifdef _WIN64
+        sprintf_s(Text, sizeof(Text), "%s - File not exist.", filename);
+#else
+        sprintf(Text, "%s - File not exist.", filename);
+#endif
+        return FALSE;
+    }
 
-    memset ( m_Quest, 0, sizeof( QUEST_ATTRIBUTE )*MAX_QUESTS );
+    // Validar que m_Quest esté inicializado
+    if (m_Quest == NULL)
+    {
+        fclose(fp);
+        return FALSE;
+    }
 
-	int     Size    = sizeof ( QUEST_ATTRIBUTE );
-	BYTE*   Buffer  = new BYTE [Size];
-	for ( int i=0; i<MAX_QUESTS; i++ )
-	{
-		fread ( Buffer, Size, 1, fp );
-		BuxConvert ( Buffer, Size );
-		memcpy ( &m_Quest[i], Buffer, Size );
-	}
-	SAFE_DELETE_ARRAY(Buffer);
-	fclose ( fp );
+    memset(m_Quest, 0, sizeof(QUEST_ATTRIBUTE) * MAX_QUESTS);
 
-	return  TRUE;
+    int Size = sizeof(QUEST_ATTRIBUTE);
+
+    // Validación: verificar que el tamaño sea razonable
+    if (Size <= 0 || Size > 10000)
+    {
+        fclose(fp);
+        return FALSE;
+    }
+
+    BYTE* Buffer = new BYTE[Size];
+
+    if (Buffer == NULL)
+    {
+        fclose(fp);
+        return FALSE;
+    }
+
+    for (int i = 0; i < MAX_QUESTS; i++)
+    {
+        size_t bytesRead = fread(Buffer, 1, Size, fp);
+
+        // Validar que se leyó correctamente
+        if (bytesRead != (size_t)Size)
+        {
+            delete[] Buffer;
+            fclose(fp);
+            return FALSE;
+        }
+
+        BuxConvert(Buffer, Size);
+
+        // Usar memcpy con validación
+#ifdef _WIN64
+        memcpy_s(&m_Quest[i], sizeof(QUEST_ATTRIBUTE), Buffer, Size);
+#else
+        memcpy(&m_Quest[i], Buffer, Size);
+#endif
+    }
+
+    delete[] Buffer;
+    fclose(fp);
+
+    return TRUE;
 }
 
 void CSQuest::setQuestLists ( BYTE* byList, int num, int Class )
@@ -636,23 +687,34 @@ void CSQuest::RenderDevilSquare ( void )
 	g_pRenderText->SetTextColor(200, 220, 255, 255);
 }
 
-void CSQuest::RenderBloodCastle ( void )
+void CSQuest::RenderBloodCastle(void)
 {
-    char Text[100];
+	char Text[100];
+
 	g_pRenderText->SetFont(g_hFontBold);
 	g_pRenderText->SetTextColor(230, 230, 230, 255);
 	g_pRenderText->SetBgColor(20, 20, 20, 255);
-	g_pRenderText->RenderText(m_iStartX+95-60, m_iStartY+12, GlobalText[1146],120, 0, RT3_SORT_CENTER);
-
+	g_pRenderText->RenderText(m_iStartX + 95 - 60, m_iStartY + 12, GlobalText[1146], 120, 0, RT3_SORT_CENTER);
 	g_pRenderText->SetTextColor(223, 191, 103, 255);
 	g_pRenderText->SetBgColor(0);
-	sprintf ( Text, GlobalText[869], BLOODCASTLE_QUEST_NUM, GlobalText[1146], GlobalText[1140]);
-	g_pRenderText->RenderText(m_iStartX+95, m_iStartY+80, Text, 0 ,0, RT3_WRITE_CENTER);
-	g_pRenderText->SetTextColor(255, 230, 210, 255);
-	g_pRenderText->RenderText(m_iStartX+85, m_iStartY+100, GlobalText[877], 0 ,0, RT3_WRITE_CENTER);
-    g_pRenderText->RenderText(m_iStartX+105, m_iStartY+120, GlobalText[878], 0 ,0, RT3_WRITE_CENTER);
 
+#ifdef _WIN64
+	sprintf_s(Text, sizeof(Text), GlobalText[869], BLOODCASTLE_QUEST_NUM, GlobalText[1146], GlobalText[1140]);
+#else
+	sprintf(Text, GlobalText[869], BLOODCASTLE_QUEST_NUM, GlobalText[1146], GlobalText[1140]);
+#endif
+
+	g_pRenderText->RenderText(m_iStartX + 95, m_iStartY + 80, Text, 0, 0, RT3_WRITE_CENTER);
+	g_pRenderText->SetTextColor(255, 230, 210, 255);
+	g_pRenderText->RenderText(m_iStartX + 85, m_iStartY + 100, GlobalText[877], 0, 0, RT3_WRITE_CENTER);
+	g_pRenderText->RenderText(m_iStartX + 105, m_iStartY + 120, GlobalText[878], 0, 0, RT3_WRITE_CENTER);
 	g_pRenderText->SetFont(g_hFontBig);
-	sprintf ( Text, GlobalText[868], m_byEventCount[m_byQuestType] );
-	g_pRenderText->RenderText(m_iStartX+95, m_iStartY+65+60*4, Text, 0 ,0, RT3_WRITE_CENTER);
+
+#ifdef _WIN64
+	sprintf_s(Text, sizeof(Text), GlobalText[868], m_byEventCount[m_byQuestType]);
+#else
+	sprintf(Text, GlobalText[868], m_byEventCount[m_byQuestType]);
+#endif
+
+	g_pRenderText->RenderText(m_iStartX + 95, m_iStartY + 65 + 60 * 4, Text, 0, 0, RT3_WRITE_CENTER);
 }

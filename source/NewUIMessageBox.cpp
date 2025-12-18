@@ -6,6 +6,7 @@
 #include "NewUIMessageBox.h"	// self
 #include "NewUIManager.h"
 #include "UIControls.h"
+#include <intrin.h>
 extern int DisplayWinCDepthBox;
 extern int DisplayWin;
 extern int DisplayWinMid;
@@ -305,9 +306,9 @@ bool SEASON3B::CNewUIMessageBoxMng::UpdateKeyEvent()
 bool SEASON3B::CNewUIMessageBoxMng::Update()
 {
 	//. Update
-	std::sort(m_vecMsgBoxes.begin(),m_vecMsgBoxes.end(), ComparePriority);
+	std::sort(m_vecMsgBoxes.begin(), m_vecMsgBoxes.end(), ComparePriority);
 	type_vector_msgbox::iterator vi = m_vecMsgBoxes.begin();
-	if(vi == m_vecMsgBoxes.end())
+	if (vi == m_vecMsgBoxes.end())
 	{
 		return true;
 	}
@@ -315,30 +316,30 @@ bool SEASON3B::CNewUIMessageBoxMng::Update()
 	bool bResult = pCurMsgBox->Update();
 
 	//. Event Processing
-	while(!m_queueEvents.empty())
+	while (!m_queueEvents.empty())
 	{
 		CNewUIEvent* pEvent = m_queueEvents.front();
-		if(pEvent->GetOwner() == pCurMsgBox)
+		if (pEvent->GetOwner() == pCurMsgBox)
 		{
 			//. function call
 			EVENT_CALLBACK pCallback = pCurMsgBox->GetCallbackFunc(pEvent->GetEvent());
-			if(pCallback)
+			if (pCallback)
 			{
 				CALLBACK_RESULT Result = (*pCallback)(pCurMsgBox, pEvent->GetParam());
-				if(CALLBACK_BREAK == Result)
+				if (CALLBACK_BREAK == Result)
 				{
 					PopEvent(); break;
 				}
-				if(CALLBACK_EXCEPTION == Result)
+				if (CALLBACK_EXCEPTION == Result)
 				{
-					__asm { int 3 };
+					__debugbreak();  // Reemplazado: __asm { int 3 }
 				}
-				if(CALLBACK_POP_ALL_EVENTS == Result)
+				if (CALLBACK_POP_ALL_EVENTS == Result)
 				{
 					PopAllEvents(); break;
 				}
 			}
-			if(pEvent->GetEvent() == MSGBOX_EVENT_DESTROY)
+			if (pEvent->GetEvent() == MSGBOX_EVENT_DESTROY)
 			{
 				DeleteMessageBox(pCurMsgBox);
 				PopAllEvents();
@@ -347,7 +348,7 @@ bool SEASON3B::CNewUIMessageBoxMng::Update()
 		}
 		PopEvent();
 	}
-	return bResult; 
+	return bResult;
 }
 
 bool SEASON3B::CNewUIMessageBoxMng::Render()

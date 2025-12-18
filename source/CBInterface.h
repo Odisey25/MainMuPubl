@@ -416,7 +416,7 @@ public:
 	bool		check_Captcha(std::string& captcha, std::string& user_input);
 	std::string generateCaptcha(int n);
 	std::string vCaptcha;
-	bool Interface::gDrawPegasus(int IDGUID, float PosX, float PosY, float SizeW, float SizeH, int TypeButton, LPCSTR Text, const BYTE* a9);
+	bool Interface::gDrawPegasus(int IDGUID, float PosX, float PosY, float SizeW, float SizeH, int TypeButton, LPCSTR Text, ...);
 	bool Interface::DrawCustomButton(int x, int y, int width, int height, const char* text);
 	void Interface::DrawInfoMini();
 	void Interface::DrawWindowMuaVIP();

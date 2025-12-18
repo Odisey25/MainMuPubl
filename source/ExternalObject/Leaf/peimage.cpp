@@ -742,7 +742,12 @@ bool CPeImageDataInjector::WriteNtHeaders(xstreambuf& xNewImage, const void* pOr
 	NewNtHeaders.OptionalHeader.FileAlignment = pIPH->wFileAlignment;
 	NewNtHeaders.OptionalHeader.SizeOfHeaders = pIPH->wSizeOfHeaders;
 	NewNtHeaders.OptionalHeader.BaseOfCode = pIPH->dwBaseOfCode;
+
+#ifndef _WIN64
+	// Solo en 32 bits: BaseOfData existe
 	NewNtHeaders.OptionalHeader.BaseOfData = pIPH->dwBaseOfCode + pOrigNtHeaders->OptionalHeader.SizeOfCode + pIPH->dwSizeOfIPD;
+#endif
+
 	xNewImage.write(&NewNtHeaders, sizeof(IMAGE_NT_HEADERS));
 
 	//. acquire nt header

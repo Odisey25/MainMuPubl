@@ -46,23 +46,45 @@ CCallStackDump::~CCallStackDump() { Clear(); }
 
 void CCallStackDump::Dump(const CONTEXT* pContext) {
 	Clear();
-	
-	DWORD* pEbp = (DWORD*)pContext->Ebp;
-	for(int i=0; i<64; i++) 
+
+#ifdef _WIN64
+	// 64 bits: usar Rbp (64-bit base pointer)
+	DWORD64* pEbp = (DWORD64*)pContext->Rbp;
+	for (int i = 0; i < 64; i++)
 	{
 		CCallStackFrame* pCallStackFrame = new CCallStackFrame;
-		if(!pCallStackFrame->Create(pEbp)) 
+		if (!pCallStackFrame->Create((DWORD*)pEbp))
 		{
 			delete pCallStackFrame; break;
 		}
 		m_listFrame.push_back(pCallStackFrame);
 
-		if(IsBadReadPtr((DWORD*)*pEbp, sizeof(DWORD)))
+		if (IsBadReadPtr((DWORD64*)*pEbp, sizeof(DWORD64)))
+			break;
+
+		pEbp = (DWORD64*)*pEbp;
+	}
+#else
+	// 32 bits: usar Ebp (32-bit base pointer)
+	DWORD* pEbp = (DWORD*)pContext->Ebp;
+	for (int i = 0; i < 64; i++)
+	{
+		CCallStackFrame* pCallStackFrame = new CCallStackFrame;
+		if (!pCallStackFrame->Create(pEbp))
+		{
+			delete pCallStackFrame; break;
+		}
+		m_listFrame.push_back(pCallStackFrame);
+
+		if (IsBadReadPtr((DWORD*)*pEbp, sizeof(DWORD)))
 			break;
 
 		pEbp = (DWORD*)*pEbp;
 	}
+#endif
 }
+
+
 void CCallStackDump::Dump() 
 {
 	CONTEXT ct;

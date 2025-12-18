@@ -28,6 +28,7 @@ void CSprite::Release()
 	SAFE_DELETE_ARRAY(m_aFrameTexCoord);
 }
 
+
 void CSprite::Create(int nOrgWidth, int nOrgHeight, int nTexID, int nMaxFrame, SFrameCoord* aFrameCoord, int nDatumX, int nDatumY, bool bTile, int nSizingDatums, float fScaleX, float fScaleY)
 {
 	Release();
@@ -36,6 +37,9 @@ void CSprite::Create(int nOrgWidth, int nOrgHeight, int nTexID, int nMaxFrame, S
 	m_fOrgHeight = (float)nOrgHeight;
 	m_nTexID = nTexID;
 	m_pTexture = Bitmaps.FindTexture(m_nTexID);
+
+	// Validación de fScaleY
+	if (fScaleY <= 0.0f) fScaleY = 1.0f;
 
 	m_fScrHeight = (float)WindowHeight / fScaleY;
 
@@ -50,7 +54,7 @@ void CSprite::Create(int nOrgWidth, int nOrgHeight, int nTexID, int nMaxFrame, S
 
 	m_nNowFrame = -1;
 
-	if (-1 < m_nTexID)
+	if (-1 < m_nTexID && m_pTexture != NULL && m_pTexture->Width > 0 && m_pTexture->Height > 0)
 	{
 		m_aTexCoord[LT].fTU = 0.5f / m_pTexture->Width;
 		m_aTexCoord[LT].fTV = 0.5f / m_pTexture->Height;
@@ -64,15 +68,13 @@ void CSprite::Create(int nOrgWidth, int nOrgHeight, int nTexID, int nMaxFrame, S
 		if (NULL != aFrameCoord)
 		{
 			_ASSERT(0 < nMaxFrame);
-
 			m_nMaxFrame = nMaxFrame;
-
 			m_aFrameTexCoord = new STexCoord[m_nMaxFrame];
 
 			for (int i = 0; i < m_nMaxFrame; ++i)
 			{
-				m_aFrameTexCoord[i].fTU = ((float)aFrameCoord[i].nX + 0.5f)	/ m_pTexture->Width;
-				m_aFrameTexCoord[i].fTV = ((float)aFrameCoord[i].nY + 0.5f)	/ m_pTexture->Height;
+				m_aFrameTexCoord[i].fTU = ((float)aFrameCoord[i].nX + 0.5f) / m_pTexture->Width;
+				m_aFrameTexCoord[i].fTV = ((float)aFrameCoord[i].nY + 0.5f) / m_pTexture->Height;
 			}
 
 			m_nStartFrame = m_nEndFrame = 0;
@@ -88,7 +90,12 @@ void CSprite::Create(int nOrgWidth, int nOrgHeight, int nTexID, int nMaxFrame, S
 	}
 	else
 	{
-		::memset(m_aTexCoord, 0, sizeof(STexCoord) * POS_MAX);
+		// SOLUCIÓN: Inicializar manualmente (funciona igual en 32 y 64 bits)
+		for (int i = 0; i < POS_MAX; ++i)
+		{
+			m_aTexCoord[i].fTU = 0.0f;
+			m_aTexCoord[i].fTV = 0.0f;
+		}
 
 		m_nMaxFrame = 0;
 		m_nStartFrame = m_nEndFrame = -1;
@@ -96,10 +103,8 @@ void CSprite::Create(int nOrgWidth, int nOrgHeight, int nTexID, int nMaxFrame, S
 	}
 
 	m_byAlpha = m_byRed = m_byGreen = m_byBlue = 255;
-
 	m_fDatumX = (float)nDatumX;
 	m_fDatumY = (float)nDatumY;
-
 	m_bRepeat = false;
 	m_dDelayTime = m_dDeltaTickSum = 0.0;
 	m_nSizingDatums = nSizingDatums;
@@ -107,6 +112,7 @@ void CSprite::Create(int nOrgWidth, int nOrgHeight, int nTexID, int nMaxFrame, S
 	m_fScaleY = fScaleY;
 	m_bShow = false;
 }
+
 
 void CSprite::Create(SImgInfo* pImgInfo, int nDatumX, int nDatumY, bool bTile,
 					 int nSizingDatums, float fScaleX, float fScaleY)

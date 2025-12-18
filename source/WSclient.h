@@ -4,8 +4,13 @@
 #pragma once
 
 #include "wsctlc.h"
+#ifdef _WIN64
+#include <SimpleModulus/SimpleModulus.h>
+#else
 #include "SimpleModulus.h"
+#endif
 #include "CSMapServer.h"
+
 
 #define WM_ASYNCSELECTMSG (WM_USER+0)
 

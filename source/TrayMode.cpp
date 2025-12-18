@@ -50,13 +50,32 @@ void CTrayMode::Toggle() // OK
 	}
 }
 
-LONG CTrayMode::GetMainWndProc() // OK
+#ifdef _WIN64
+LONG_PTR CTrayMode::GetMainWndProc()
 {
-	//Window = FindWindow(gProtect.m_MainInfo.WindowName, NULL);
 	Window = g_hWnd;
 
-	return ((this->m_MainWndProc == 0) ? ((LONG)(this->m_MainWndProc = (WNDPROC)SetWindowLong(Window, GWL_WNDPROC, (LONG)CTrayMode::TrayModeWndProc))) : ((LONG)this->m_MainWndProc));
+	if (this->m_MainWndProc == 0)
+	{
+		this->m_MainWndProc = (WNDPROC)SetWindowLongPtr(Window, GWLP_WNDPROC, (LONG_PTR)CTrayMode::TrayModeWndProc);
+	}
+
+	return (LONG_PTR)this->m_MainWndProc;
 }
+#else
+LONG CTrayMode::GetMainWndProc()
+{
+	Window = g_hWnd;
+
+	if (this->m_MainWndProc == 0)
+	{
+		this->m_MainWndProc = (WNDPROC)SetWindowLong(Window, GWL_WNDPROC, (LONG)CTrayMode::TrayModeWndProc);
+	}
+
+	return (LONG)this->m_MainWndProc;
+}
+#endif
+
 
 void CTrayMode::ShowNotify(bool mode) // OK
 {

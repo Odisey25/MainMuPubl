@@ -69,6 +69,12 @@
 #include <vector>
 #include <queue>
 
+#ifdef _WIN64
+#include <SimpleModulus/SimpleModulus.h>
+#else
+#include "SimpleModulus.h"
+#endif
+
 #pragma warning( pop )
 
 //opengl
@@ -102,6 +108,7 @@
 #include <iomanip>
 #include <string>
 #include <sstream>
+#include <intrin.h>
 
 #define CURL_STATICLIB
 #pragma comment(lib, "crypt32.lib")

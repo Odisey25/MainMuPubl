@@ -1056,18 +1056,16 @@ void Interface::DrawWindowJewelBankVer2()
 }
 
 
-bool Interface::gDrawPegasus(int IDGUID, float PosX, float PosY, float SizeW, float SizeH, int TypeButton, LPCSTR Text, const BYTE* a9)
+bool Interface::gDrawPegasus(int IDGUID, float PosX, float PosY, float SizeW, float SizeH, int TypeButton, LPCSTR Text, ...)
 {
 	bool mreturn = false;
-	//=====================Button 1
-
 
 	char WindowName[2048];
 	int BuffLen = sizeof(WindowName) - 1;
 	ZeroMemory(WindowName, BuffLen);
 
 	va_list args;
-	va_start(args, Text);
+	va_start(args, Text);  // Text es el último parámetro antes de ...
 	int Len = vsprintf_s(WindowName, BuffLen, Text, args);
 	va_end(args);
 
@@ -1085,7 +1083,6 @@ bool Interface::gDrawPegasus(int IDGUID, float PosX, float PosY, float SizeW, fl
 			else {
 				pDrawButton(IDGUID, PosX, PosY, SizeW, SizeH, 0.0, SizeH * 1);
 			}
-
 		}
 		else {
 			pDrawButton(IDGUID, PosX, PosY, SizeW, SizeH, 0.0, 0.0);
@@ -1095,7 +1092,6 @@ bool Interface::gDrawPegasus(int IDGUID, float PosX, float PosY, float SizeW, fl
 	{
 		if (SEASON3B::CheckMouseIn(PosX, PosY, SizeW, SizeH) == 1)
 		{
-
 			if ((GetKeyState(VK_LBUTTON) & 0x8000) && GetTickCount() - gInterface.Data[eWindowClick].EventTick > 500 && !gInterface.BLockButtonHover)
 			{
 				gInterface.Data[eWindowClick].EventTick = GetTickCount();
@@ -1106,19 +1102,16 @@ bool Interface::gDrawPegasus(int IDGUID, float PosX, float PosY, float SizeW, fl
 			else {
 				pDrawButton(IDGUID, PosX, PosY, SizeW, SizeH, 0.0, 0.0);
 			}
-
 		}
 		else {
 			pDrawButton(IDGUID, PosX, PosY, SizeW, SizeH, 0.0, 0.0);
 		}
 	}
-
 	else
 	{
 		if (SEASON3B::CheckMouseIn(PosX, PosY, SizeW, SizeH) == 1)
 		{
-		
-			if (GetTickCount() - gInterface.Data[eWindowClick].EventTick > 500 && !gInterface.BLockButtonHover) //Click
+			if (GetTickCount() - gInterface.Data[eWindowClick].EventTick > 500 && !gInterface.BLockButtonHover)
 			{
 				if ((GetKeyState(VK_LBUTTON) & 0x8000))
 				{
@@ -1128,7 +1121,6 @@ bool Interface::gDrawPegasus(int IDGUID, float PosX, float PosY, float SizeW, fl
 				}
 			}
 			RenderImage(IDGUID, PosX, PosY, SizeW, SizeH, 0, 0, RGBA(255, 228, 107, 255));
-		
 		}
 		else
 		{

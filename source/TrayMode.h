@@ -10,15 +10,20 @@
 class CTrayMode
 {
 public:
-	CTrayMode();
-	void Init(HINSTANCE hins);
-	void Toggle();
-	LONG GetMainWndProc();
-	void ShowNotify(bool mode);
-	static LRESULT CALLBACK TrayModeWndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
-	HICON m_TrayIcon;
+    CTrayMode();
+    void Init(HINSTANCE hins);
+    void Toggle();
+#ifdef _WIN64
+    LONG_PTR GetMainWndProc();  // 64 bits
+#else
+    LONG GetMainWndProc();      // 32 bits
+#endif
+    void ShowNotify(bool mode);
+    static LRESULT CALLBACK TrayModeWndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
+    HICON m_TrayIcon;
 private:
-	WNDPROC m_MainWndProc;
+    WNDPROC m_MainWndProc;
 };
+
 
 extern CTrayMode gTrayMode;

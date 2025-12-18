@@ -5,7 +5,7 @@
 
 #include "checkintegrity.h"
 #include "xstreambuf.h"
-
+#include <intrin.h>
 #include <algorithm>
 
 using namespace leaf;
@@ -472,46 +472,60 @@ void CCyclicRedundancyCheck32::DestroyCrc32Table()
 	delete [] m_pdwCrc32Table; 
 }
 
-void CCyclicRedundancyCheck32::GenerateCrc32SeedAssembly(BYTE* pbyBuffer, size_t size, DWORD& dwCrc32) 
+void CCyclicRedundancyCheck32::GenerateCrc32SeedAssembly(BYTE* pbyBuffer, size_t size, DWORD& dwCrc32)
 {
+#ifdef _WIN64
+	// 64 bits: versión C++
+	DWORD crc = dwCrc32;
+	BYTE* buffer = pbyBuffer;
+	DWORD* crcTable = m_pdwCrc32Table;
+
+	for (size_t i = 0; i < size; i++)
+	{
+		BYTE index = (BYTE)(crc ^ buffer[i]);
+		crc = (crc >> 8) ^ crcTable[index];
+	}
+
+	dwCrc32 = crc;
+#else
+	// 32 bits: versión ASM original
 	DWORD dwByteRead = size;
 	__asm
 	{
-		// Save the esi and edi registers
 		push esi
 		push edi
 
-		mov eax, dwCrc32			// Load the pointer to dwCrc32
-		mov ecx, [eax]				// Dereference the pointer to load dwCrc32
+		mov eax, dwCrc32
+		mov ecx, [eax]
 
-		mov ebx, this				// Load the CRC32 table
+		mov ebx, this
 		mov edi, [ebx]CCyclicRedundancyCheck32.m_pdwCrc32Table
 
-		mov esi, pbyBuffer			// Load buffer
-		mov ebx, dwByteRead			// Load dwByteRead
-		lea edx, [esi + ebx]		// Calculate the end of the buffer
+		mov esi, pbyBuffer
+		mov ebx, dwByteRead
+		lea edx, [esi + ebx]
 
-crc32loop:
-		xor eax, eax				// Clear the eax register
-		mov bl, byte ptr [esi]		// Load the current source byte
+		crc32loop:
+		xor eax, eax
+			mov bl, byte ptr[esi]
 
-		mov al, cl					// Copy crc value into eax
-		inc esi						// Advance the source pointer
+			mov al, cl
+			inc esi
 
-		xor al, bl					// Create the index into the CRC32 table
-		shr ecx, 8
+			xor al, bl
+			shr ecx, 8
 
-		mov ebx, [edi + eax * 4]	// Get the value out of the table
-		xor ecx, ebx				// xor with the current byte
+			mov ebx, [edi + eax * 4]
+			xor ecx, ebx
 
-		cmp edx, esi				// Have we reached the end of the buffer?
-		jne crc32loop
+			cmp edx, esi
+			jne crc32loop
 
-		// Restore the edi and esi registers
-		pop edi
-		pop esi
+			pop edi
+			pop esi
 
-		mov eax, dwCrc32			// Load the pointer to dwCrc32
-		mov [eax], ecx				// Write the result
+			mov eax, dwCrc32
+			mov[eax], ecx
 	}
+#endif
 }

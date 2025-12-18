@@ -12,6 +12,7 @@
 #include <eh.h>
 #include <imagehlp.h>
 #include "ErrorReport.h"
+#include <intrin.h>
 
 #if defined USER_WINDOW_MODE || (defined WINDOWMODE)
 extern BOOL g_bUseWindowMode;
@@ -544,33 +545,29 @@ void GetOSVersion( ER_SystemInfo *si)
 	strcat( si->m_lpszOS, lpszTemp);
 }
 
-__int64 GetCPUFrequency( unsigned int uiMeasureMSecs)
+__int64 GetCPUFrequency(unsigned int uiMeasureMSecs)
 {
-	assert( uiMeasureMSecs > 0);
+	assert(uiMeasureMSecs > 0);
 
 	// First we get the CPUID standard level 0x00000001
-	DWORD reg;
-	__asm
-	{
-		mov eax, 1
-		cpuid
-		mov reg, edx
-	}
+	int cpuInfo[4];
+	__cpuid(cpuInfo, 1);
+	DWORD reg = cpuInfo[3];  // edx está en cpuInfo[3]
 
 	// Then we check, if the RDTSC (Real Date Time Stamp Counter) is available.
 	// This function is necessary for our measure process.
-	if ( !( reg & ( 1 << 4)))
+	if (!(reg & (1 << 4)))
 	{
-		return ( 0);
+		return (0);
 	}
 
 	// After that we declare some vars and check the frequency of the high
 	// resolution timer for the measure process.
 	// If there's no high-res timer, we exit.
 	__int64 llFreq;
-	if ( !QueryPerformanceFrequency( ( LARGE_INTEGER*) &llFreq))
+	if (!QueryPerformanceFrequency((LARGE_INTEGER*)&llFreq))
 	{
-		return ( 0);
+		return (0);
 	}
 
 	// Now we can init the measure process. We set the process and thread priority
@@ -580,7 +577,12 @@ __int64 GetCPUFrequency( unsigned int uiMeasureMSecs)
 	HANDLE hThread = GetCurrentThread();
 	DWORD dwCurPriorityClass = GetPriorityClass(hProcess);
 	int iCurThreadPriority = GetThreadPriority(hThread);
+
+#ifdef _WIN64
+	DWORD_PTR dwProcessMask, dwSystemMask, dwNewMask = 1;
+#else
 	DWORD dwProcessMask, dwSystemMask, dwNewMask = 1;
+#endif
 	GetProcessAffinityMask(hProcess, &dwProcessMask, &dwSystemMask);
 
 	SetPriorityClass(hProcess, REALTIME_PRIORITY_CLASS);
@@ -589,32 +591,25 @@ __int64 GetCPUFrequency( unsigned int uiMeasureMSecs)
 
 	// Now we call a CPUID to ensure, that all other prior called functions are
 	// completed now (serialization)
-	__asm { cpuid }
+	__cpuid(cpuInfo, 0);
 
 	__int64 llStartTime, llEndTime;
 	__int64 llStart, llEnd;
-	// We ask the high-res timer for the start time
-	QueryPerformanceCounter((LARGE_INTEGER *) &llStartTime);
-	// Then we get the current cpu clock and store it
-	__asm 
-	{
-		rdtsc
-		mov dword ptr [llStart+4], edx
-		mov dword ptr [llStart], eax
-	}
 
-	// Now we wart for some msecs
+	// We ask the high-res timer for the start time
+	QueryPerformanceCounter((LARGE_INTEGER*)&llStartTime);
+
+	// Then we get the current cpu clock and store it
+	llStart = __rdtsc();
+
+	// Now we wait for some msecs
 	Sleep(uiMeasureMSecs);
 
 	// We ask for the end time
-	QueryPerformanceCounter((LARGE_INTEGER *) &llEndTime);
+	QueryPerformanceCounter((LARGE_INTEGER*)&llEndTime);
+
 	// And also for the end cpu clock
-	__asm 
-	{
-		rdtsc
-		mov dword ptr [llEnd+4], edx
-		mov dword ptr [llEnd], eax
-	}
+	llEnd = __rdtsc();
 
 	// Now we can restore the default process and thread priorities
 	SetProcessAffinityMask(hProcess, dwProcessMask);
@@ -627,183 +622,174 @@ __int64 GetCPUFrequency( unsigned int uiMeasureMSecs)
 
 	// And finally the frequency is the clock difference divided by the time
 	// difference. 
-	__int64 llFrequency = (__int64)((( double)llDif) / ((( double)llTimeDif) / llFreq));
+	__int64 llFrequency = (__int64)(((double)llDif) / (((double)llTimeDif) / llFreq));
+
 	// At last we just return the frequency that is also stored in the call
 	// member var uqwFrequency
 	return llFrequency;
 }
 
-void GetCPUInfo( ER_SystemInfo *si)
+void GetCPUInfo(ER_SystemInfo* si)
 {
-	char *lpszUnknown = "Unknown";
+	char* lpszUnknown = "Unknown";
 	char lpszTemp[256];
 
-	// Á¾·ù
+	// Declarar variables y array para cpuid
+	int cpuInfo[4];
 	DWORD eaxreg, ebxreg, ecxreg, edxreg;
- 
+
 	// We read the standard CPUID level 0x00000000 which should
 	// be available on every x86 processor
-	__asm
-	{
-		mov eax, 0
-		cpuid
-		mov eaxreg, eax
-		mov ebxreg, ebx
-		mov edxreg, edx
-		mov ecxreg, ecx
-	}
+	__cpuid(cpuInfo, 0);
+	eaxreg = cpuInfo[0];
+	ebxreg = cpuInfo[1];
+	ecxreg = cpuInfo[2];
+	edxreg = cpuInfo[3];
+
 	int iBrand = ebxreg;
-	*((DWORD *) si->m_lpszCPU) = ebxreg;
-	*((DWORD *) (si->m_lpszCPU+4)) = edxreg;
-	*((DWORD *) (si->m_lpszCPU+8)) = ecxreg;
-	strcat( si->m_lpszCPU, " - ");
+	*((DWORD*)si->m_lpszCPU) = ebxreg;
+	*((DWORD*)(si->m_lpszCPU + 4)) = edxreg;
+	*((DWORD*)(si->m_lpszCPU + 8)) = ecxreg;
+	strcat(si->m_lpszCPU, " - ");
 	unsigned long ulMaxSupportedLevel, ulMaxSupportedExtendedLevel;
 	ulMaxSupportedLevel = eaxreg & 0xFFFF;
+
 	// Then we read the ext. CPUID level 0x80000000
-	// ...to check the max. supportted extended CPUID level
-	__asm
-	{
-        mov eax, 0x80000000
-		cpuid
-		mov eaxreg, eax
-	}
+	// ...to check the max. supported extended CPUID level
+	__cpuid(cpuInfo, 0x80000000);
+	eaxreg = cpuInfo[0];
 	ulMaxSupportedExtendedLevel = eaxreg;
 
 	// First we get the CPUID standard level 0x00000001
-	__asm
-	{
-		mov eax, 1
-		cpuid
-		mov eaxreg, eax
-	}
-	unsigned int uiFamily   = (eaxreg >> 8) & 0xF;
-	unsigned int uiModel    = (eaxreg >> 4) & 0xF;
+	__cpuid(cpuInfo, 1);
+	eaxreg = cpuInfo[0];
+	unsigned int uiFamily = (eaxreg >> 8) & 0xF;
+	unsigned int uiModel = (eaxreg >> 4) & 0xF;
 
-	// Á¾·ù Ã£±â
-	switch ( iBrand)
+	// Brand detection
+	switch (iBrand)
 	{
-		case 0x756E6547:	// GenuineIntel
-			switch ( uiFamily)
+	case 0x756E6547:    // GenuineIntel
+		switch (uiFamily)
+		{
+		case 3:    // 386
+			break;
+		case 4:    // 486
+			break;
+		case 5:    // pentium
+			break;
+		case 6:    // pentium pro - pentium 3
+			switch (uiModel)
 			{
-			case 3:	// 386
-				break;
-			case 4:	// 486
-				break;
-			case 5:	// pentium
-				break;
-			case 6:	// pentium pro - pentium 3
-				switch ( uiModel)
-				{
-				case 0:
-				case 1:
-				default:
-					strcat( si->m_lpszCPU, "Pentium Pro");
-					break;
-				case 3:
-				case 5:
-					strcat( si->m_lpszCPU, "Pentium 2");
-					break;
-				case 6:
-					strcat( si->m_lpszCPU, "Pentium Celeron");
-					break;
-				case 7:
-				case 8:
-				case 0xA:
-				case 0xB:
-					strcat( si->m_lpszCPU, "Pentium 3");
-					break;
-				}
-				break;
-			case 15:	// pentium 4
-				strcat( si->m_lpszCPU, "Pentium 4");
-				break;
+			case 0:
+			case 1:
 			default:
-				strcat( si->m_lpszCPU, lpszUnknown);
+				strcat(si->m_lpszCPU, "Pentium Pro");
+				break;
+			case 3:
+			case 5:
+				strcat(si->m_lpszCPU, "Pentium 2");
+				break;
+			case 6:
+				strcat(si->m_lpszCPU, "Pentium Celeron");
+				break;
+			case 7:
+			case 8:
+			case 0xA:
+			case 0xB:
+				strcat(si->m_lpszCPU, "Pentium 3");
 				break;
 			}
 			break;
-		case 0x68747541:	// AuthenticAMD
-			switch ( uiFamily)
-			{
-			case 4:	// 486, 586
-				switch ( uiModel)
-				{
-				case 3:
-				case 7:
-				case 8:
-				case 9:
-					strcat( si->m_lpszCPU, "AMD 486");
-					break;
-				case 0xE:
-				case 0xF:
-					strcat( si->m_lpszCPU, "AMD 586");
-					break;
-				default:
-					strcat( si->m_lpszCPU, "AMD Unknown (486 or 586)");
-					break;
-				}
-			case 5:	// K5, K6
-				switch ( uiModel)
-				{
-				case 0:
-				case 1:
-				case 2:
-				case 3:
-					strcat( si->m_lpszCPU, "AMD K5 5k86");
-					break;
-				case 6:
-				case 7:
-					strcat( si->m_lpszCPU, "AMD K6");
-					break;
-				case 8:
-					strcat( si->m_lpszCPU, "AMD K6-2");
-					break;
-				case 9:
-					strcat( si->m_lpszCPU, "AMD K6-3");
-					break;
-				case 0xD:
-					strcat( si->m_lpszCPU, "AMD K6-2+ or K6-3+");
-					break;
-				default:
-					strcat( si->m_lpszCPU, "AMD Unknown (K5 or K6)");
-					break;
-				}
-				break;
-			case 6:	// K7 Athlon, Duron
-				switch ( uiModel)
-				{
-				case 1:
-				case 2:
-				case 4:
-				case 6:
-					strcat( si->m_lpszCPU, "AMD K-7 Athlon");
-					break;
-				case 3:
-				case 7:
-					strcat( si->m_lpszCPU, "AMD K-7 Duron");
-					break;
-				default:
-					strcat( si->m_lpszCPU, "AMD K-7 Unknown");
-					break;
-				}
-				break;
-			default:
-				strcat( si->m_lpszCPU, "AMD Unknown");
-				break;
-			}
+		case 15:    // pentium 4
+			strcat(si->m_lpszCPU, "Pentium 4");
 			break;
-		case 0x69727943:	// CyrixInstead
 		default:
-			strcat( si->m_lpszCPU, lpszUnknown);
+			strcat(si->m_lpszCPU, lpszUnknown);
 			break;
+		}
+		break;
+	case 0x68747541:    // AuthenticAMD
+		switch (uiFamily)
+		{
+		case 4:    // 486, 586
+			switch (uiModel)
+			{
+			case 3:
+			case 7:
+			case 8:
+			case 9:
+				strcat(si->m_lpszCPU, "AMD 486");
+				break;
+			case 0xE:
+			case 0xF:
+				strcat(si->m_lpszCPU, "AMD 586");
+				break;
+			default:
+				strcat(si->m_lpszCPU, "AMD Unknown (486 or 586)");
+				break;
+			}
+		case 5:    // K5, K6
+			switch (uiModel)
+			{
+			case 0:
+			case 1:
+			case 2:
+			case 3:
+				strcat(si->m_lpszCPU, "AMD K5 5k86");
+				break;
+			case 6:
+			case 7:
+				strcat(si->m_lpszCPU, "AMD K6");
+				break;
+			case 8:
+				strcat(si->m_lpszCPU, "AMD K6-2");
+				break;
+			case 9:
+				strcat(si->m_lpszCPU, "AMD K6-3");
+				break;
+			case 0xD:
+				strcat(si->m_lpszCPU, "AMD K6-2+ or K6-3+");
+				break;
+			default:
+				strcat(si->m_lpszCPU, "AMD Unknown (K5 or K6)");
+				break;
+			}
+			break;
+		case 6:    // K7 Athlon, Duron
+			switch (uiModel)
+			{
+			case 1:
+			case 2:
+			case 4:
+			case 6:
+				strcat(si->m_lpszCPU, "AMD K-7 Athlon");
+				break;
+			case 3:
+			case 7:
+				strcat(si->m_lpszCPU, "AMD K-7 Duron");
+				break;
+			default:
+				strcat(si->m_lpszCPU, "AMD K-7 Unknown");
+				break;
+			}
+			break;
+		default:
+			strcat(si->m_lpszCPU, "AMD Unknown");
+			break;
+		}
+		break;
+	case 0x69727943:    // CyrixInstead
+	default:
+		strcat(si->m_lpszCPU, lpszUnknown);
+		break;
 	}
 
-	// ¼Óµµ
-	__int64 llFreq = GetCPUFrequency( 50) / 1000000;
-	wsprintf( lpszTemp, " %dMhz", ( int)llFreq);
-	strcat( si->m_lpszCPU, lpszTemp);
+	// CPU speed
+	__int64 llFreq = GetCPUFrequency(50) / 1000000;
+	wsprintf(lpszTemp, " %dMhz", (int)llFreq);
+	strcat(si->m_lpszCPU, lpszTemp);
 }
-
 
 typedef HRESULT(WINAPI * DIRECTDRAWCREATE)( GUID*, LPDIRECTDRAW*, IUnknown* );
 typedef HRESULT(WINAPI * DIRECTDRAWCREATEEX)( GUID*, VOID**, REFIID, IUnknown* );

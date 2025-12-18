@@ -5,7 +5,11 @@
 #include "zzzinterface.h"
 #include "zzzinventory.h"
 #include "zzzMixInventory.h"
+#ifdef _WIN64
+#include <SimpleModulus/SimpleModulus.h>
+#else
 #include "SimpleModulus.h"
+#endif
 #include "WSclient.h"
 #include "SocketSystem.h"
 #include "ItemAddOptioninfo.h"

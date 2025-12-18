@@ -546,7 +546,13 @@ extern int TimeRemain;
 extern bool EnableFastInput;
 void MainScene(HDC hDC);
 
-LONG FAR PASCAL WndProc(HWND hwnd,UINT msg,WPARAM wParam,LPARAM lParam)
+#ifdef _WIN64
+// Versión para x64 (64 bits)
+LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
+#else
+// Versión para Win32 (32 bits) - ORIGINAL
+LONG FAR PASCAL WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
+#endif
 {
 	MOUSEHOOKSTRUCTEX* Mouse = (MOUSEHOOKSTRUCTEX*)lParam;
     switch (msg)

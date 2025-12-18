@@ -2,6 +2,9 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#ifdef _WIN64
+#define _CRT_SECURE_NO_WARNINGS  //  AGREGAR ESTA LÍNEA
+#endif
 #include "w_PetActionStand.h"
 #include "w_PetActionRound.h"
 #include "w_PetActionDemon.h"
@@ -191,20 +194,27 @@ void PetProcess::UnRegister(CHARACTER* Owner, int itemType, bool isUnregistAll)
 bool PetProcess::LoadData()
 {
 	char FileName[100];
+#ifdef _WIN64
+	sprintf_s(FileName, sizeof(FileName), "Data\\Local\\pet.bmd");
+#else
 	sprintf(FileName, "Data\\Local\\pet.bmd");
+#endif
 
 	int _ver;
 	int _array;
-
 	FILE* fp = fopen(FileName, "rb");
+
 	if (fp == NULL)
 	{
 		char Text[256];
+#ifdef _WIN64
+		sprintf_s(Text, sizeof(Text), "%s - File not exist.", FileName);
+#else
 		sprintf(Text, "%s - File not exist.", FileName);
+#endif
 		g_ErrorReport.Write(Text);
 		MessageBox(g_hWnd, Text, NULL, MB_OK);
 		SendMessage(g_hWnd, WM_DESTROY, 0, 0);
-
 		return FALSE;
 	}
 
@@ -222,8 +232,8 @@ bool PetProcess::LoadData()
 	fread(&_listSize, sizeof(DWORD), 1, fp);
 
 	int Size = sizeof(int) + sizeof(int) + sizeof(float) + sizeof(int) + ((sizeof(int) + sizeof(float)) * _array);
-	BYTE* Buffer = new BYTE[Size * _listSize];
 
+	BYTE* Buffer = new BYTE[Size * _listSize];
 	fread(Buffer, Size * _listSize, 1, fp);
 
 	DWORD dwCheckSum;
@@ -232,24 +242,34 @@ bool PetProcess::LoadData()
 	if (dwCheckSum != GenerateCheckSum2(Buffer, Size * _listSize, 0x7F1D))
 	{
 		char Text[256];
+#ifdef _WIN64
+		sprintf_s(Text, sizeof(Text), "%s - File corrupted.", FileName);
+#else
 		sprintf(Text, "%s - File corrupted.", FileName);
+#endif
 		g_ErrorReport.Write(Text);
 		MessageBox(g_hWnd, Text, NULL, MB_OK);
 		SendMessage(g_hWnd, WM_DESTROY, 0, 0);
+
+		delete[] _action;
+		delete[] _speed;
+		delete[] Buffer;
+		fclose(fp);
 
 		return FALSE;
 	}
 	else
 	{
 		BYTE* pSeek = Buffer;
+
 		for (int i = 0; i < _listSize; i++)
 		{
 			_type = 0;
 			_scale = 0.0f;
 			_blendMesh = -1;
 			_count = 0;
-			ZeroMemory(_action, sizeof(_action));
-			ZeroMemory(_speed, sizeof(_speed));
+			ZeroMemory(_action, sizeof(int) * _array);
+			ZeroMemory(_speed, sizeof(float) * _array);
 
 			BuxConvert(pSeek, Size);
 
@@ -268,8 +288,8 @@ bool PetProcess::LoadData()
 			memcpy(_action, pSeek, sizeof(int) * _array);
 			pSeek += sizeof(int) * _array;
 
-			memcpy(_speed, pSeek, sizeof(_speed) * _array);
-			pSeek += sizeof(_speed) * _array;
+			memcpy(_speed, pSeek, sizeof(float) * _array);
+			pSeek += sizeof(float) * _array;
 
 			PetInfoPtr petInfo = PetInfo::Make();
 			petInfo->SetBlendMesh(_blendMesh);
@@ -279,12 +299,15 @@ bool PetProcess::LoadData()
 			m_petsInfo.insert(make_pair(ITEM_HELPER + _type, petInfo));
 		}
 	}
+
 	delete[] _action;
 	delete[] _speed;
 	delete[] Buffer;
+	fclose(fp);
 
 	return TRUE;
 }
+
 
 bool PetProcess::IsPet(int itemType)
 {
