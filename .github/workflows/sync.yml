@@ -1,39 +1,32 @@
-name: 🔍 Test Token Permissions
+name: 🔄 Sincronización Rápida
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
 
 jobs:
-  test:
+  sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Test Repository Access
-        env:
-          GH_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
+      - name: 📥 Checkout código público
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: ⚙️ Configurar Git
         run: |
-          echo "🔍 Probando acceso al repositorio privado..."
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
           
-          # Esta es la prueba CRUCIAL
-          RESPONSE=$(curl -s -o response.txt -w "%{http_code}" \
-            -H "Authorization: token $GH_TOKEN" \
-            https://api.github.com/repos/Odisey25/Main.6.3)
+      - name: 📤 Clonar a repo temporalmente público
+        run: |
+          echo "🚀 Clonando a Main.6.3 (público temporalmente)..."
           
-          echo "📡 Código de respuesta: $RESPONSE"
+          # URL PÚBLICA (sin token)
+          git remote add private https://github.com/Odisey25/Main.6.3.git
           
-          if [ "$RESPONSE" = "200" ]; then
-            echo "✅ PERFECTO! Token tiene acceso correcto"
-            echo "📄 Contenido de la respuesta:"
-            cat response.txt | head -20
-          elif [ "$RESPONSE" = "404" ]; then
-            echo "❌ 404 - Repositorio no encontrado"
-            echo "   Verifica que 'Main.6.3' existe exactamente así"
-          elif [ "$RESPONSE" = "403" ]; then
-            echo "❌ 403 - Prohibido"
-            echo "   El token NO tiene permisos 'repo'"
-            echo "   Crea un NUEVO token marcando SOLO:"
-            echo "   - [x] repo"
-            echo "   - [x] workflow"
-          else
-            echo "⚠️ Código inesperado: $RESPONSE"
-            cat response.txt
-          fi
+          # Push normal
+          git push private main:main --force
+          
+          echo "✅ Sincronización completada!"
