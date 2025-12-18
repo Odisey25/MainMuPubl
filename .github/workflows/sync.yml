@@ -1,32 +1,21 @@
-name: 🔄 Sincronización Rápida
+name: 🔄 Clonar a Repo Público
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
 
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: 📥 Checkout código público
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           
-      - name: ⚙️ Configurar Git
+      - name: 📤 Push Directo (URL PÚBLICA)
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
+          echo "🚀 Clonando a Main.6.3 (ahora público)..."
           
-      - name: 📤 Clonar a repo temporalmente público
-        run: |
-          echo "🚀 Clonando a Main.6.3 (público temporalmente)..."
+          # URL PÚBLICA - SIN TOKEN
+          git push https://github.com/Odisey25/Main.6.3.git main:main --force
           
-          # URL PÚBLICA (sin token)
-          git remote add private https://github.com/Odisey25/Main.6.3.git
-          
-          # Push normal
-          git push private main:main --force
-          
-          echo "✅ Sincronización completada!"
+          echo "✅ ¡Éxito! Repositorio sincronizado."
