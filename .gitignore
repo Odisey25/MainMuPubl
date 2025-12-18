@@ -1,0 +1,53 @@
+# Build outputs
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+[Gg]lobal [Rr]elease/
+[Gg]lobal [Dd]ebug/
+x64/
+x86/
+*.exe
+*.dll
+*.lib
+*.obj
+*.o
+*.a
+*.so
+*.dylib
+
+# Visual Studio specific
+*.pch
+*.tlog
+*.pdb
+*.ilk
+*.sbr
+*.idb
+*.ipch
+*.aps
+*.ncb
+*.suo
+*.user
+*.db
+
+# IDE files
+.vs/
+*.vcxproj.user
+*.filters
+
+# Cache and temp files
+*.cache
+*.tmp
+*.temp
+
+# Dependencies
+dependencies/
+libs/
+vendor/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+/source/Global Release/Main.pch
