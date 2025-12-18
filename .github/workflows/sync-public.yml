@@ -1,14 +1,39 @@
-name: 🆕 SYNC-PUBLIC-REPO-NOW
+name: 🔄 Mirror Público a Público
+
 on:
-  workflow_dispatch:  # This allows you to run it manually from the Actions tab
+  # Diferentes formas de activar el workflow:
+  workflow_dispatch:        # Manual desde GitHub
+  push:                     # Automático al hacer push
+    branches: [ main ]
+  # schedule:               # Programado (ej: cada día a las 3 AM)
+  #   - cron: '0 3 * * *'
 
 jobs:
-  sync:
+  mirror:
     runs-on: ubuntu-latest
+    
     steps:
-      - name: 📥 Checkout Public Repo
+      # PASO 1: Obtener el código fuente
+      - name: Obtener código del repo público
         uses: actions/checkout@v4
-
-      - name: 📤 Push to Public Main.6.3
+        with:
+          fetch-depth: 0  # Trae todo el historial
+          
+      # PASO 2: Configurar Git
+      - name: Configurar usuario Git
         run: |
-          git push https://github.com/Odisey25/Main.6.3.git HEAD:main --force
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          
+      # PASO 3: Sincronizar
+      - name: Sincronizar con repo destino
+        run: |
+          echo "🔗 Origen:  MainMuPubl"
+          echo "🎯 Destino: Main.6.3"
+          echo "⏰ Iniciando: $(date)"
+          
+          # Método más robusto
+          git remote add destino https://github.com/Odisey25/Main.6.3.git
+          git push destino main --force
+          
+          echo "✅ Finalizado: $(date)"
