@@ -1,0 +1,23 @@
+name: 🆕 SYNC-PUBLIC-REPO-NOW
+
+on:
+  workflow_dispatch:  # SOLO manual
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Clonar MainMuPubl
+        uses: actions/checkout@v4
+        
+      - name: 📤 Push a Main.6.3 (PÚBLICO)
+        run: |
+          echo "=== INICIANDO SINCRONIZACIÓN ==="
+          echo "Origen: MainMuPubl"
+          echo "Destino: Main.6.3"
+          echo "================================"
+          
+          # Push DIRECTO sin tokens
+          git push https://github.com/Odisey25/Main.6.3.git main
+          
+          echo "✅ ¡ÉXITO! Sincronizado correctamente."
