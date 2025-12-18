@@ -1,21 +1,7 @@
-name: 🔄 Clonar a Repo Público
+# Método 1: Web interface
+1. https://github.com/Odisey25/Main.6.3/settings
+2. Scroll to "Danger Zone" (muy abajo)
+3. "Change visibility" → "Public" → Confirmar
 
-on:
-  workflow_dispatch:
-
-jobs:
-  sync:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          
-      - name: 📤 Push Directo (URL PÚBLICA)
-        run: |
-          echo "🚀 Clonando a Main.6.3 (ahora público)..."
-          
-          # URL PÚBLICA - SIN TOKEN
-          git push https://github.com/Odisey25/Main.6.3.git main:main --force
-          
-          echo "✅ ¡Éxito! Repositorio sincronizado."
+# Método 2: GitHub CLI
+gh repo edit Odisey25/Main.6.3 --visibility=public
