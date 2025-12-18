@@ -1,43 +1,39 @@
-name: 🔄 Sync to Private Repo
+name: 🔍 Test Token Permissions
 
 on:
-  push:
-    branches: [main]
-  workflow_dispatch:  # Para ejecutar manualmente
+  workflow_dispatch:
 
 jobs:
-  sync:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: 📥 Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: ⚙️ Setup Git
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
-
-      - name: 📤 Push to Private Repo
+      - name: Test Repository Access
         env:
-          PRIVATE_REPO_URL: https://x-access-token:${{ secrets.PRIVATE_REPO_TOKEN }}@github.com/Odisey25/Main.6.3
+          GH_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
         run: |
-          # Verificar que tenemos acceso
-          echo "🔄 Iniciando sincronización..."
+          echo "🔍 Probando acceso al repositorio privado..."
           
-          # Agregar remoto privado
-          git remote add private $PRIVATE_REPO_URL
+          # Esta es la prueba CRUCIAL
+          RESPONSE=$(curl -s -o response.txt -w "%{http_code}" \
+            -H "Authorization: token $GH_TOKEN" \
+            https://api.github.com/repos/Odisey25/Main.6.3)
           
-          # Obtener todas las branches y tags
-          git fetch --all
+          echo "📡 Código de respuesta: $RESPONSE"
           
-          # Empujar TODO al repositorio privado
-          echo "📤 Enviando contenido al repositorio privado..."
-          git push private --all --force
-          git push private --tags --force
-          
-          echo "✅ Sincronización completada exitosamente!"
-          echo "📊 Repositorio público: MainMuPubl"
-          echo "🔒 Repositorio privado: Main.6.3"
-          echo "🕐 Fecha: $(date)"
+          if [ "$RESPONSE" = "200" ]; then
+            echo "✅ PERFECTO! Token tiene acceso correcto"
+            echo "📄 Contenido de la respuesta:"
+            cat response.txt | head -20
+          elif [ "$RESPONSE" = "404" ]; then
+            echo "❌ 404 - Repositorio no encontrado"
+            echo "   Verifica que 'Main.6.3' existe exactamente así"
+          elif [ "$RESPONSE" = "403" ]; then
+            echo "❌ 403 - Prohibido"
+            echo "   El token NO tiene permisos 'repo'"
+            echo "   Crea un NUEVO token marcando SOLO:"
+            echo "   - [x] repo"
+            echo "   - [x] workflow"
+          else
+            echo "⚠️ Código inesperado: $RESPONSE"
+            cat response.txt
+          fi
