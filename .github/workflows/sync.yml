@@ -1,0 +1,43 @@
+name: 🔄 Sync to Private Repo
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:  # Para ejecutar manualmente
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: ⚙️ Setup Git
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+      - name: 📤 Push to Private Repo
+        env:
+          PRIVATE_REPO_URL: https://x-access-token:${{ secrets.PRIVATE_REPO_TOKEN }}@github.com/Odisey25/Main.6.3
+        run: |
+          # Verificar que tenemos acceso
+          echo "🔄 Iniciando sincronización..."
+          
+          # Agregar remoto privado
+          git remote add private $PRIVATE_REPO_URL
+          
+          # Obtener todas las branches y tags
+          git fetch --all
+          
+          # Empujar TODO al repositorio privado
+          echo "📤 Enviando contenido al repositorio privado..."
+          git push private --all --force
+          git push private --tags --force
+          
+          echo "✅ Sincronización completada exitosamente!"
+          echo "📊 Repositorio público: MainMuPubl"
+          echo "🔒 Repositorio privado: Main.6.3"
+          echo "🕐 Fecha: $(date)"
